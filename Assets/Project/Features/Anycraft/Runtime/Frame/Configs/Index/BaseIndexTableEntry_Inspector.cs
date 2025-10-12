@@ -8,7 +8,7 @@ namespace Anycraft.Frame.Configs.Index
 {
     public partial class BaseIndexTableEntry<TTable, TConfig>
     {
-        [ValueDropdown(nameof(Getindexes))]
+        [ValueDropdown(nameof(GetIndexes))]
         [LabelText("Id")]
         [ShowInInspector] private int Inspector_Index
         {
@@ -16,7 +16,7 @@ namespace Anycraft.Frame.Configs.Index
             set => _index = value;
         }
     
-        private IEnumerable<int> Getindexes()
+        private IEnumerable<int> GetIndexes()
         {
             var table = EditorUtils.LoadFirstAssetOfType<TTable>();
 
