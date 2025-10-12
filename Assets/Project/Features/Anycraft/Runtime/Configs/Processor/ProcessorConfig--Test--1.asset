@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c6737c44fceb3343a6873d588a65640, type: 3}
-  m_Name: ProcessorConfig--Test
+  m_Name: ProcessorConfig--Test--1
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Processor.Configs.ProcessorConfig
   _id: Test
+  _index: 1
   _inputData:
     _itemSlot: []
     _resourceSlot: []

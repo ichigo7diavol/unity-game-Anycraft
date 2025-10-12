@@ -1,17 +1,26 @@
 #if UNITY_EDITOR
 
+using Sirenix.OdinInspector;
 using UnityEditor;
 
 namespace Anycraft.Frame.Configs
 {
     public partial class ConfigContainer
     {
-        partial void UpdateAssetName()
+        [LabelText(nameof(Config))]
+        [OnValueChanged(nameof(Inspector_UpdateAssetName))]
+        [ShowInInspector] private IConfig Inspector_Config
+        {
+            get => _config;
+            set => _config = value;
+        }
+
+        private void Inspector_UpdateAssetName()
         {
             var path = AssetDatabase.GetAssetPath(this);
             var newName = _config == null 
-                ? GetType().Name
-                : _config.GetType().Name + $"Container--{_config.Id}";
+                ? "Empty-Container"
+                : $"{_config.GetType().Name}-Container";
 
             AssetDatabase.RenameAsset(path, newName);
             AssetDatabase.SaveAssets();

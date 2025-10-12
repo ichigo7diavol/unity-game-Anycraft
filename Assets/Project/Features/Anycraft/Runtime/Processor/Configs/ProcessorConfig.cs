@@ -1,10 +1,11 @@
 using Anycraft.Frame.Configs;
+using Anycraft.Frame.Configs.Index;
 using UnityEngine;
 
 namespace Anycraft.Processor.Configs
 {
     [CreateAssetMenu(menuName = "Anycraft/Processor/" + nameof(ProcessorConfig))]
-    public sealed class ProcessorConfig : BaseSerializedConfig
+    public sealed class ProcessorConfig : BaseIndexedConfig
     {
         [SerializeField] private ProcessorData _data;
 

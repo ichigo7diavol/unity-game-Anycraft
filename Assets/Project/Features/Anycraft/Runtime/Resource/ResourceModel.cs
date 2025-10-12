@@ -1,5 +1,4 @@
 using Anycraft.Frame;
-using Anycraft.Frame.Configs;
 
 namespace Anycraft.Resource
 {
