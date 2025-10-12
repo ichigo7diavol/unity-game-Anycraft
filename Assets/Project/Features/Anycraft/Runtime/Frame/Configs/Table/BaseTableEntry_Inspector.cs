@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
+using Anycraft.Utils;
 
 namespace Anycraft.Frame.Configs.Table
 {
