@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Anycraft.Resource
 {
     [CreateAssetMenu(menuName = "Anycraft/Resource/" + nameof(ResourceConfig))]
-    public sealed class ResourceConfig : SerializedConfig
+    public sealed class ResourceConfig : BaseSerializedConfig
     {
     }
 }

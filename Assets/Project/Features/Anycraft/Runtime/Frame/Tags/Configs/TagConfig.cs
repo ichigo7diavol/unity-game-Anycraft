@@ -6,7 +6,7 @@ using Anycraft.Frame.Configs;
 namespace Anycraft.Frame.Tags.Configs
 {
     [CreateAssetMenu(menuName = "Anycraft/Frame/Tags/Configs/" + nameof(TagConfig))]
-    public class TagConfig : SerializedConfig
+    public class TagConfig : BaseSerializedConfig
     {
         [Serializable]
         public sealed class LocalizationData : BaseLocalizationData

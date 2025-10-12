@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Anycraft.Frame.Configs
 {
-    public abstract partial class SerializedConfig : ScriptableObject, IConfig
+    public abstract partial class BaseSerializedConfig : ScriptableObject, IConfig
     {
         [OnValueChanged(nameof(UpdateAssetName))]
         [SerializeField] string _id;

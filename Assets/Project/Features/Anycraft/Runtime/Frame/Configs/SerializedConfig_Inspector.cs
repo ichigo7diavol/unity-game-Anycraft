@@ -4,7 +4,7 @@ using UnityEditor;
 
 namespace Anycraft.Frame.Configs
 {
-    public partial class SerializedConfig
+    public partial class BaseSerializedConfig
     {   
         partial void UpdateAssetName()
         {

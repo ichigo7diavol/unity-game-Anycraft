@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Anycraft.Items.Configs
 {
     [CreateAssetMenu(menuName = "Anycraft/Items/Configs/" + nameof(ItemConfig))]
-    public sealed class ItemConfig : SerializedConfig
+    public sealed class ItemConfig : BaseSerializedConfig
     {
         [Serializable]
         public sealed class LocalizationData : BaseLocalizationData

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d38f6784551eb428c998fa3f281679, type: 3}
   m_Name: ResourceConfig--Test
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Resource.ResourceConfig
-  _id: Test2
+  _id: Test

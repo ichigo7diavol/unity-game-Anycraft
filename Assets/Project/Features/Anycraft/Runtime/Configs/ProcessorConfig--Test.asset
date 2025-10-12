@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: ProcessorConfig--Test
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Processor.Configs.ProcessorConfig
   _id: Test
-  _editorName: Test
   _inputData:
     _itemSlot: []
     _resourceSlot: []

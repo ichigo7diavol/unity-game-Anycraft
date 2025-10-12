@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Anycraft.Frame.Configs.Table
 {
-    public abstract partial class BaseTableConfig<TConfig> : SerializedConfig
-        where TConfig : SerializedConfig
+    public abstract partial class BaseTableConfig<TConfig> : BaseSerializedConfig
+        where TConfig : BaseSerializedConfig
     {
         [HideInInspector]
         [SerializeField] List<TConfig> _configs = new();
