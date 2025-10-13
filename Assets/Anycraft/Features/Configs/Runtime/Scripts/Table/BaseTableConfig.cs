@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FluentValidation;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -9,10 +10,11 @@ namespace Anycraft.Features.Configs.Table
         where TConfig : BaseSerializedConfig
     {
         public new sealed class Validator
+            : AbstractValidator<BaseTableConfig<TConfig>>
         {
             public Validator()
             {
-                
+                Include(new BaseSerializedConfig.Validator());
             }
         }
 

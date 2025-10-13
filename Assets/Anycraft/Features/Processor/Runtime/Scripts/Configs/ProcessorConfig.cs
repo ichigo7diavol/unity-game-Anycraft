@@ -13,6 +13,7 @@ namespace Anycraft.Features.Processor.Configs
         {
             public Validator()
             {
+                Include(new BaseIndexedConfig.Validator());
             }
         }
 

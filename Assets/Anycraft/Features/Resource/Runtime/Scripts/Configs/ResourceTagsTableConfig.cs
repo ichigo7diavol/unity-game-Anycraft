@@ -6,13 +6,15 @@ using JetBrains.Annotations;
 namespace Anycraft.Resource.Configs
 {
     [UsedImplicitly]
-    public sealed class ResourceTagsTableConfig : BaseTableConfig<ResourceTagConfig>
+    public sealed class ResourceTagsTableConfig
+        : BaseTableConfig<ResourceTagConfig>
     {
         public new sealed class Validator
             : AbstractValidator<ResourceTagsTableConfig>
         {
             public Validator()
             {
+                Include(new BaseTableConfig<ResourceTagConfig>.Validator());
             }
         }
 

@@ -1,19 +1,22 @@
+using FluentValidation;
 using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Anycraft.Features.Configs.Index
-{   
+{
     [UsedImplicitly]
-    public abstract partial class BaseIndexedConfig : BaseSerializedConfig
+    public abstract partial class BaseIndexedConfig
+        : BaseSerializedConfig
     {
         public new sealed class Validator
+            : AbstractValidator<BaseIndexedConfig>
         {
             public Validator()
             {
-
+                Include(new BaseSerializedConfig.Validator());
             }
         }
-        
+
         [HideInInspector]
         [SerializeField] private int _index;
 

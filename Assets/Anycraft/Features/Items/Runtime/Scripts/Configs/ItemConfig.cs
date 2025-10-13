@@ -15,6 +15,7 @@ namespace Anycraft.Features.Items.Configs
         {
             public Validator()
             {
+                Include(new BaseSerializedConfig.Validator());
             }
         }
 

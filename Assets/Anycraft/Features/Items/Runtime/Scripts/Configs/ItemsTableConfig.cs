@@ -13,6 +13,7 @@ namespace Anycraft.Features.Items.Configs
         {
             public Validator()
             {
+                
             }
         }
 
