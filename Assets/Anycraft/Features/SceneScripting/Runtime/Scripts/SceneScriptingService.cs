@@ -12,20 +12,24 @@ namespace Anycraft.Features.SceneScripting
 
     [UsedImplicitly]
     public sealed partial class SceneScriptingService
-    : IService, IAsyncStartable
+        : IService, IAsyncStartable
     {
         private BaseSceneScript _script;
 
         public SceneScriptingService(BaseSceneScript script)
         {
             Assert.IsNotNull(script);
+
+            _script = script;
         }
 
         public async UniTask StartAsync(CancellationToken cancellation = default)
         {
+            cancellation.ThrowIfCancellationRequested();
+
             try
             {
-                await _script.StartAsync();
+                await _script.StartAsync(cancellation);
             }
             catch (Exception e)
             {

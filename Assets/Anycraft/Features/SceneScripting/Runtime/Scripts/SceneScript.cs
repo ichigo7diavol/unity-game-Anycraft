@@ -1,16 +1,17 @@
+using System.Threading;
+using Anycraft.Features.Configs;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
-using UnityEngine;
 
 namespace Anycraft.Features.SceneScripting
 {
     [UsedImplicitly]
-    public abstract class BaseSceneScript : ScriptableObject
+    public abstract class BaseSceneScript : BaseSerializedConfig
     {
         // public virtual async UniTask InitializeAsync() { }
         // public virtual async UniTask PostInitializeAsync() { }  
-        
-        public virtual async UniTask StartAsync() { }  
+
+        public virtual UniTask StartAsync(CancellationToken cancellation = default) => UniTask.CompletedTask;  
         // public virtual async UniTask PostStartAsync() { }  
     }
 }

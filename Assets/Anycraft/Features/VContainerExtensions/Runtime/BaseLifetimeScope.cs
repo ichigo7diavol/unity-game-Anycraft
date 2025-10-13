@@ -3,10 +3,12 @@ using VContainer.Unity;
 using UnityEngine;
 using System.Collections.Generic;
 using Anycraft.Features.Validation;
+using JetBrains.Annotations;
 
 namespace Anycraft.Features.VContainerExtenions
 {
-    public class BaseLifetimeScope : LifetimeScope, IValidatable
+    [UsedImplicitly]
+    public abstract class BaseLifetimeScope : LifetimeScope, IValidatable
     {
         [SerializeField] private List<MonoContainerInstaller> _monoInstallers = new();
         [SerializeField] private List<ScriptableContainerInstaller> _scriptableInstallers = new();
