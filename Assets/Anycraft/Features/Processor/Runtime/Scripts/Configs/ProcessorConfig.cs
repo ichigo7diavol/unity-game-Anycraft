@@ -1,4 +1,6 @@
 using Anycraft.Features.Configs.Index;
+using Anycraft.Features.Validation;
+using FluentValidation;
 using UnityEngine;
 
 namespace Anycraft.Features.Processor.Configs
@@ -6,6 +8,14 @@ namespace Anycraft.Features.Processor.Configs
     [CreateAssetMenu(menuName = "Anycraft/Processor/" + nameof(ProcessorConfig))]
     public sealed class ProcessorConfig : BaseIndexedConfig
     {
+        public new sealed class Validator
+            : AbstractValidator<ProcessorConfig>
+        {
+            public Validator()
+            {
+            }
+        }
+
         [SerializeField] private ProcessorData _data;
 
         [SerializeField] private ProcessorInputData _inputData;
@@ -18,6 +28,7 @@ namespace Anycraft.Features.Processor.Configs
 
         public override void Validate()
         {
+            this.ValidateAndThrow(new Validator());
         }
     }
 }

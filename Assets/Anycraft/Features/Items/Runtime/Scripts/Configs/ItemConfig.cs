@@ -1,6 +1,8 @@
 using System;
 using Anycraft.Features.Configs;
 using Anycraft.Features.Localization;
+using Anycraft.Features.Validation;
+using FluentValidation;
 using UnityEngine;
 
 namespace Anycraft.Features.Items.Configs
@@ -8,6 +10,14 @@ namespace Anycraft.Features.Items.Configs
     [CreateAssetMenu(menuName = "Anycraft/Items/Configs/" + nameof(ItemConfig))]
     public sealed class ItemConfig : BaseSerializedConfig
     {
+        public new sealed class Validator
+            : AbstractValidator<ItemConfig>
+        {
+            public Validator()
+            {
+            }
+        }
+
         [Serializable]
         public sealed class LocalizationData : BaseLocalizationData
         {
@@ -17,6 +27,7 @@ namespace Anycraft.Features.Items.Configs
 
         public override void Validate()
         {
+            this.ValidateAndThrow(new Validator());
         }
     }
 }
