@@ -6,5 +6,8 @@ namespace Anycraft.Resource.Configs
     [UsedImplicitly]
     public sealed class ResourceTagsTableConfig : BaseTableConfig<ResourceTagConfig>
     {
-    }   
+        public override void Validate()
+        {
+        }
+    }
 }

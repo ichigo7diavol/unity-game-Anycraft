@@ -1,8 +1,0 @@
-namespace Anycraft.Features.Services
-{
-    public partial class ServicesInspector
-    {
-        [ShowInInspector] private List<IService> Inspector_Services => _services;
-
-    }
-}

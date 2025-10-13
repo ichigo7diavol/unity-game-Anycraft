@@ -6,6 +6,14 @@ namespace Anycraft.Features.Configs.Index
     [UsedImplicitly]
     public abstract partial class BaseIndexedConfig : BaseSerializedConfig
     {
+        public new sealed class Validator
+        {
+            public Validator()
+            {
+
+            }
+        }
+        
         [HideInInspector]
         [SerializeField] private int _index;
 

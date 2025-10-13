@@ -8,5 +8,8 @@ namespace Anycraft.Features.Bootstrap.Scopes
     [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Bootstrap) + "/" + nameof(Scopes) + "/" + nameof(BootstrapSceneScript))]
     public sealed class BootstrapSceneScript : BaseSceneScript
     {
+        public override void Validate()
+        {
+        }
     }
 }

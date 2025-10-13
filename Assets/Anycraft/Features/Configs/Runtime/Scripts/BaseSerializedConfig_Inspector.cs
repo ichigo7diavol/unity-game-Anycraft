@@ -29,6 +29,12 @@ namespace Anycraft.Features.Configs
             AssetDatabase.RenameAsset(path, newName);
             AssetDatabase.SaveAssets();
         }
+
+        [Button("Validate")]
+        private void Inspector_Validate()
+        {
+            Validate();
+        }
     }
 }
 #endif

@@ -37,12 +37,6 @@ namespace Anycraft.Features.Configs.Table
             {
                 return Color.red;
             }
-            var err = "";
-            
-            if (!value.Validate(ref err))
-            {
-                return Color.red;
-            }
             if (_configs.Count(e => e.Id == value.Id) >= 2)
             {
                 return Color.red;

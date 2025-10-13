@@ -6,5 +6,8 @@ namespace Anycraft.Features.Items.Configs
     [CreateAssetMenu(menuName = "Anycraft/Items/Configs/" + nameof(ItemsTableConfig))]
     public sealed class ItemsTableConfig : BaseTableConfig<ItemConfig>
     {
-    }   
+        public override void Validate()
+        {
+        }
+    }
 }

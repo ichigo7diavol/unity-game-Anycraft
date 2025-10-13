@@ -10,6 +10,14 @@ namespace Anycraft.Features.Configs.Index
     public abstract partial class BaseIndexTableConfig<TConfig> : BaseSerializedConfig
         where TConfig : BaseIndexedConfig
     {
+        public new sealed class Validator
+        {
+            public Validator()
+            {
+
+            }
+        }
+        
         [HideInInspector]
         [SerializeField] private List<TConfig> _configs = new();
 

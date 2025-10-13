@@ -15,6 +15,10 @@ namespace Anycraft.Features.Processor.Configs
 
         public ProcessorInputData InputData => _inputData;
         public ProcessorOutputData OutputData => _outputData;
+
+        public override void Validate()
+        {
+        }
     }
 }
 

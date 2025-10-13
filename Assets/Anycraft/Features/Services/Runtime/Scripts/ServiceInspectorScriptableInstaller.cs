@@ -6,6 +6,7 @@ using VContainer;
 namespace Anycraft.Features.Services
 {
     [UsedImplicitly]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Services) + "/" + nameof(ServiceInspectorScriptableInstaller))]
     public sealed class ServiceInspectorScriptableInstaller : ScriptableContainerInstaller
     {
         public override void Install(IContainerBuilder builder)

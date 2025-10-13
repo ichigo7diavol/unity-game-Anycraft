@@ -14,6 +14,10 @@ namespace Anycraft.Features.Items.Configs
         }
 
         [SerializeField] private ItemTagTableEntries _tags;
+
+        public override void Validate()
+        {
+        }
     }
 }
 

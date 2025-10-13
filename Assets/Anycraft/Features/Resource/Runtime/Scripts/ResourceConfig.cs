@@ -6,5 +6,8 @@ namespace Anycraft.Features.Resource
     [CreateAssetMenu(menuName = "Anycraft/Resource/" + nameof(ResourceConfig))]
     public sealed class ResourceConfig : BaseSerializedConfig
     {
+        public override void Validate()
+        {
+        }
     }
 }
