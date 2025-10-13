@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Anycraft.Features.Configs.Index
 {   
+    [UsedImplicitly]
     public abstract partial class BaseIndexedConfig : BaseSerializedConfig
     {
         [HideInInspector]

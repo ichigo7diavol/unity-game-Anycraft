@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Anycraft.Features.Configs.Table
 {
+    [UsedImplicitly]
     public abstract partial class BaseTableConfig<TConfig> : BaseSerializedConfig
         where TConfig : BaseSerializedConfig
     {

@@ -1,9 +1,11 @@
 using UnityEngine;
 using System;
+using JetBrains.Annotations;
 
 namespace Anycraft.Features.Configs.Table
 {
     [Serializable]
+    [UsedImplicitly]
     public abstract partial class BaseTableEntry<TTable, TConfig>
         where TTable : BaseTableConfig<TConfig>
         where TConfig : BaseSerializedConfig
