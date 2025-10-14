@@ -9,7 +9,7 @@ namespace Anycraft.Features.Configs
 {
     public partial class BaseSerializedConfig
     {
-        [PropertySpace(spaceBefore:0, spaceAfter:8)]
+        [PropertySpace(spaceBefore: 0, spaceAfter: 8)]
         [Title("Properties")]
         [LabelText(nameof(Id))]
         [OnValueChanged(nameof(Inspector_UpdateAssetName))]

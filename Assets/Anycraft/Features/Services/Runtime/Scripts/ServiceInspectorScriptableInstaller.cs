@@ -1,4 +1,4 @@
-using Anycraft.Features.VContainerExtenions;
+using Anycraft.Features.VContainerExtenions.Installers;
 using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
@@ -7,7 +7,8 @@ namespace Anycraft.Features.Services
 {
     [UsedImplicitly]
     [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Services) + "/" + nameof(ServiceInspectorScriptableInstaller))]
-    public sealed class ServiceInspectorScriptableInstaller : ScriptableContainerInstaller
+    public sealed class ServiceInspectorScriptableInstaller
+        : ScriptableContainerInstaller
     {
         public override void Install(IContainerBuilder builder)
         {

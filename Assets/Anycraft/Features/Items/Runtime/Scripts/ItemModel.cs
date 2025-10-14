@@ -1,4 +1,4 @@
-using Anycraft.Features.Frame;
+using Anycraft.Features.Frame.Models;
 using Anycraft.Features.Items.Configs;
 
 namespace Anycraft.Features.Items
