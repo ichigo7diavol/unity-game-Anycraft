@@ -1,8 +1,8 @@
-using Anycraft.FluentValidationExtensions.Validation;
+using Anycraft.Features.FluentValidationExtensions;
 using FluentValidation;
 using System.Linq;
 
-namespace Anycraft.FluentValidationExtensions.Configs.Table
+namespace Anycraft.Features.Configs.Table
 {
     public partial class BaseTableConfig<TConfig> 
     {

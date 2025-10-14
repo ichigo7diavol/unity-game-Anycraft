@@ -1,8 +1,8 @@
-using Anycraft.FluentValidationExtensions.Configs;
-using Anycraft.FluentValidationExtensions.Validation;
+using Anycraft.Features.Configs;
+using Anycraft.Features.FluentValidationExtensions;
 using FluentValidation;
 
-namespace Anycraft.FluentValidationExtensions.Tags.Configs
+namespace Anycraft.Features.Tags.Configs
 {
     public abstract partial class BaseTagConfig
     {

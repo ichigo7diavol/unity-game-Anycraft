@@ -1,9 +1,8 @@
-using System.Text;
 using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.FluentValidationExtensions.VContainerExtenions
+namespace Anycraft.Features.VContainerExtenions.Installers
 {
     [UsedImplicitly]
     public abstract class MonoContainerInstaller : MonoBehaviour, IContainerInstaller

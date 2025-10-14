@@ -2,9 +2,9 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using Anycraft.FluentValidationExtensions.Validation;
+using Anycraft.Features.FluentValidationExtensions;
 
-namespace Anycraft.FluentValidationExtensions.Configs.Index
+namespace Anycraft.Features.Configs.Index
 {
     [UsedImplicitly]
     public abstract partial class BaseIndexTableConfig<TConfig> 

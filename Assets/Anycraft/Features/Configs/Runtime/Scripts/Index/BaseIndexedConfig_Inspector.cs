@@ -1,6 +1,6 @@
 using Sirenix.OdinInspector;
 
-namespace Anycraft.FluentValidationExtensions.Configs.Index
+namespace Anycraft.Features.Configs.Index
 {
     public abstract partial class BaseIndexedConfig
         : BaseSerializedConfig

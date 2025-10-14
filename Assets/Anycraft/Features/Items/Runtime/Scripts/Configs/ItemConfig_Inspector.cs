@@ -1,6 +1,6 @@
 using Sirenix.OdinInspector;
 
-namespace Anycraft.FluentValidationExtensions.Items.Configs
+namespace Anycraft.Features.Items.Configs
 {
     public sealed partial class ItemConfig
     {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
 
-namespace Anycraft.FluentValidationExtensions.VContainerExtenions
+namespace Anycraft.Features.VContainerExtenions
 {
     [UsedImplicitly]
     public abstract class BaseLifetimeScope : LifetimeScope

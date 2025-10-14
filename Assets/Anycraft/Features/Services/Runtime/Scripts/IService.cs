@@ -1,4 +1,4 @@
-namespace Anycraft.FluentValidationExtensions.Services
+namespace Anycraft.Features.Services
 {
     public interface IService
     {

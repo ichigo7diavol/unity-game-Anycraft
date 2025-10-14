@@ -1,9 +1,9 @@
-using Anycraft.FluentValidationExtensions.Configs;
-using Anycraft.FluentValidationExtensions.Configs.Table;
-using Anycraft.FluentValidationExtensions.Validation;
+using Anycraft.Features.Configs;
+using Anycraft.Features.Configs.Table;
+using Anycraft.Features.FluentValidationExtensions;
 using FluentValidation;
 
-namespace Anycraft.FluentValidationExtensions.Items.Configs
+namespace Anycraft.Features.Items.Configs
 {
     public sealed partial class ItemConfig
     {

@@ -1,7 +1,7 @@
-using Anycraft.FluentValidationExtensions.Frame;
-using Anycraft.FluentValidationExtensions.Processor.Configs;
+using Anycraft.Features.Frame;
+using Anycraft.Features.Processor.Configs;
 
-namespace Anycraft.FluentValidationExtensions.Processor
+namespace Anycraft.Features.Processor
 {
     public sealed class ProcessorModel : BaseModel<ProcessorConfig>
     {

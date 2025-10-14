@@ -2,10 +2,10 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Anycraft.FluentValidationExtensions.Utilities;
+using Anycraft.Features.Utilities;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.FluentValidationExtensions.Configs.Table
+namespace Anycraft.Features.Configs.Table
 {
     public partial class BaseTableEntry<TTable, TConfig>
     {

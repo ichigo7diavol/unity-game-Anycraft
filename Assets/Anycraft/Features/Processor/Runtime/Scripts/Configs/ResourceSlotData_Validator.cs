@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Anycraft.FluentValidationExtensions.Processor
+namespace Anycraft.Features.Processor
 {
     public sealed partial class ProcessorResourceSlotData
     {

@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Anycraft.FluentValidationExtensions.Configs
+namespace Anycraft.Features.Configs
 {
     public abstract partial class BaseSerializedConfig
     {

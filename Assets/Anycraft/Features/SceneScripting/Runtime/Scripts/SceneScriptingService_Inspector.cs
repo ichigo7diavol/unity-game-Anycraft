@@ -1,4 +1,4 @@
-namespace Anycraft.FluentValidationExtensions.SceneScripting
+namespace Anycraft.Features.SceneScripting
 {
     public partial class SceneScriptingService
     {

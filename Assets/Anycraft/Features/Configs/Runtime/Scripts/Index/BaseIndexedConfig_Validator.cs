@@ -1,7 +1,7 @@
-using Anycraft.FluentValidationExtensions.Validation;
+using Anycraft.Features.FluentValidationExtensions;
 using FluentValidation;
 
-namespace Anycraft.FluentValidationExtensions.Configs.Index
+namespace Anycraft.Features.Configs.Index
 {
     public abstract partial class BaseIndexedConfig
     {

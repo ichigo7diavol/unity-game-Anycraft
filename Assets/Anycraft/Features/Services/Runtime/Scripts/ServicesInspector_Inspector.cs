@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.FluentValidationExtensions.Services
+namespace Anycraft.Features.Services
 {
     public partial class ServicesInspector
     {

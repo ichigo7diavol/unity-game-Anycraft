@@ -1,12 +1,12 @@
-using Anycraft.FluentValidationExtensions.VContainerExtenions;
+using Anycraft.Features.VContainerExtenions;
 using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.FluentValidationExtensions.Services
+namespace Anycraft.Features.Services
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(FluentValidationExtensions) + "/" + nameof(Services) + "/" + nameof(ServiceInspectorScriptableInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Services) + "/" + nameof(ServiceInspectorScriptableInstaller))]
     public sealed class ServiceInspectorScriptableInstaller : ScriptableContainerInstaller
     {
         public override void Install(IContainerBuilder builder)

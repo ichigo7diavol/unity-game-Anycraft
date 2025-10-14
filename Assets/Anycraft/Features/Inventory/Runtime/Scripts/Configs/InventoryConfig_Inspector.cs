@@ -1,4 +1,4 @@
-namespace Anycraft.FluentValidationExtensions.Inventory.Configs
+namespace Anycraft.Features.Inventory.Configs
 {
     public sealed partial class InventoryConfig
     {

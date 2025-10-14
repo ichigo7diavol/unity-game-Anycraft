@@ -2,10 +2,11 @@ using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.FluentValidationExtensions.VContainerExtenions
+namespace Anycraft.Features.VContainerExtenions.Installers
 {
     [UsedImplicitly]
-    public abstract class ScriptableContainerInstaller : ScriptableObject, IContainerInstaller
+    public abstract partial class ScriptableContainerInstaller
+        : ScriptableObject, IContainerInstaller
     {
         public virtual void Install(IContainerBuilder builder)
         {

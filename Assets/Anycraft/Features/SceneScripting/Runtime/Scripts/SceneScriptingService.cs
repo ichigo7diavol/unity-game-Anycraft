@@ -1,13 +1,13 @@
 using System;
 using System.Threading;
-using Anycraft.FluentValidationExtensions.Services;
+using Anycraft.Features.Services;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Assertions;
 using VContainer.Unity;
 
-namespace Anycraft.FluentValidationExtensions.SceneScripting
+namespace Anycraft.Features.SceneScripting
 {
 
     [UsedImplicitly]

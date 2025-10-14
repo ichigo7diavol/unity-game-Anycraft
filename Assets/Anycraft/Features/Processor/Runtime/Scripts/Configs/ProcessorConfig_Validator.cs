@@ -1,8 +1,8 @@
-using Anycraft.FluentValidationExtensions.Configs.Index;
-using Anycraft.FluentValidationExtensions.Validation;
+using Anycraft.Features.Configs.Index;
+using Anycraft.Features.FluentValidationExtensions;
 using FluentValidation;
 
-namespace Anycraft.FluentValidationExtensions.Processor.Configs
+namespace Anycraft.Features.Processor.Configs
 {
     public sealed partial class ProcessorConfig
     {

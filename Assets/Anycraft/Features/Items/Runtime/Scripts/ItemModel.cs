@@ -1,7 +1,7 @@
-using Anycraft.FluentValidationExtensions.Frame;
-using Anycraft.FluentValidationExtensions.Items.Configs;
+using Anycraft.Features.Frame;
+using Anycraft.Features.Items.Configs;
 
-namespace Anycraft.FluentValidationExtensions.Items
+namespace Anycraft.Features.Items
 {
     public sealed class ItemModel : BaseModel<ItemConfig>
     {

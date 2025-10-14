@@ -1,9 +1,9 @@
-using Anycraft.FluentValidationExtensions.Configs;
+using Anycraft.Features.Configs;
 using UnityEngine;
 
-namespace Anycraft.FluentValidationExtensions.Inventory.Configs
+namespace Anycraft.Features.Inventory.Configs
 {
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(FluentValidationExtensions) + "/" + nameof(Inventory) + "/" + nameof(Configs) + "/" + nameof(InventoryConfig))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Inventory) + "/" + nameof(Configs) + "/" + nameof(InventoryConfig))]
     public sealed partial class InventoryConfig
         : BaseSerializedConfig
     {

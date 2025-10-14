@@ -1,9 +1,9 @@
-using Anycraft.FluentValidationExtensions.Configs.Index;
+using Anycraft.Features.Configs.Index;
 using UnityEngine;
 
-namespace Anycraft.FluentValidationExtensions.Processor.Configs
+namespace Anycraft.Features.Processor.Configs
 {
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(FluentValidationExtensions) + "/" + nameof(Processor) + "/" + nameof(Configs) + "/" + nameof(ProcessorConfig))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Processor) + "/" + nameof(Configs) + "/" + nameof(ProcessorConfig))]
     public sealed partial class ProcessorConfig : BaseIndexedConfig
     {
         [SerializeField] private ProcessorData _data;

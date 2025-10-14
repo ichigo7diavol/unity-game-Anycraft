@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Anycraft.FluentValidationExtensions.Localization
+namespace Anycraft.Features.Localization
 {
     [Serializable]
     public abstract class BaseLocalizationData

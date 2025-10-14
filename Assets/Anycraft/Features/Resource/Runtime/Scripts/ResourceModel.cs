@@ -1,8 +1,8 @@
-using Anycraft.FluentValidationExtensions.Frame;
-using Anycraft.FluentValidationExtensions.Resource.Configs;
+using Anycraft.Features.Frame;
+using Anycraft.Features.Resource.Configs;
 using JetBrains.Annotations;
 
-namespace Anycraft.FluentValidationExtensions.Resource
+namespace Anycraft.Features.Resource
 {
     [UsedImplicitly]
     public sealed class ResourceModel : BaseModel<ResourceConfig>

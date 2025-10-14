@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Anycraft.Features.OdinExtensions.Windows;
-using Anycraft.FluentValidationExtensions.Utilities;
+using Anycraft.Features.Utilities;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Anycraft.FluentValidationExtensions.Configs.Table
+namespace Anycraft.Features.Configs.Table
 {
     public partial class BaseTableConfig<TConfig>
     {

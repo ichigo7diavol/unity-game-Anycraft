@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Concurrent;
-using System.Linq;
 using FluentValidation;
 using JetBrains.Annotations;
 
-namespace Anycraft.FluentValidationExtensions.Validation
+namespace Anycraft.Features.FluentValidationExtensions
 {
     [UsedImplicitly]
     public static class ValidatorCache

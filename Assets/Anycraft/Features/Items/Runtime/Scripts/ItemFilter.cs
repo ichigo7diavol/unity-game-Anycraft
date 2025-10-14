@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Anycraft.FluentValidationExtensions.Items.Configs;
+using Anycraft.Features.Items.Configs;
 using UnityEngine;
 
-namespace Anycraft.FluentValidationExtensions.Items
+namespace Anycraft.Features.Items
 {
     [Serializable]
     public sealed class ItemFilter

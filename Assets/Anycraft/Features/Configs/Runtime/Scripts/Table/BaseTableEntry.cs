@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 using JetBrains.Annotations;
 
-namespace Anycraft.FluentValidationExtensions.Configs.Table
+namespace Anycraft.Features.Configs.Table
 {
     [Serializable]
     [UsedImplicitly]

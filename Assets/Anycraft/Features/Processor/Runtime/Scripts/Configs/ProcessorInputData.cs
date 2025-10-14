@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Anycraft.FluentValidationExtensions.Processor.Configs
+namespace Anycraft.Features.Processor.Configs
 {
     [Serializable]
     public sealed partial class ProcessorInputData

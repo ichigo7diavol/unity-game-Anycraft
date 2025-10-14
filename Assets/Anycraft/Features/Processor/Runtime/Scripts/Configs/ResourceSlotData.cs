@@ -1,6 +1,6 @@
 using System;
 
-namespace Anycraft.FluentValidationExtensions.Processor
+namespace Anycraft.Features.Processor
 {
     [Serializable]
     public sealed partial class ProcessorResourceSlotData
