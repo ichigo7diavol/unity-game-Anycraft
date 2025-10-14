@@ -1,26 +1,13 @@
 using Anycraft.Features.Configs.Table;
-using Anycraft.Features.Validation;
-using FluentValidation;
 using JetBrains.Annotations;
+using UnityEngine;
 
-namespace Anycraft.Resource.Configs
+namespace Anycraft.Features.Resource.Configs
 {
     [UsedImplicitly]
-    public sealed class ResourceTagsTableConfig
+    [CreateAssetMenu(menuName = "Anycraft/Features/Resource/" + nameof(ResourceTagsTableConfig))]
+    public sealed partial class ResourceTagsTableConfig
         : BaseTableConfig<ResourceTagConfig>
     {
-        public new sealed class Validator
-            : AbstractValidator<ResourceTagsTableConfig>
-        {
-            public Validator()
-            {
-                Include(ValidatorCache.Get<BaseTableConfig<ResourceTagConfig>>());
-            }
-        }
-
-        public override void Validate()
-        {
-            this.ValidateAndThrow();
-        }
     }
 }

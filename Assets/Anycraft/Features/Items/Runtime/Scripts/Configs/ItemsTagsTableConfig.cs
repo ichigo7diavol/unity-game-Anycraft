@@ -1,26 +1,11 @@
 using Anycraft.Features.Configs.Table;
-using Anycraft.Features.Validation;
-using FluentValidation;
 using UnityEngine;
 
 namespace Anycraft.Features.Items.Configs
 {
-    [CreateAssetMenu(menuName = "Anycraft/Items/Configs/" + nameof(ItemsTagsTableConfig))]
-    public sealed class ItemsTagsTableConfig
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Items) + "/" + nameof(Configs) + "/" + nameof(ItemsTagsTableConfig))]
+    public sealed partial class ItemsTagsTableConfig
         : BaseTableConfig<ItemTagConfig>
     {
-        public new sealed class Validator
-            : AbstractValidator<ItemsTagsTableConfig>
-        {
-            public Validator()
-            {
-                Include(ValidatorCache.Get<BaseTableConfig<ItemTagConfig>>());
-            }
-        }
-
-        public override void Validate()
-        {
-            this.ValidateAndThrow();
-        }
     }
 }

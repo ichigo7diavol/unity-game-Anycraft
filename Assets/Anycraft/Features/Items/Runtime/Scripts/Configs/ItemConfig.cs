@@ -1,35 +1,13 @@
-using System;
 using Anycraft.Features.Configs;
-using Anycraft.Features.Localization;
-using Anycraft.Features.Validation;
-using FluentValidation;
 using UnityEngine;
 
 namespace Anycraft.Features.Items.Configs
 {
-    [CreateAssetMenu(menuName = "Anycraft/Items/Configs/" + nameof(ItemConfig))]
-    public sealed class ItemConfig : BaseSerializedConfig
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Items) + "/" + nameof(Configs) + "/" + nameof(ItemConfig))]
+    public sealed partial class ItemConfig
+        : BaseSerializedConfig
     {
-        public new sealed class Validator
-            : AbstractValidator<ItemConfig>
-        {
-            public Validator()
-            {
-                Include(ValidatorCache.Get<BaseSerializedConfig>());
-            }
-        }
-
-        [Serializable]
-        public sealed class LocalizationData : BaseLocalizationData
-        {
-        }
-
-        [SerializeField] private ItemTagTableEntries _tags;
-
-        public override void Validate()
-        {
-            this.ValidateAndThrow();
-        }
+        [HideInInspector][SerializeField] private ItemTagTableEntries _tags;
     }
 }
 

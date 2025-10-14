@@ -2,8 +2,6 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using FluentValidation;
-using Anycraft.Features.Validation;
 
 namespace Anycraft.Features.Configs.Index
 {
@@ -13,17 +11,6 @@ namespace Anycraft.Features.Configs.Index
         : BaseSerializedConfig
         where TConfig : BaseIndexedConfig
     {
-        public new sealed class Validator
-            : AbstractValidator<BaseIndexTableConfig<TConfig>>
-        {
-            public Validator()
-            {
-                Include(ValidatorCache.Get<BaseSerializedConfig>());
-
-                RuleFor(c => c._configs).NotNull();
-            }
-        }
-        
         [HideInInspector]
         [SerializeField] private List<TConfig> _configs = new();
 

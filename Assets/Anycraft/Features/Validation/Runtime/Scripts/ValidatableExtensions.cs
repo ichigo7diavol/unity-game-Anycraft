@@ -4,11 +4,11 @@ namespace Anycraft.Features.Validation
 {
     public static class ValidatableExtensions
     {
-        public static void ValidateAndThrow<TValidatable>(this TValidatable validatable)
-            where TValidatable : IValidatable
+        public static void ValidateAndThrow<TValidator, TValidatable>(this TValidatable validatable)
+            where TValidator : IValidator<TValidatable>, new()
         {
             ValidatorCache
-                .Get<TValidatable>()
+                .Get<TValidator, TValidatable>()
                 .ValidateAndThrow(validatable);
         }
     }

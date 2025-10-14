@@ -17,18 +17,12 @@ namespace Anycraft.Features.Tags.Configs
         {
             public Validator()
             {
-                Include(ValidatorCache.Get<BaseSerializedConfig>());
+                var validator = ValidatorCache.Get<
+                    BaseSerializedConfig.Validator, BaseSerializedConfig>();
+                
+                Include(validator);
             }
         }
-
-        [Serializable]
-        public sealed class LocalizationData : BaseLocalizationData
-        {
-        }
-
-        [SerializeField] private LocalizationData _localization;
-
-        public LocalizationData Localization { get => _localization; }
 
         public override string ToString() => $"Tag--{Id}";
     }

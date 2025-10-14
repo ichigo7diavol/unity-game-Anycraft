@@ -1,26 +1,11 @@
 using Anycraft.Features.Configs;
-using Anycraft.Features.Validation;
-using FluentValidation;
 using UnityEngine;
 
 namespace Anycraft.Features.Inventory.Configs
 {
-    [CreateAssetMenu(menuName = "Anycraft/Inventory/Configs/" + nameof(InventorySlotConfig))]
-    public sealed class InventorySlotConfig
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Inventory) + "/" + nameof(Configs) + "/" + nameof(InventorySlotConfig))]
+    public sealed partial class InventorySlotConfig
         : BaseSerializedConfig
     {
-        public new sealed class Validator
-            : AbstractValidator<InventorySlotConfig>
-        {
-            public Validator()
-            {
-                Include(ValidatorCache.Get<BaseSerializedConfig>());
-            }
-        }
-
-        public override void Validate()
-        {
-            this.ValidateAndThrow();
-        }
     }
 }

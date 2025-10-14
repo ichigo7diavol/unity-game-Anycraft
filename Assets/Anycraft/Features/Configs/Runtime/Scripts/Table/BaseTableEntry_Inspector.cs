@@ -10,7 +10,7 @@ namespace Anycraft.Features.Configs.Table
     public partial class BaseTableEntry<TTable, TConfig>
     {
         [ValueDropdown(nameof(GetIds))]
-        [LabelText("Id")]
+        [LabelText(nameof(Id))]
         [ShowInInspector] private string Inspector_Id
         {
             get => _id;
