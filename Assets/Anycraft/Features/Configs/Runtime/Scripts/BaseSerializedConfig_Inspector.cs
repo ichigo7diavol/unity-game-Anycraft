@@ -8,6 +8,11 @@ namespace Anycraft.Features.Configs
 {
     public partial class BaseSerializedConfig
     {
+        private bool Inpector_ValidationErrorIsVisible { get; set; }
+        private string Inpector_ValidationError;
+        
+        [PropertySpace(spaceBefore:0, spaceAfter:8)]
+        [Title("Properties")]
         [LabelText(nameof(Id))]
         [OnValueChanged(nameof(Inspector_UpdateAssetName))]
         [ShowInInspector] public string Inspector_Id
@@ -30,10 +35,8 @@ namespace Anycraft.Features.Configs
             AssetDatabase.SaveAssets();
         }
 
-        private bool Inpector_ValidationErrorIsVisible { get; set; }
-        private string Inpector_ValidationError;
-
-        [PropertyOrder(int.MaxValue)]
+        [Title("Validation")]
+        [PropertyOrder(int.MinValue)]
         [InfoBox("$" + nameof(Inpector_ValidationError),
             VisibleIf = nameof(Inpector_ValidationErrorIsVisible),
             InfoMessageType = InfoMessageType.Error)]

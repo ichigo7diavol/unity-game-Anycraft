@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d438710a0b5d4924c813ed5a80e847eb, type: 3}
+  m_Name: ResourceTagsTableConfig--Main
+  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Resource.Configs.ResourceTagsTableConfig
+  _id: Main
+  _configs:
+  - {fileID: 11400000, guid: fa3cc2961eda44447812528fbe9cf20b, type: 2}
+  - {fileID: 11400000, guid: c6e9c6b272bd4784f83454991e565bdd, type: 2}
