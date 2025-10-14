@@ -15,8 +15,7 @@ namespace Anycraft.Features.Items.Configs
         {
             public Validator()
             {
-                Include(ValidatorCache.Get<BaseSerializedConfig.Validator,
-                    BaseSerializedConfig>());
+                Include(ValidatorCache.Get<BaseSerializedConfig>());
             }
         }
 
@@ -29,7 +28,7 @@ namespace Anycraft.Features.Items.Configs
 
         public override void Validate()
         {
-            this.ValidateAndThrow<Validator, ItemConfig>();
+            this.ValidateAndThrow();
         }
     }
 }

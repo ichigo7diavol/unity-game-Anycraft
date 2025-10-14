@@ -13,11 +13,11 @@ namespace Anycraft.Features.Tags.Configs
         : BaseSerializedConfig
     {
         public new sealed class Validator
-            : AbstractValidator<BaseSerializedConfig>
+            : AbstractValidator<BaseTagConfig>
         {
             public Validator()
             {
-                Include(ValidatorCache.Get<BaseSerializedConfig.Validator, BaseSerializedConfig>());
+                Include(ValidatorCache.Get<BaseSerializedConfig>());
             }
         }
 

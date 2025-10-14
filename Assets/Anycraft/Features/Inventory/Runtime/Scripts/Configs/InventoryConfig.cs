@@ -14,14 +14,13 @@ namespace Anycraft.Features.Inventory.Configs
         {
             public Validator()
             {
-                Include(ValidatorCache.Get<BaseSerializedConfig.Validator,
-                    BaseSerializedConfig>());
+                Include(ValidatorCache.Get<BaseSerializedConfig>());
             }
         }
 
         public override void Validate()
         {
-            this.ValidateAndThrow<Validator, InventoryConfig>();
+            this.ValidateAndThrow();
         }
     }
 }

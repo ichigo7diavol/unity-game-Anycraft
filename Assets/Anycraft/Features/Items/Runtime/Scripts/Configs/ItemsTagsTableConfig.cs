@@ -14,14 +14,13 @@ namespace Anycraft.Features.Items.Configs
         {
             public Validator()
             {
-                Include(ValidatorCache.Get<BaseTableConfig<ItemTagConfig>.Validator,
-                    BaseTableConfig<ItemTagConfig>>());
+                Include(ValidatorCache.Get<BaseTableConfig<ItemTagConfig>>());
             }
         }
 
         public override void Validate()
         {
-            this.ValidateAndThrow<Validator, ItemsTagsTableConfig>();
+            this.ValidateAndThrow();
         }
     }
 }

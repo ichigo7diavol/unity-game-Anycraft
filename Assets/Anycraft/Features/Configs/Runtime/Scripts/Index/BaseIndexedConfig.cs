@@ -14,8 +14,7 @@ namespace Anycraft.Features.Configs.Index
         {
             public Validator()
             {
-                Include(ValidatorCache.Get<BaseSerializedConfig.Validator,
-                    BaseSerializedConfig>());
+                Include(ValidatorCache.Get<BaseSerializedConfig>());
             }
         }
 

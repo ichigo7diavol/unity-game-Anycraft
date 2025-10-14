@@ -15,8 +15,7 @@ namespace Anycraft.Features.Configs.Table
         {
             public Validator()
             {
-                Include(ValidatorCache.Get<BaseSerializedConfig.Validator,
-                    BaseSerializedConfig>());
+                Include(ValidatorCache.Get<BaseSerializedConfig>());
             }
         }
 

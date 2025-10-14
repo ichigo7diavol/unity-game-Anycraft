@@ -10,6 +10,7 @@ namespace Anycraft.Features.Configs.Index
         where TTable : BaseIndexTableConfig<TConfig>
         where TConfig : BaseIndexedConfig
     {
+        [HideInInspector]
         [SerializeField] private int _index;
 
         public int Index => _index;

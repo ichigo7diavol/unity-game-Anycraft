@@ -10,7 +10,7 @@ namespace Anycraft.Features.Configs.Index
     public partial class BaseIndexTableEntry<TTable, TConfig>
     {
         [ValueDropdown(nameof(GetIndexes))]
-        [LabelText("Id")]
+        [LabelText(nameof(Index))]
         [ShowInInspector] private int Inspector_Index
         {
             get => _index;

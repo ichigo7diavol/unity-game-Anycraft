@@ -33,7 +33,8 @@ namespace Anycraft.Features.Configs
         private bool Inpector_ValidationErrorIsVisible { get; set; }
         private string Inpector_ValidationError;
 
-        [InfoBox("$"+ nameof(Inpector_ValidationError),
+        [PropertyOrder(int.MaxValue)]
+        [InfoBox("$" + nameof(Inpector_ValidationError),
             VisibleIf = nameof(Inpector_ValidationErrorIsVisible),
             InfoMessageType = InfoMessageType.Error)]
         [Button("Validate")]
@@ -49,6 +50,8 @@ namespace Anycraft.Features.Configs
             {
                 Inpector_ValidationErrorIsVisible = true;
                 Inpector_ValidationError = e.Message;
+
+                throw;
             }
         }
     }
