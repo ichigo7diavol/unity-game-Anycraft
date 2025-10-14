@@ -1,12 +1,12 @@
-using Anycraft.Features.VContainerExtenions;
+using Anycraft.FluentValidationExtensions.VContainerExtenions;
 using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.SceneScripting
+namespace Anycraft.FluentValidationExtensions.SceneScripting
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneScripting) + "/" + nameof(SceneScriptingServiceScriptableInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(FluentValidationExtensions) + "/" + nameof(SceneScripting) + "/" + nameof(SceneScriptingServiceScriptableInstaller))]
     public sealed class SceneScriptingServiceScriptableInstaller : ScriptableContainerInstaller
     {
         [SerializeField] private BaseSceneScript _script;

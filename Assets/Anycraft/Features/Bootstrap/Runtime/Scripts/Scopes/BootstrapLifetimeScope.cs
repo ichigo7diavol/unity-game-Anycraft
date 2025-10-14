@@ -1,4 +1,4 @@
-using Anycraft.Features.VContainerExtenions;
+using Anycraft.FluentValidationExtensions.VContainerExtenions;
 
 public sealed class BootstrapLifetimeScope : BaseLifetimeScope
 {

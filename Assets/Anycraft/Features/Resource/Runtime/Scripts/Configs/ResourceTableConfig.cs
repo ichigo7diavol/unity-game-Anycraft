@@ -1,9 +1,9 @@
-using Anycraft.Features.Configs.Table;
+using Anycraft.FluentValidationExtensions.Configs.Table;
 using UnityEngine;
 
-namespace Anycraft.Features.Resource.Configs
+namespace Anycraft.FluentValidationExtensions.Resource.Configs
 {
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Resource) + "/" + nameof(Configs) + "/" + nameof(ResourceTableConfig))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(FluentValidationExtensions) + "/" + nameof(Resource) + "/" + nameof(Configs) + "/" + nameof(ResourceTableConfig))]
     public sealed partial class ResourceTableConfig
         : BaseTableConfig<ResourceConfig>
     {

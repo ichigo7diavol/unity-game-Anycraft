@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Anycraft.Features.Configs.Index
+namespace Anycraft.FluentValidationExtensions.Configs.Index
 {
     public abstract partial class BaseIndexTableEntry<TTable, TConfig>
     {

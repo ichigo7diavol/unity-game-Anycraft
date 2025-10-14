@@ -5,7 +5,7 @@ using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Anycraft.Features.Configs.Index
+namespace Anycraft.FluentValidationExtensions.Configs.Index
 {
     public partial class BaseIndexTableConfig<TConfig>
     {

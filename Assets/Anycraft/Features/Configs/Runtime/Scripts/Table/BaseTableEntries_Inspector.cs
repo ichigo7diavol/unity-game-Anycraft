@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using Anycraft.Features.Utilities;
+using Anycraft.FluentValidationExtensions.Utilities;
 
-namespace Anycraft.Features.Configs.Table
+namespace Anycraft.FluentValidationExtensions.Configs.Table
 {
     public partial class BaseTableEntries<TTable, TConfig>
     {

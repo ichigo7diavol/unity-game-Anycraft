@@ -1,12 +1,14 @@
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Configs.Index
+namespace Anycraft.FluentValidationExtensions.Configs.Index
 {
-    public abstract partial class BaseIndexedConfig : BaseSerializedConfig
+    public abstract partial class BaseIndexedConfig
+        : BaseSerializedConfig
     {
         [LabelText(nameof(Index))]
         [OnValueChanged(nameof(Inspector_UpdateAssetName))]
-        [ShowInInspector] private int Inpector_Index
+        [ShowInInspector]
+        private int Inpector_Index
         {
             get => _index;
             set => _index = value;

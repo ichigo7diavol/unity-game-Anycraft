@@ -1,11 +1,11 @@
 using System;
 using System.Threading;
-using Anycraft.Features.Configs;
+using Anycraft.FluentValidationExtensions.Configs;
 using Cysharp.Threading.Tasks;
 using ObservableCollections;
 using R3;
 
-namespace Anycraft.Features.Frame
+namespace Anycraft.FluentValidationExtensions.Frame
 {
     public abstract class BaseCollectionModel<TModel, TConfig> : IDisposable
         where TModel : BaseModel<TConfig>

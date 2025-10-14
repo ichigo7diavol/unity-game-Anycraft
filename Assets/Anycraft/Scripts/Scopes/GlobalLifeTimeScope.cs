@@ -1,4 +1,4 @@
-using Anycraft.Features.VContainerExtenions;
+using Anycraft.FluentValidationExtensions.VContainerExtenions;
 using JetBrains.Annotations;
 
 namespace Anycraft.Scopes

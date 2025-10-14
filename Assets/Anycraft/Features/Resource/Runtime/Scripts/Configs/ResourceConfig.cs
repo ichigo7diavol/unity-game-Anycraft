@@ -1,10 +1,10 @@
-using Anycraft.Features.Configs;
+using Anycraft.FluentValidationExtensions.Configs;
 using UnityEngine;
 
-namespace Anycraft.Features.Resource.Configs
+namespace Anycraft.FluentValidationExtensions.Resource.Configs
 {
 
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Resource) + "/" + nameof(Configs) + "/" + nameof(ResourceConfig))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(FluentValidationExtensions) + "/" + nameof(Resource) + "/" + nameof(Configs) + "/" + nameof(ResourceConfig))]
     public sealed partial class ResourceConfig
         : BaseSerializedConfig
     {

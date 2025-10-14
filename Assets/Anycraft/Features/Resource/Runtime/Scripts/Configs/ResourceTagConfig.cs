@@ -1,11 +1,11 @@
-using Anycraft.Features.Tags.Configs;
+using Anycraft.FluentValidationExtensions.Tags.Configs;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Resource.Configs
+namespace Anycraft.FluentValidationExtensions.Resource.Configs
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Resource) + "/" + nameof(Configs) + "/" + nameof(ResourceTagConfig))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(FluentValidationExtensions) + "/" + nameof(Resource) + "/" + nameof(Configs) + "/" + nameof(ResourceTagConfig))]
     public sealed partial class ResourceTagConfig
         : BaseTagConfig
     {

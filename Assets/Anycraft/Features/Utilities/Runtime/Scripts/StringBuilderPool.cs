@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
 using System.Text;
 
-namespace Anycraft.Features.Utilities
+namespace Anycraft.FluentValidationExtensions.Utilities
 {
     public static class StringBuilderPool
     {

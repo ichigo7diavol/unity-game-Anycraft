@@ -1,4 +1,4 @@
-namespace Anycraft.Features.Resource.Configs
+namespace Anycraft.FluentValidationExtensions.Resource.Configs
 {
     public sealed partial class ResourceConfig
     {

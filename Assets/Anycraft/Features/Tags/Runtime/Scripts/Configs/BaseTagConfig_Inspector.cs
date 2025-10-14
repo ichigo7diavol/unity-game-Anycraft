@@ -1,6 +1,6 @@
 #if UNITY_EDITOR
 
-namespace Anycraft.Features.Tags.Configs
+namespace Anycraft.FluentValidationExtensions.Tags.Configs
 {
     public abstract partial class BaseTagConfig
     {

@@ -1,7 +1,7 @@
-using Anycraft.Features.Frame;
-using Anycraft.Features.Resource.Configs;
+using Anycraft.FluentValidationExtensions.Frame;
+using Anycraft.FluentValidationExtensions.Resource.Configs;
 
-namespace Anycraft.Features.Resource
+namespace Anycraft.FluentValidationExtensions.Resource
 {
     public sealed class ResourcModel : BaseCollectionModel<ResourceModel, ResourceConfig>
     {

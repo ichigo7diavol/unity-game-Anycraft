@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace Anycraft.Features.Utilities
+namespace Anycraft.FluentValidationExtensions.Utilities
 {
     public static class EditorUtils
     {

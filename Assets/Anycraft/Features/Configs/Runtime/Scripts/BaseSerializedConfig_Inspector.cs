@@ -1,10 +1,10 @@
 #if UNITY_EDITOR
 
-using Anycraft.Features.Configs.Utils;
+using Anycraft.FluentValidationExtensions.Configs.Utils;
 using Sirenix.OdinInspector;
 using UnityEditor;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.FluentValidationExtensions.Configs
 {
     public partial class BaseSerializedConfig
     {

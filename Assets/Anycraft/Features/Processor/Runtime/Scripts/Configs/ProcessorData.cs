@@ -1,4 +1,4 @@
-namespace Anycraft.Features.Processor.Configs
+namespace Anycraft.FluentValidationExtensions.Processor.Configs
 {
     public sealed partial class ProcessorData
     {

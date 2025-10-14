@@ -3,7 +3,7 @@
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.Configs.Utils
+namespace Anycraft.FluentValidationExtensions.Configs.Utils
 {
     [UsedImplicitly]
     public static class ConfigUtils 

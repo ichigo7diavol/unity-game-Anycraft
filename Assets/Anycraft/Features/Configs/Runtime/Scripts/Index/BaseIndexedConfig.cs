@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Configs.Index
+namespace Anycraft.FluentValidationExtensions.Configs.Index
 {
     [UsedImplicitly]
     public abstract partial class BaseIndexedConfig

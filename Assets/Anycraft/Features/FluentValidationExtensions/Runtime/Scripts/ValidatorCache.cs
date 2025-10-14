@@ -4,7 +4,7 @@ using System.Linq;
 using FluentValidation;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.Validation
+namespace Anycraft.FluentValidationExtensions.Validation
 {
     [UsedImplicitly]
     public static class ValidatorCache

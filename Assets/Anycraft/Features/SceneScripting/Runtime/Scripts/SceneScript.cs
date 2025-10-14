@@ -1,9 +1,9 @@
 using System.Threading;
-using Anycraft.Features.Configs;
+using Anycraft.FluentValidationExtensions.Configs;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.SceneScripting
+namespace Anycraft.FluentValidationExtensions.SceneScripting
 {
     [UsedImplicitly]
     public abstract class BaseSceneScript : BaseSerializedConfig

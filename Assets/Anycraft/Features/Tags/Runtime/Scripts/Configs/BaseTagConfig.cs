@@ -1,7 +1,7 @@
-using Anycraft.Features.Configs;
+using Anycraft.FluentValidationExtensions.Configs;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.Tags.Configs
+namespace Anycraft.FluentValidationExtensions.Tags.Configs
 {
     [UsedImplicitly]
     public abstract partial class BaseTagConfig

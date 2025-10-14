@@ -1,7 +1,7 @@
 using System;
-using Anycraft.Features.Configs.Table;
+using Anycraft.FluentValidationExtensions.Configs.Table;
 
-namespace Anycraft.Features.Items.Configs
+namespace Anycraft.FluentValidationExtensions.Items.Configs
 {
     [Serializable]
     public sealed class ItemTagTableEntry

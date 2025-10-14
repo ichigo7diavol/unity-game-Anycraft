@@ -1,4 +1,4 @@
-namespace Anycraft.Features.Processor
+namespace Anycraft.FluentValidationExtensions.Processor
 {
     public sealed partial class ProcessorResourceSlotData
     {

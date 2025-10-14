@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using VContainer;
 
-namespace Anycraft.Features.VContainerExtenions
+namespace Anycraft.FluentValidationExtensions.VContainerExtenions
 {
     [UsedImplicitly]
     public interface IContainerInstaller

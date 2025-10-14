@@ -1,7 +1,7 @@
-using Anycraft.Features.Validation;
+using Anycraft.FluentValidationExtensions.Validation;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.FluentValidationExtensions.Configs
 {
     [UsedImplicitly]
     public interface IConfig : IValidatable

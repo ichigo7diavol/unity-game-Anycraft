@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.FluentValidationExtensions.Configs
 {
     [UsedImplicitly]
     public abstract partial class BaseSerializedConfig

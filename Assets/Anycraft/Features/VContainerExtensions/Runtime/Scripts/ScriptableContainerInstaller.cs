@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.VContainerExtenions
+namespace Anycraft.FluentValidationExtensions.VContainerExtenions
 {
     [UsedImplicitly]
     public abstract class ScriptableContainerInstaller : ScriptableObject, IContainerInstaller

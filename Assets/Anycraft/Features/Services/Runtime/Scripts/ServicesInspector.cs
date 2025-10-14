@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.Services
+namespace Anycraft.FluentValidationExtensions.Services
 {
     [UsedImplicitly]
     public sealed partial class ServicesInspector : MonoBehaviour

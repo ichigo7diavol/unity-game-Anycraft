@@ -1,10 +1,10 @@
 using System;
 using System.Threading;
-using Anycraft.Features.Configs;
+using Anycraft.FluentValidationExtensions.Configs;
 using Cysharp.Threading.Tasks;
 using R3;
 
-namespace Anycraft.Features.Frame
+namespace Anycraft.FluentValidationExtensions.Frame
 {
     public abstract class BaseModel<TConfig> : IDisposable
         where TConfig : IConfig
