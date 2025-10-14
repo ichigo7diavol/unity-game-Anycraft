@@ -30,10 +30,26 @@ namespace Anycraft.Features.Configs
             AssetDatabase.SaveAssets();
         }
 
+        private bool Inpector_ValidationErrorIsVisible { get; set; }
+        private string Inpector_ValidationError;
+
+        [InfoBox("$"+ nameof(Inpector_ValidationError),
+            VisibleIf = nameof(Inpector_ValidationErrorIsVisible),
+            InfoMessageType = InfoMessageType.Error)]
         [Button("Validate")]
         private void Inspector_Validate()
         {
-            Validate();
+            Inpector_ValidationErrorIsVisible = false;
+
+            try
+            {
+                Validate();
+            }
+            catch (System.Exception e)
+            {
+                Inpector_ValidationErrorIsVisible = true;
+                Inpector_ValidationError = e.Message;
+            }
         }
     }
 }
