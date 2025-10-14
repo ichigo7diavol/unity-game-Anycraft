@@ -13,7 +13,7 @@ namespace Anycraft.Features.Configs.Table
     {
         [HideInInspector]
         [SerializeField] private List<string> _ids;
-        
+
         public IReadOnlyList<string> Ids => _ids;
     }
 }

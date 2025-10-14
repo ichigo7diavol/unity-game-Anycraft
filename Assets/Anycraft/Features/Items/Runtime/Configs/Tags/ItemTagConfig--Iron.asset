@@ -13,5 +13,3 @@ MonoBehaviour:
   m_Name: ItemTagConfig--Iron
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Items.Configs.ItemTagConfig
   _id: Iron
-  _localization:
-    _debugName: DebugName

@@ -4,6 +4,9 @@ using Anycraft.Features.Configs.Table;
 namespace Anycraft.Features.Items.Configs
 {
     [Serializable]
-    public sealed class ItemTableEntry : BaseTableEntry<ItemsTableConfig, ItemConfig> {}
+    public sealed class ItemTableEntry
+        : BaseTableEntry<ItemsTableConfig, ItemConfig>
+    {
+    }
 }
 

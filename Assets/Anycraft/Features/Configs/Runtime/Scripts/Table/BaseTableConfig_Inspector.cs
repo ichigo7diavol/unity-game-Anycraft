@@ -37,7 +37,7 @@ namespace Anycraft.Features.Configs.Table
             {
                 return Color.red;
             }
-            if (_configs.Count(e => e.Id == value.Id) >= 2)
+            if (_configs.Count(e => e != null && e.Id == value.Id) >= 2)
             {
                 return Color.red;
             }

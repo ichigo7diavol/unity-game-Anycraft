@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Anycraft.Features.Resource.Configs
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = "Anycraft/Features/Resource/" + nameof(ResourceTagsTableConfig))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Resource) + "/" + nameof(Configs) + "/" + nameof(ResourceTagsTableConfig))]
     public sealed partial class ResourceTagsTableConfig
         : BaseTableConfig<ResourceTagConfig>
     {

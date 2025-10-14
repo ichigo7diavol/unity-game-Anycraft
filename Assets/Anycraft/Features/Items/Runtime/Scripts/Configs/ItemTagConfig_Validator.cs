@@ -23,8 +23,8 @@ namespace Anycraft.Features.Items.Configs
         {
             this.ValidateAndThrow
             <
-                BaseTagConfig.Validator,
-                BaseTagConfig
+                Validator,
+                ItemTagConfig
             >();
         }
     }

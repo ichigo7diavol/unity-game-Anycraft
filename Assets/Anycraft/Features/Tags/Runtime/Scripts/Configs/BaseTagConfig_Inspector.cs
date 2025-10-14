@@ -1,29 +1,11 @@
 #if UNITY_EDITOR
 
-using System.Collections.Generic;
-using System.Linq;
-using Anycraft.Features.Utilities;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Configs.Table
+namespace Anycraft.Features.Tags.Configs
 {
-    public partial class BaseTableEntry<TTable, TConfig>
+    public abstract partial class BaseTagConfig
     {
-        [ValueDropdown(nameof(GetIds))]
-        [LabelText(nameof(Id))]
-        [ShowInInspector] private string Inspector_Id
-        {
-            get => _id;
-            set => _id = value;
-        }
-
-        private IEnumerable<string> GetIds()
-        {
-            var table = EditorUtils.LoadFirstAssetOfType<TTable>();
-
-            return table.Configs.Select(e => e.Id);
-        }
-        
         private bool Inpector_ValidationErrorIsVisible { get; set; }
         private string Inpector_ValidationError;
 
@@ -48,6 +30,6 @@ namespace Anycraft.Features.Configs.Table
                 throw;
             }
         }
-    }   
+    }
 }
 #endif

@@ -11,17 +11,21 @@ namespace Anycraft.Features.Resource.Configs
         {
             public Validator()
             {
-                var validator = ValidatorCache.Get<
-                    BaseSerializedConfig.Validator, BaseSerializedConfig>();
-                
-                Include(validator);
+                Include(ValidatorCache.Get
+                <
+                    BaseSerializedConfig.Validator,
+                    BaseSerializedConfig
+                >());
             }
         }
 
         public override void Validate()
         {
-            this.ValidateAndThrow<
-                BaseSerializedConfig.Validator, BaseSerializedConfig>();
+            this.ValidateAndThrow
+            <
+                Validator,
+                ResourceConfig
+            >();
         }
     }
 }

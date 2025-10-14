@@ -1,20 +1,20 @@
-using Anycraft.Features.Configs.Table;
+using Anycraft.Features.Configs;
 using Anycraft.Features.Validation;
 using FluentValidation;
 
-namespace Anycraft.Features.Resource.Configs
+namespace Anycraft.Features.Tags.Configs
 {
-    public sealed partial class ResourceTagsTableConfig
+    public abstract partial class BaseTagConfig
     {
         public new sealed class Validator
-            : AbstractValidator<ResourceTagsTableConfig>
+            : AbstractValidator<BaseTagConfig>
         {
             public Validator()
             {
                 Include(ValidatorCache.Get
                 <
-                    BaseTableConfig<ResourceTagConfig>.Validator,
-                    BaseTableConfig<ResourceTagConfig>
+                    BaseSerializedConfig.Validator,
+                    BaseSerializedConfig
                 >());
             }
         }
@@ -24,8 +24,9 @@ namespace Anycraft.Features.Resource.Configs
             this.ValidateAndThrow
             <
                 Validator,
-                ResourceTagsTableConfig
+                BaseTagConfig
             >();
         }
     }
 }
+
