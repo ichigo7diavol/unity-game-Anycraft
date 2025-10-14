@@ -14,13 +14,14 @@ namespace Anycraft.Features.Resource.Configs
         {
             public Validator()
             {
-                Include(new BaseSerializedConfig.Validator());
+                Include(ValidatorCache.Get<BaseSerializedConfig.Validator,
+                    BaseSerializedConfig>());
             }
         }
 
         public override void Validate()
         {
-            this.ValidateAndThrow(new Validator());
+            this.ValidateAndThrow<Validator, ResourceConfig>();
         }
     }
 }

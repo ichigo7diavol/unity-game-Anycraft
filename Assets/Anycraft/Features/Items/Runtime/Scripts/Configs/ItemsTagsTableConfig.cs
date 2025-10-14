@@ -6,20 +6,22 @@ using UnityEngine;
 namespace Anycraft.Features.Items.Configs
 {
     [CreateAssetMenu(menuName = "Anycraft/Items/Configs/" + nameof(ItemsTagsTableConfig))]
-    public sealed class ItemsTagsTableConfig : BaseTableConfig<ItemTagConfig>
+    public sealed class ItemsTagsTableConfig
+        : BaseTableConfig<ItemTagConfig>
     {
         public new sealed class Validator
             : AbstractValidator<ItemsTagsTableConfig>
         {
             public Validator()
             {
-                Include(new BaseTableConfig<ItemTagConfig>.Validator());
+                Include(ValidatorCache.Get<BaseTableConfig<ItemTagConfig>.Validator,
+                    BaseTableConfig<ItemTagConfig>>());
             }
         }
 
         public override void Validate()
         {
-            this.ValidateAndThrow(new Validator());
+            this.ValidateAndThrow<Validator, ItemsTagsTableConfig>();
         }
     }
 }

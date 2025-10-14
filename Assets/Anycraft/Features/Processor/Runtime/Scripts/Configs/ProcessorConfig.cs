@@ -13,7 +13,12 @@ namespace Anycraft.Features.Processor.Configs
         {
             public Validator()
             {
-                Include(new BaseIndexedConfig.Validator());
+                Include(ValidatorCache.Get<BaseIndexedConfig.Validator,
+                    BaseIndexedConfig>());
+
+                RuleFor(c => c._data).NotNull();
+                RuleFor(c => c._inputData).NotNull();
+                RuleFor(c => c._outputData).NotNull();
             }
         }
 
@@ -29,7 +34,7 @@ namespace Anycraft.Features.Processor.Configs
 
         public override void Validate()
         {
-            this.ValidateAndThrow(new Validator());
+            this.ValidateAndThrow<Validator, ProcessorConfig>();
         }
     }
 }

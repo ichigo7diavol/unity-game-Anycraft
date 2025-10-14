@@ -17,7 +17,7 @@ namespace Anycraft.Features.Tags.Configs
         {
             public Validator()
             {
-                Include(new BaseSerializedConfig.Validator());
+                Include(ValidatorCache.Get<BaseSerializedConfig.Validator, BaseSerializedConfig>());
             }
         }
 
@@ -31,11 +31,6 @@ namespace Anycraft.Features.Tags.Configs
         public LocalizationData Localization { get => _localization; }
 
         public override string ToString() => $"Tag--{Id}";
-
-        public override void Validate()
-        {
-            this.ValidateAndThrow(new Validator());
-        }
     }
 }
 

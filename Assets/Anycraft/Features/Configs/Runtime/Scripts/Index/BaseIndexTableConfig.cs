@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using FluentValidation;
+using Anycraft.Features.Validation;
 
 namespace Anycraft.Features.Configs.Index
 {
@@ -17,7 +18,8 @@ namespace Anycraft.Features.Configs.Index
         {
             public Validator()
             {
-                Include(new BaseSerializedConfig.Validator());
+                Include(ValidatorCache.Get<BaseSerializedConfig.Validator,
+                    BaseSerializedConfig>());
             }
         }
         

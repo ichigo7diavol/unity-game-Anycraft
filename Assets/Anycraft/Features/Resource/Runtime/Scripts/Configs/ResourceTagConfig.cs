@@ -14,13 +14,14 @@ namespace Anycraft.Resource.Configs
         {
             public Validator()
             {
-                Include(new BaseTagConfig.Validator());
+                Include(ValidatorCache.Get<BaseTagConfig.Validator,
+                    BaseTagConfig>());
             }
         }
 
         public override void Validate()
         {
-            this.ValidateAndThrow(new Validator());
+            this.ValidateAndThrow<Validator, ResourceTagConfig>();
         }
     }
 }

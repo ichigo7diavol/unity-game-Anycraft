@@ -1,3 +1,4 @@
+using Anycraft.Features.Validation;
 using FluentValidation;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -13,7 +14,8 @@ namespace Anycraft.Features.Configs.Index
         {
             public Validator()
             {
-                Include(new BaseSerializedConfig.Validator());
+                Include(ValidatorCache.Get<BaseSerializedConfig.Validator,
+                    BaseSerializedConfig>());
             }
         }
 
