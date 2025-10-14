@@ -11,7 +11,7 @@ namespace Anycraft.Features.Configs.Table
     public partial class BaseTableEntries<TTable, TConfig>
     {
         [ValueDropdown(nameof(GetIds))]
-        [LabelText("Ids")]
+        [LabelText(nameof(Ids))]
         [ListDrawerSettings(ElementColor = nameof(ElementColor))]
         [ShowInInspector] private List<string> Inspector_Ids
         {

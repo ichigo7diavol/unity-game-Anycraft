@@ -2,10 +2,10 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Anycraft.Features.Validation;
 
 namespace Anycraft.Features.Configs.Index
 {
-    [Serializable]
     [UsedImplicitly]
     public abstract partial class BaseIndexTableConfig<TConfig> 
         : BaseSerializedConfig
@@ -15,5 +15,14 @@ namespace Anycraft.Features.Configs.Index
         [SerializeField] private List<TConfig> _configs = new();
 
         public IEnumerable<TConfig> Configs => _configs;
+
+        public override void Validate()
+        {
+            this.ValidateAndThrow
+            <
+                Validator,
+                BaseIndexTableConfig<TConfig>       
+            >();
+        }
     }
 }

@@ -23,8 +23,8 @@ namespace Anycraft.Features.Inventory.Configs
         {
             this.ValidateAndThrow
             <
-                BaseSerializedConfig.Validator,
-                BaseSerializedConfig
+                Validator,
+                InventoryConfig
             >();
         }
     }

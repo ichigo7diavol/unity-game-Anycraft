@@ -1,4 +1,3 @@
-using Anycraft.Features.Validation;
 using FluentValidation;
 
 namespace Anycraft.Features.Configs.Table
@@ -13,19 +12,7 @@ namespace Anycraft.Features.Configs.Table
                 RuleFor(c => c._id)
                     .NotNull()
                     .NotEmpty();
-
-                RuleFor(c => c)
-                    .NotNull();
             }
-        }
-
-        public void Validate()
-        {
-            this.ValidateAndThrow
-            <
-                Validator,
-                BaseTableEntry<TTable, TConfig>
-            >();
         }
     }
 }

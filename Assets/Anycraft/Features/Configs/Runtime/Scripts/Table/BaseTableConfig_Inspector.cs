@@ -10,7 +10,7 @@ namespace Anycraft.Features.Configs.Table
 {
     public partial class BaseTableConfig<TConfig>
     {
-        [LabelText("Configs")]
+        [LabelText(nameof(Configs))]
         [ListDrawerSettings(ElementColor = nameof(ElementColor))]
         [ShowInInspector] private List<TConfig> Inspector_configs
         {

@@ -6,10 +6,10 @@ namespace Anycraft.Features.Items.Configs
     {
         [LabelText(nameof(Tags))]
         [ShowInInspector]
-        private ItemTagTableEntries Inspector_Tags
+        private ItemTagTableEntries Inspector_TagEntries
         {
-            get => _tags;
-            set => _tags = value;
+            get => _tagEntries;
+            set => _tagEntries = value;
         }
     }
 }

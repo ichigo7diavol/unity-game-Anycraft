@@ -15,6 +15,9 @@ namespace Anycraft.Features.Configs.Index
                     BaseSerializedConfig.Validator,
                     BaseSerializedConfig
                 >());
+
+                RuleFor(c => c.Index)
+                    .GreaterThanOrEqualTo(0);
             }
         }
     }

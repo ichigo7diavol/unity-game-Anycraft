@@ -1,5 +1,6 @@
 using FluentValidation;
 using Anycraft.Features.Validation;
+using System.Linq;
 
 namespace Anycraft.Features.Configs.Index
 {
@@ -16,7 +17,29 @@ namespace Anycraft.Features.Configs.Index
                     BaseSerializedConfig
                 >());
 
-                RuleFor(c => c._configs).NotNull();
+                RuleFor(c => c._configs)
+                    .NotNull();
+
+                RuleForEach(c => c._configs)
+                    .NotNull();
+                
+                RuleForEach(c => c._configs)
+                    .Custom
+                    (
+                        (value, context) =>
+                        {
+                            if (value == null)
+                            {
+                                return;
+                            }
+                            var configs = context.InstanceToValidate.Configs;
+
+                            if (configs.Count(c => c.Index == value.Index) >= 2)
+                            {
+                                context.AddFailure($"duplicated key '{value.Id}'");
+                            }
+                        }
+                    );
             }
         }
     }

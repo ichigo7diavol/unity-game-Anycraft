@@ -7,7 +7,7 @@ namespace Anycraft.Features.Items.Configs
     public sealed partial class ItemConfig
         : BaseSerializedConfig
     {
-        [HideInInspector][SerializeField] private ItemTagTableEntries _tags;
+        [HideInInspector] [SerializeField] private ItemTagTableEntries _tagEntries;
     }
 }
 

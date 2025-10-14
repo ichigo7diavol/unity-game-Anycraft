@@ -9,6 +9,7 @@ namespace Anycraft.Features.Configs.Table
 {
     public partial class BaseTableEntry<TTable, TConfig>
     {
+        [Required]
         [ValueDropdown(nameof(GetIds))]
         [LabelText(nameof(Id))]
         [ShowInInspector] private string Inspector_Id
@@ -22,31 +23,6 @@ namespace Anycraft.Features.Configs.Table
             var table = EditorUtils.LoadFirstAssetOfType<TTable>();
 
             return table.Configs.Select(e => e.Id);
-        }
-        
-        private bool Inpector_ValidationErrorIsVisible { get; set; }
-        private string Inpector_ValidationError;
-
-        [PropertyOrder(int.MaxValue)]
-        [InfoBox("$" + nameof(Inpector_ValidationError),
-            VisibleIf = nameof(Inpector_ValidationErrorIsVisible),
-            InfoMessageType = InfoMessageType.Error)]
-        [Button("Validate")]
-        private void Inspector_Validate()
-        {
-            Inpector_ValidationErrorIsVisible = false;
-
-            try
-            {
-                Validate();
-            }
-            catch (System.Exception e)
-            {
-                Inpector_ValidationErrorIsVisible = true;
-                Inpector_ValidationError = e.Message;
-
-                throw;
-            }
         }
     }   
 }

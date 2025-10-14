@@ -15,7 +15,7 @@ namespace Anycraft.Features.Items.Configs
                 Include(ValidatorCache.Get<
                     BaseSerializedConfig.Validator, BaseSerializedConfig>());
 
-                RuleFor(c => c._tags)
+                RuleFor(c => c._tagEntries)
                     .NotNull()
                     .SetValidator(ValidatorCache.Get
                     <

@@ -10,9 +10,29 @@ namespace Anycraft.Features.Configs.Table
         {
             public Validator()
             {
-                RuleFor(x => x._ids)
-                    .Must(list => list.Distinct().Count() == list.Count)
-                    .WithMessage("Must contain unique values");
+                RuleFor(c => c._ids)
+                    .NotNull();
+
+                RuleForEach(c => c._ids)
+                    .NotNull();
+                
+                RuleForEach(c => c._ids)
+                    .Custom
+                    (
+                        (value, context) =>
+                        {
+                            if (value == null)
+                            {
+                                return;
+                            }
+                            var configs = context.InstanceToValidate._ids;
+
+                            if (configs.Count(c => c != null && c == value) >= 2)
+                            {
+                                context.AddFailure($"duplicated id '{value}'");
+                            }
+                        }
+                    );
             }
         }
     }
