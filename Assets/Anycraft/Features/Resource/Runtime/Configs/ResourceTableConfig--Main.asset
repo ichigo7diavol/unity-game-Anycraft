@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ResourceTableConfig--Main
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Resource.Configs.ResourceTableConfig
   _id: Main
-  _configs: []
+  _configs:
+  - {fileID: 11400000, guid: bf116878532cc574fa1c401d19559565, type: 2}

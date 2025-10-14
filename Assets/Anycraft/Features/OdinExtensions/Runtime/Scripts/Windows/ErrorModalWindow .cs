@@ -28,6 +28,8 @@ namespace Anycraft.Features.OdinExtensions.Windows
         public static void Show(string message)
         {
             var window = CreateInstance<ErrorModalWindow>();
+            window.minSize = new Vector2(600, 225);
+            window.maxSize = new Vector2(600, 225);
             window.position = GUIHelper.GetEditorWindowRect().AlignCenter(500, 250);
             window.errorText = message;
             window.titleContent = new GUIContent("Validation error");

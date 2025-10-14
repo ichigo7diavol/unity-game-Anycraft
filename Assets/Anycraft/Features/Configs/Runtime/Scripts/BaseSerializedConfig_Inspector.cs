@@ -33,7 +33,7 @@ namespace Anycraft.FluentValidationExtensions.Configs
             AssetDatabase.SaveAssets();
         }
 
-        [Title("Validation")]
+        [TitleGroup("Validation")]
         [PropertyOrder(int.MinValue)]
         [Button("Validate")]
         private void Inspector_Validate()

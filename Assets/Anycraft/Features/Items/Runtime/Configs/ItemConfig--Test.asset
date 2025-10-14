@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: ItemConfig--Test
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Items.ItemConfig
   _id: Test
-  _tags:
+  _tagEntries:
     _ids:
-    - Test
-    - Stone
+    - Iron
     - Wood
