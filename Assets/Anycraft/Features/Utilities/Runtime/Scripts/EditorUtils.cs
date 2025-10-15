@@ -7,7 +7,7 @@ using UnityEditor;
 
 namespace Anycraft.Features.Utilities
 {
-    public static class EditorUtils
+    public static class RuntimeEditorUtils
     {
         public static TAsset LoadFirstAssetOfType<TAsset>()
             where TAsset : Object

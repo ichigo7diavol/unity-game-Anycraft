@@ -20,7 +20,7 @@ namespace Anycraft.Features.Configs.Table
 
         private IEnumerable<string> GetIds()
         {
-            var table = EditorUtils.LoadFirstAssetOfType<TTable>();
+            var table = RuntimeEditorUtils.LoadFirstAssetOfType<TTable>();
 
             return table.Configs.Select(e => e.Id);
         }
