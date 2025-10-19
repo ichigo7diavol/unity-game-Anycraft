@@ -14,7 +14,7 @@ namespace Anycraft.Features.Ui.Popups.Presenters
     {
         private readonly ReactiveProperty<TData> _dataObservable = new();
 
-        public TData Data
+        public TData PopupData
         {
             get => _dataObservable.Value;
             set => _dataObservable.Value = value;

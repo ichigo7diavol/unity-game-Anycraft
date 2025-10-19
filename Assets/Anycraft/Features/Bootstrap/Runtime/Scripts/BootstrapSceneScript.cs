@@ -5,7 +5,8 @@ using Anycraft.Features.Ui.Popups.Services;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using MessagePipe;
-using NUnit.Framework;
+using R3;
+using UnityEngine.Assertions;
 
 namespace Anycraft.Features.Bootstrap
 {
@@ -13,11 +14,13 @@ namespace Anycraft.Features.Bootstrap
     public sealed class BootstrapSceneScript
         : BaseSceneScript
     {
-        private readonly IAsyncPublisher<ShowPopupEvent<BootstrapPopupPresenter>> _showBootstrapPopupPublisher;
+        private readonly IAsyncPublisher<ShowPopupEvent<BootstrapPopupPresenter,
+            BootstrapPopupPresenter.Data>> _showBootstrapPopupPublisher;
 
         public BootstrapSceneScript
         (
-            IAsyncPublisher<ShowPopupEvent<BootstrapPopupPresenter>> showBootstrapPopupPublisher
+            IAsyncPublisher<ShowPopupEvent<BootstrapPopupPresenter,
+                BootstrapPopupPresenter.Data>> showBootstrapPopupPublisher
         )
         {
             Assert.IsNotNull(showBootstrapPopupPublisher);
@@ -33,8 +36,16 @@ namespace Anycraft.Features.Bootstrap
 
             await UniTask.WaitForSeconds(1);
 
+            var progressObservale = new ReactiveProperty<float>();
+            var popupData = new BootstrapPopupPresenter.Data(progressObservale);
+            var eventData = new ShowPopupEvent
+            <
+                BootstrapPopupPresenter,
+                BootstrapPopupPresenter.Data
+            >(popupData);
+
             await _showBootstrapPopupPublisher
-                .PublishAsync(new ShowPopupEvent<BootstrapPopupPresenter>());
+                .PublishAsync(eventData);
 
             this.LogStepCompleted($"opened: {nameof(BootstrapPopupPresenter)}");
             

@@ -42,7 +42,7 @@ namespace Anycraft.Features.Ui.Popups.Services
             where TPopupData : BasePopupPresenter
         {
             var presenter = await PopupsService.ShowAsync<TPopupPresenter>();
-            presenter.Data = data.PopupData;
+            presenter.PopupData = data.PopupData;
         }
     } 
 }
