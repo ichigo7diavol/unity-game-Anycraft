@@ -1,23 +1,27 @@
+using Anycraft.Features.VContainerExtenions;
 using Anycraft.Features.VContainerExtenions.Installers;
 using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
+using VContainer.Unity;
 
 namespace Anycraft.Features.Services
 {
     [UsedImplicitly]
     [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Services) + "/" + nameof(ServiceInspectorScriptableInstaller))]
     public sealed class ServiceInspectorScriptableInstaller
-        : ScriptableContainerInstaller
+        : BaseScriptableInstaller
     {
         public override void Install(IContainerBuilder builder)
         {
             base.Install(builder);
 
-            var gameObject = new GameObject($"[{nameof(ServicesInspector)}]");
-            gameObject.AddComponent<ServicesInspector>();
+            builder.RegisterComponentOnNewGameObject<ServicesInspector>(
+                Lifetime.Singleton, $"[{nameof(ServicesInspector)}]")
+                .AsSelf()
+                .AsImplementedInterfaces();
 
-            builder.RegisterInstance(gameObject).AsSelf();
+            builder.AsLazy<ServicesInspector>();
         }
     }
 }

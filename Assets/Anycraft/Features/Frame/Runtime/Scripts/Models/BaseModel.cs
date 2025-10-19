@@ -41,7 +41,7 @@ namespace Anycraft.Features.Frame.Models
         {
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
             _cts.Cancel();
             _cts.Dispose();

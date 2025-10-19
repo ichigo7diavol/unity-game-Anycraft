@@ -48,3 +48,6 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
+  _monoInstallers: []
+  _scriptableInstallers:
+  - {fileID: 11400000, guid: 19831dd652f5a2049ab4346107b9f145, type: 2}

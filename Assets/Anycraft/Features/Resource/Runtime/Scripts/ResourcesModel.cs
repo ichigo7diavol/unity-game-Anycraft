@@ -2,11 +2,12 @@ using Anycraft.Features.Frame.Models;
 
 namespace Anycraft.Features.Resource
 {
-    public sealed class ResourcModel : BaseCollectionModel<ResourceModel>
+    public sealed class ResourcModel
+        : BaseCollectionModel<ResourceModel>
     {
-        public override ResourceModel Create()
+        protected override ResourceModel Factorize<T>()
         {
             throw new System.NotImplementedException();
         }
     }
-}
+}   

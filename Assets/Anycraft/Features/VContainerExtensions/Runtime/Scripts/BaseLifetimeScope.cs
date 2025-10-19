@@ -8,11 +8,13 @@ using Anycraft.Features.VContainerExtenions.Installers;
 
 namespace Anycraft.Features.VContainerExtenions
 {
+
     [UsedImplicitly]
-    public abstract class BaseLifetimeScope : LifetimeScope
+    public abstract class BaseLifetimeScope
+        : LifetimeScope
     {
-        [SerializeField] private List<MonoContainerInstaller> _monoInstallers = new();
-        [SerializeField] private List<ScriptableContainerInstaller> _scriptableInstallers = new();
+        [SerializeField] private List<BaseMonoInstaller> _monoInstallers = new();
+        [SerializeField] private List<BaseScriptableInstaller> _scriptableInstallers = new();
 
         protected override void Configure(IContainerBuilder builder)
         {

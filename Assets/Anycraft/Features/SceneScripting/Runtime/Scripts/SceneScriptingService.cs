@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 using Anycraft.Features.Services;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
@@ -9,27 +8,33 @@ using VContainer.Unity;
 
 namespace Anycraft.Features.SceneScripting
 {
-
     [UsedImplicitly]
     public sealed partial class SceneScriptingService
-        : IService, IAsyncStartable
+        : IService, IStartable
     {
-        private BaseSceneScript _script;
+        private readonly ISceneScript _script;
 
-        public SceneScriptingService(BaseSceneScript script)
+        public SceneScriptingService(ISceneScript script)
         {
             Assert.IsNotNull(script);
 
             _script = script;
         }
 
-        public async UniTask StartAsync(CancellationToken cancellation = default)
+        public void Start()
         {
-            cancellation.ThrowIfCancellationRequested();
+            StartAsync().Forget();
+        }
 
+        public void Dispose()
+        {
+        }
+
+        private async UniTask StartAsync()
+        {
             try
             {
-                await _script.StartAsync(cancellation);
+                await _script.StartAsync();
             }
             catch (Exception e)
             {

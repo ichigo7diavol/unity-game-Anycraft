@@ -6,12 +6,29 @@ using VContainer;
 namespace Anycraft.Features.SceneScripting
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneScripting) + "/" + nameof(SceneScriptingServiceScriptableInstaller))]
-    public sealed class SceneScriptingServiceScriptableInstaller
-        : ScriptableContainerInstaller
+    public abstract class BaseSceneScriptingServiceScriptableInstaller<TSceneScript, TSceneScriptConfig>
+        : BaseSceneScriptingServiceScriptableInstaller<TSceneScript>
+        where TSceneScript : BaseSceneScript
+        where TSceneScriptConfig : BaseSceneScriptConfig
     {
-        [SerializeField] private BaseSceneScript _script;
+        [SerializeField] private TSceneScriptConfig _config;
 
+        public override void Install(IContainerBuilder builder)
+        {
+            base.Install(builder);
+
+            builder
+                .RegisterInstance(_config)
+                .AsImplementedInterfaces()
+                .AsSelf();
+        }
+    }
+
+    [UsedImplicitly]
+    public abstract class BaseSceneScriptingServiceScriptableInstaller<TSceneScript>
+        : BaseScriptableInstaller
+        where TSceneScript : BaseSceneScript
+    {
         public override void Install(IContainerBuilder builder)
         {
             base.Install(builder);
@@ -21,7 +38,10 @@ namespace Anycraft.Features.SceneScripting
                 .AsImplementedInterfaces()
                 .AsSelf();
 
-            builder.RegisterInstance(_script);
+            builder
+                .Register<TSceneScript>(Lifetime.Singleton)
+                .AsImplementedInterfaces()
+                .AsSelf();
         }
     }
 }

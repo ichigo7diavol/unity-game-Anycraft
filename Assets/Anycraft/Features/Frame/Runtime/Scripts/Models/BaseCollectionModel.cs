@@ -9,15 +9,12 @@ using UnityEngine;
 namespace Anycraft.Features.Frame.Models
 {
     public abstract class BaseCollectionModel<TModel> 
-        : IDisposable
+        : BaseModel
         where TModel : BaseModel
     {
-        private readonly CancellationTokenSource _cts = new();
-        private readonly ObservableDictionary<string, BaseModel> _models = new();
+        private readonly ObservableDictionary<int, BaseModel> _models = new();
 
-        public CancellationToken Token => _cts.Token;
-
-        public IReadOnlyObservableDictionary<string, BaseModel> Models => _models;
+        public IReadOnlyObservableDictionary<int, BaseModel> Models => _models;
 
         protected BaseCollectionModel()
         {
@@ -25,9 +22,16 @@ namespace Anycraft.Features.Frame.Models
             _models.ObserveRemove().Subscribe(OnModelRemove).AddTo(Token);
         }
 
-        public abstract TModel Create();
+        public TModel Create<T>()
+            where T : TModel
+        {
+            var model = Factorize<T>();
+            _models.Add(model.GetHashCode(), model);
 
-        public void Dispose()
+            return model;
+        }
+
+        public override void Dispose()
         {
             foreach (var kvp in _models)
             {
@@ -40,19 +44,21 @@ namespace Anycraft.Features.Frame.Models
                     Debug.LogException(e);
                 }
             }
-            _cts.Cancel();
-            _cts.Dispose();
+            base.Dispose();
         }
 
+        protected abstract TModel Factorize<T>()
+            where T : TModel;
+       
         protected virtual void OnModelAdd(
-            CollectionAddEvent<KeyValuePair<string, BaseModel>> data)
+            CollectionAddEvent<KeyValuePair<int, BaseModel>> data)
         {
             data.Value.Value.Token
                 .Register(() => _models.Remove(data.Value.Key));
         }
 
         protected virtual void OnModelRemove(
-            CollectionRemoveEvent<KeyValuePair<string, BaseModel>> data)
+            CollectionRemoveEvent<KeyValuePair<int, BaseModel>> data)
         {
         }
     }
