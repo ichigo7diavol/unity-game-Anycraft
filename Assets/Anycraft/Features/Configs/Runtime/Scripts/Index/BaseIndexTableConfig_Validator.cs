@@ -36,7 +36,7 @@ namespace Anycraft.Features.Configs.Index
 
                             if (configs.Count(c => c.Index == value.Index) >= 2)
                             {
-                                context.AddFailure($"duplicated key '{value.Id}'");
+                                context.AddFailure($"duplicated index '{value.Index}'");
                             }
                         }
                     );

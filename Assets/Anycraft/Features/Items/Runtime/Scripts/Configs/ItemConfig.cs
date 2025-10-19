@@ -5,9 +5,10 @@ namespace Anycraft.Features.Items.Configs
 {
     [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(ItemConfig))]
     public sealed partial class ItemConfig
-        : BaseSerializedConfig
+        : BaseIdentifiableConfig
     {
-        [HideInInspector] [SerializeField] private ItemTagTableEntries _tagEntries;
+        [HideInInspector] 
+        [SerializeField] private ItemTagTableEntries _tagEntries;
     }
 }
 

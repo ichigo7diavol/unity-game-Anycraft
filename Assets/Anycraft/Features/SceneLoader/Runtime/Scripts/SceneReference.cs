@@ -1,9 +1,11 @@
 using System;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Anycraft.Features.SceneLoader
 {
     [Serializable]
+    [UsedImplicitly]
     public sealed partial class SceneReference
     {
         [HideInInspector]

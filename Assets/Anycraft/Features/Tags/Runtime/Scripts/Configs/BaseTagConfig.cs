@@ -5,7 +5,7 @@ namespace Anycraft.Features.Tags.Configs
 {
     [UsedImplicitly]
     public abstract partial class BaseTagConfig
-        : BaseSerializedConfig
+        : BaseIdentifiableConfig
     {
         public override string ToString() => $"Tag--{Id}";
     }

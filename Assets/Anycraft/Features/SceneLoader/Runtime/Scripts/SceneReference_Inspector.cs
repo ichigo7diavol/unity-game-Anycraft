@@ -7,18 +7,21 @@ namespace Anycraft.Features.SceneLoader
 {
     public sealed partial class SceneReference
     {
-        [InfoBox("Scene not added to build", VisibleIf = nameof(IsBeingBuilt), InfoMessageType = InfoMessageType.Error)]
+        [InfoBox("Scene not added to build", VisibleIf = nameof(Inspector_IsNotBeingBuilt), InfoMessageType = InfoMessageType.Error)]
         [LabelText("Scene Asset")]
         [OnValueChanged(nameof(UpdateSerializedData))]
         [ShowInInspector] private SceneAsset Inspector_SceneAsset;
         
+        [ShowIf(nameof(Inspector_IsBeingBuilt))]
         [LabelText(nameof(Path))]
         [ShowInInspector] private string Inspector_Path => _path;
 
+        [ShowIf(nameof(Inspector_IsBeingBuilt))]
         [LabelText(nameof(BuildIndex))]
         [ShowInInspector] private int Inspector_BuildIndex => _buildIndex;
 
-        private bool IsBeingBuilt => !CheckIfInBuild();
+        private bool Inspector_IsBeingBuilt => CheckIfInBuild();
+        private bool Inspector_IsNotBeingBuilt => !CheckIfInBuild();
 
         private void UpdateSerializedData()
         {

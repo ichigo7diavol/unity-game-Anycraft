@@ -9,9 +9,6 @@ namespace Anycraft.Features.Configs
         {
             public Validator()
             {
-                RuleFor(c => c._id)
-                    .NotNull()
-                    .NotEmpty();
             }
         }
 

@@ -5,7 +5,7 @@ namespace Anycraft.Features.Configs.Index
 {
     [UsedImplicitly]
     public abstract partial class BaseIndexedConfig
-        : BaseSerializedConfig
+        : BaseIdentifiableConfig
     {
         [HideInInspector]
         [SerializeField] private int _index;

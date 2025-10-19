@@ -21,7 +21,7 @@ namespace Anycraft.Features.Configs.Table
         {
             var table = RuntimeEditorUtils.LoadFirstAssetOfType<TTable>();
 
-            return table.Configs.Select(e => e.Id);
+            return table.Configs.Select(c => c.Id);
         }
     }
 }

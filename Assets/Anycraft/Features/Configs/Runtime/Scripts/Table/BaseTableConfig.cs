@@ -6,7 +6,7 @@ namespace Anycraft.Features.Configs.Table
 {
     [UsedImplicitly]
     public abstract partial class BaseTableConfig<TConfig> : BaseSerializedConfig
-        where TConfig : BaseSerializedConfig
+        where TConfig : BaseIdentifiableConfig
     {
         [HideInInspector]
         [SerializeField] List<TConfig> _configs = new();

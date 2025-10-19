@@ -9,7 +9,7 @@ namespace Anycraft.Features.Configs.Table
     [UsedImplicitly]
     public abstract partial class BaseTableEntries<TTable, TConfig> 
         where TTable : BaseTableConfig<TConfig>
-        where TConfig : BaseSerializedConfig
+        where TConfig : BaseIdentifiableConfig
     {
         [HideInInspector]
         [SerializeField] private List<string> _ids;
