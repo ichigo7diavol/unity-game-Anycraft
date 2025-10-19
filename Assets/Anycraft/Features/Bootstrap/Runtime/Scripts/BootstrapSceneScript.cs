@@ -1,5 +1,5 @@
-using Anycraft.Features.Bootstrap;
-using Anycraft.Features.Bootstrap.Installers;
+using Anycraft.Features.Bootstrap.Popups;
+using Anycraft.Features.Logger;
 using Anycraft.Features.SceneScripting;
 using Anycraft.Features.Ui.Popups.Services;
 using Cysharp.Threading.Tasks;
@@ -25,12 +25,18 @@ namespace Anycraft.Features.Bootstrap
             _showBootstrapPopupPublisher = showBootstrapPopupPublisher;
         }
 
-        public override UniTask StartAsync()
+        public override async UniTask StartAsync()
         {
-            _showBootstrapPopupPublisher
-                .Publish(new ShowPopupEvent<BootstrapPopupPresenter>());
+            this.LogStepStarted("execution");
 
-            return UniTask.CompletedTask;
+            this.LogStepStarted($"opening: {nameof(BootstrapPopupPresenter)}");
+
+            await _showBootstrapPopupPublisher
+                .PublishAsync(new ShowPopupEvent<BootstrapPopupPresenter>());
+
+            this.LogStepCompleted($"opened: {nameof(BootstrapPopupPresenter)}");
+            
+            this.LogStepCompleted("execution");
         }
     }
 }

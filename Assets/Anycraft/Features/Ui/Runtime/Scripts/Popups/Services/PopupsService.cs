@@ -40,6 +40,8 @@ namespace Anycraft.Features.Ui.Popups.Services
         public async UniTask<TPrenter> ShowAsync<TPrenter>()
             where TPrenter : BasePopupPresenter
         {
+            Debug.Log($"Opening: {typeof(TPrenter).GetType().Name}");
+
             var type = typeof(TPrenter);
 
             if (_popups.ContainsKey(type))

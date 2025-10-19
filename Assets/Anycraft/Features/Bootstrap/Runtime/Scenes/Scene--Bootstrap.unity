@@ -548,8 +548,7 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
-  _monoInstallers:
-  - {fileID: 1764857762}
+  _monoInstallers: []
   _scriptableInstallers:
   - {fileID: 11400000, guid: 770b5831446e0d24ca1cc3583a56f02d, type: 2}
   - {fileID: 11400000, guid: 3dfe28f027c2036459bc2da004b6728d, type: 2}
@@ -564,9 +563,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1764857759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3909ef865e2621e4ebb47c5751bb302e, type: 3}
+  m_Script: {fileID: 11500000, guid: f5bfcacffcd9acd42b659c86bf633a29, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Ui.Popups.Presenters.Installers.UiMonoInstaller
+  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Bootstrap.Installers.BootstrapUiMonoInstaller
   _uiPresenter: {fileID: 735793131798972381}
   _popupsPresenter: {fileID: 735793131798972380}
 --- !u!1001 &735793131798972379

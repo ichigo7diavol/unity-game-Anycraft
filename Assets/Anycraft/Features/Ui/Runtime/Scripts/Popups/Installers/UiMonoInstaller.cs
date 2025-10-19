@@ -1,3 +1,5 @@
+using Anycraft.Features.Ui.Popups.Services;
+using Anycraft.Features.VContainerExtenions;
 using Anycraft.Features.VContainerExtenions.Installers;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
@@ -7,8 +9,9 @@ using VContainer;
 namespace Anycraft.Features.Ui.Popups.Presenters.Installers
 {
     [UsedImplicitly]
-    public sealed class UiMonoInstaller
+    public abstract class BaseUiMonoInstaller<TPopupsMediator>
         : BaseMonoInstaller
+        where TPopupsMediator : BasePopupsMediator
     {
         [Required]
         [SerializeField] private UiPresenter _uiPresenter;
@@ -23,10 +26,16 @@ namespace Anycraft.Features.Ui.Popups.Presenters.Installers
             builder.RegisterInstance(_uiPresenter)
                 .AsSelf()
                 .AsImplementedInterfaces();
-            
+
             builder.RegisterInstance(_popupsPresenter)
                 .AsSelf()
                 .AsImplementedInterfaces();
+
+            builder.Register<TPopupsMediator>(Lifetime.Singleton)
+                .AsSelf()
+                .AsImplementedInterfaces();
+
+            builder.AsLazy<TPopupsMediator>();
         }
     }
 }
