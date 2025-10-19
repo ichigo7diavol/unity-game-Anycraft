@@ -1,5 +1,3 @@
-#if UNITY_EDITOR
-
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using UnityEngine;
@@ -42,5 +40,3 @@ namespace Anycraft.Features.OdinExtensions.Windows
         }
     }
 }
-
-#endif

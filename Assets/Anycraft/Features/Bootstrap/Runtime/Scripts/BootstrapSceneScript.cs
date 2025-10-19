@@ -1,4 +1,4 @@
-using Anycraft.Features.Bootstrap.Popups;
+using Anycraft.Features.Bootstrap.Ui;
 using Anycraft.Features.Logger;
 using Anycraft.Features.SceneScripting;
 using Anycraft.Features.Ui.Popups.Services;

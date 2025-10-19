@@ -1,4 +1,4 @@
-using Anycraft.Features.Bootstrap.Popups;
+using Anycraft.Features.Bootstrap.Ui;
 using Anycraft.Features.Ui.Popups.Presenters.Installers;
 using Anycraft.Features.Ui.Popups.Services;
 using JetBrains.Annotations;
