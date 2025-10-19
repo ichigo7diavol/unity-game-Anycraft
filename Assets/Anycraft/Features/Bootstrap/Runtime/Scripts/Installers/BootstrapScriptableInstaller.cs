@@ -6,7 +6,7 @@ using VContainer;
 namespace Anycraft.Features.Bootstrap.Installers
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Bootstrap) + "/" + nameof(Installers) + "/" + nameof(BootstrapScriptableInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Bootstrap) + "/" + nameof(BootstrapScriptableInstaller))]
     public sealed class BootstrapScriptableInstaller
         : BaseScriptableInstaller
     {

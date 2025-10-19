@@ -28,8 +28,9 @@ namespace Anycraft.Features.Ui.Popups.Presenters
         }
     }
 
+    [UsedImplicitly]
     public abstract class BasePopupPresenter
-        : BasePresenter
+        : BasePresenter, IPopupPresenter
     {
         public virtual UniTask ShowAsync() { return UniTask.CompletedTask; }
         public virtual UniTask HideAsync() { return UniTask.CompletedTask; }

@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using VContainer;
+using VContainer.Unity;
 
 namespace Anycraft.Features.Ui.Popups.Presenters.Installers
 {
@@ -23,15 +24,19 @@ namespace Anycraft.Features.Ui.Popups.Presenters.Installers
         {
             base.Install(builder);
 
-            builder.RegisterInstance(_uiPresenter)
-                .AsSelf()
-                .AsImplementedInterfaces();
-
-            builder.RegisterInstance(_popupsPresenter)
+            builder.Register<PopupsService>(Lifetime.Singleton)
                 .AsSelf()
                 .AsImplementedInterfaces();
 
             builder.Register<TPopupsMediator>(Lifetime.Singleton)
+                .AsSelf()
+                .AsImplementedInterfaces();
+
+            builder.RegisterComponent(_uiPresenter)
+                .AsSelf()
+                .AsImplementedInterfaces();
+
+            builder.RegisterComponent(_popupsPresenter)
                 .AsSelf()
                 .AsImplementedInterfaces();
 

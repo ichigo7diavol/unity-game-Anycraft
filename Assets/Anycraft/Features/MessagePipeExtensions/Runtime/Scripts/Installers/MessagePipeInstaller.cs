@@ -7,8 +7,8 @@ using VContainer;
 namespace Anycraft.Features.MessagePipeExtensions.Installers
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(MessagePipeExtensions) + "/" + nameof(Installers) + "/" + nameof(MessagePipeInstaller))]
-    public sealed class MessagePipeInstaller
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(MessagePipeExtensions) + "/" + nameof(Installers) + "/" + nameof(MessagePipeScriptableInstaller))]
+    public sealed class MessagePipeScriptableInstaller
         : BaseScriptableInstaller
     {
         public override void Install(IContainerBuilder builder)

@@ -7,8 +7,8 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using Anycraft.Features.Ui.Popups.Presenters;
-using MessagePipe;
 using System.Threading;
+using Anycraft.Features.Logger;
 
 namespace Anycraft.Features.Ui.Popups.Services
 {
@@ -27,7 +27,7 @@ namespace Anycraft.Features.Ui.Popups.Services
         public PopupsService
         (
             PopupsPresenter presenter,
-            IReadOnlyList<BasePopupPresenter> prefabs
+            IEnumerable<BasePopupPresenter> prefabs
         )
         {
             Assert.IsNotNull(presenter);
@@ -37,18 +37,18 @@ namespace Anycraft.Features.Ui.Popups.Services
             _prefabs = prefabs.ToDictionary(p => p.GetType());
         }
 
-        public async UniTask<TPrenter> ShowAsync<TPrenter>()
-            where TPrenter : BasePopupPresenter
+        public async UniTask<TPopupPresenter> ShowAsync<TPopupPresenter>()
+            where TPopupPresenter : BasePopupPresenter
         {
-            Debug.Log($"Opening: {typeof(TPrenter).GetType().Name}");
+            this.LogStepStarted($"Opening: {typeof(TPopupPresenter).Name}");
 
-            var type = typeof(TPrenter);
+            var type = typeof(TPopupPresenter);
 
             if (_popups.ContainsKey(type))
             {
                 throw new InvalidOperationException();
             }
-            var prefab = GetPrefab<TPrenter>();
+            var prefab = GetPrefab<TPopupPresenter>();
             var presenter = await _presenter.CreateAsync(prefab);
 
             presenter.Token.Register(() => _popups.Remove(type));
@@ -62,7 +62,9 @@ namespace Anycraft.Features.Ui.Popups.Services
             {
                 Debug.LogException(e);
             }
-            return (TPrenter)presenter;
+            this.LogStepCompleted($"Opening: {typeof(TPopupPresenter).Name}");
+
+            return (TPopupPresenter)presenter;
         }
 
         public async UniTask HideAsync<TPrenter>()

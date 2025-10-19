@@ -26,7 +26,7 @@ namespace Anycraft.Features.Ui.Popups.Presenters
         {
             Assert.IsNotNull(prefab);
 
-            var presenter = _resolver.Instantiate(prefab, (RectTransform)transform, false);
+            var presenter = _resolver.Instantiate(prefab, GetComponent<RectTransform>(), false);
 
             return UniTask.FromResult<BasePopupPresenter>(presenter);
         }
