@@ -1,5 +1,5 @@
 using Anycraft.Features.Bootstrap.Ui;
-using Anycraft.Features.Ui.Popups.Presenters.Installers;
+using Anycraft.Features.Ui.Popups.Installers;
 using Anycraft.Features.Ui.Popups.Services;
 using JetBrains.Annotations;
 using MessagePipe;

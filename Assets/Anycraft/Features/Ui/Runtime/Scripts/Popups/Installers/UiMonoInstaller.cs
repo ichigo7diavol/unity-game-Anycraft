@@ -1,3 +1,4 @@
+using Anycraft.Features.Ui.Popups.Presenters;
 using Anycraft.Features.Ui.Popups.Services;
 using Anycraft.Features.VContainerExtenions;
 using Anycraft.Features.VContainerExtenions.Installers;
@@ -7,7 +8,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace Anycraft.Features.Ui.Popups.Presenters.Installers
+namespace Anycraft.Features.Ui.Popups.Installers
 {
     [UsedImplicitly]
     public abstract class BaseUiMonoInstaller<TPopupsMediator>

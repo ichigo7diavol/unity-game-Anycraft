@@ -1,10 +1,11 @@
+using Anycraft.Features.Ui.Popups.Presenters;
 using Anycraft.Features.VContainerExtenions.Installers;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.Ui.Popups.Presenters.Installers
+namespace Anycraft.Features.Ui.Popups.Installers
 {
     [UsedImplicitly]
     public abstract class BasePopupScriptableInstaller<TPopupPresenter>

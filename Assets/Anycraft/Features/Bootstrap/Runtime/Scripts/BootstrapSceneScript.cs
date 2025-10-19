@@ -31,6 +31,8 @@ namespace Anycraft.Features.Bootstrap
 
             this.LogStepStarted($"opening: {nameof(BootstrapPopupPresenter)}");
 
+            await UniTask.WaitForSeconds(1);
+
             await _showBootstrapPopupPublisher
                 .PublishAsync(new ShowPopupEvent<BootstrapPopupPresenter>());
 

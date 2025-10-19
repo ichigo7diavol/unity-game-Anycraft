@@ -518,6 +518,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5981476839327379408, guid: 72fd741ad3ecb1444a2c4bcc03781eb4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6801606267701710311}
+    - targetCorrespondingSourceObject: {fileID: 5981476839327379408, guid: 72fd741ad3ecb1444a2c4bcc03781eb4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8356054504067159450}
+    - targetCorrespondingSourceObject: {fileID: 5981476839327379408, guid: 72fd741ad3ecb1444a2c4bcc03781eb4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1124747088789311}
   m_SourcePrefab: {fileID: 100100000, guid: 72fd741ad3ecb1444a2c4bcc03781eb4, type: 3}
 --- !u!224 &2395692771345584920 stripped
 RectTransform:
@@ -546,3 +552,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ec1633bd60844547bb234fcb701e1d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Bootstrap.Ui.BootstrapPopupPresenter
+  _animationPresenter: {fileID: 8356054504067159450}
+--- !u!114 &8356054504067159450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264517782685568809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff2699ac68730749a4bbdf5d79f1291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Ui.Popups.Animations.FadingPopupAnimationPresenter
+  _canvasGroup: {fileID: 1124747088789311}
+  _duration: 1
+--- !u!225 &1124747088789311
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264517782685568809}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

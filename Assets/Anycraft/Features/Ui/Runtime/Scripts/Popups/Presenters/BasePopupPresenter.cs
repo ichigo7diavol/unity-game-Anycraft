@@ -2,6 +2,9 @@ using Anycraft.Features.Frame.Presenters;
 using Cysharp.Threading.Tasks;
 using R3;
 using JetBrains.Annotations;
+using Anycraft.Features.Ui.Popups.Animations;
+using UnityEngine;
+using Sirenix.OdinInspector;
 
 namespace Anycraft.Features.Ui.Popups.Presenters
 {
@@ -32,7 +35,13 @@ namespace Anycraft.Features.Ui.Popups.Presenters
     public abstract class BasePopupPresenter
         : BasePresenter, IPopupPresenter
     {
-        public virtual UniTask ShowAsync() { return UniTask.CompletedTask; }
-        public virtual UniTask HideAsync() { return UniTask.CompletedTask; }
+        [Required]
+        [SerializeField] BasePopupAnimationPresenter _animationPresenter;
+
+        public virtual async UniTask ShowAsync() 
+            => await _animationPresenter.ShowAsync();
+
+        public virtual async UniTask HideAsync() 
+            => await _animationPresenter.HideAsync();
     }
 }
