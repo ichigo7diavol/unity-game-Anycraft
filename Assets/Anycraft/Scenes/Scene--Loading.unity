@@ -424,8 +424,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1764857760}
-  - component: {fileID: 1764857761}
-  - component: {fileID: 1764857762}
   m_Layer: 0
   m_Name: '[LifeTimeScope]--Bootstrap'
   m_TagString: Untagged
@@ -448,44 +446,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1764857761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764857759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 626f21b0f6aa09e4195c9f1880ff0e84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BootstrapLifetimeScope
-  parentReference:
-    TypeName: 
-  autoRun: 1
-  autoInjectGameObjects: []
-  _monoInstallers:
-  - {fileID: 1764857762}
-  _scriptableInstallers:
-  - {fileID: 11400000, guid: 770b5831446e0d24ca1cc3583a56f02d, type: 2}
-  - {fileID: 11400000, guid: 3dfe28f027c2036459bc2da004b6728d, type: 2}
-  - {fileID: 11400000, guid: 19831dd652f5a2049ab4346107b9f145, type: 2}
-  - {fileID: 11400000, guid: f97923ee5d813e14d8411605366250d8, type: 2}
-  - {fileID: 11400000, guid: e9370c21734595044bd5971d62bd5dab, type: 2}
---- !u!114 &1764857762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764857759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5bfcacffcd9acd42b659c86bf633a29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Bootstrap.Installers.BootstrapUiMonoInstaller
-  _uiPresenter: {fileID: 735793131798972381}
-  _popupsPresenter: {fileID: 735793131798972380}
 --- !u!1001 &735793131798972379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -586,28 +546,6 @@ PrefabInstance:
       addedObject: {fileID: 1294964129}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 899d9ef98392b134297e7b2768794127, type: 3}
---- !u!114 &735793131798972380 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5906451459719889810, guid: 899d9ef98392b134297e7b2768794127, type: 3}
-  m_PrefabInstance: {fileID: 735793131798972379}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d95574024aa3c47b6e36f92e001a6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Ui.Popups.PopupsPresenter
---- !u!114 &735793131798972381 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3843468784834754865, guid: 899d9ef98392b134297e7b2768794127, type: 3}
-  m_PrefabInstance: {fileID: 735793131798972379}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b26e7bb296f091479dc18cf5738cf69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Ui.Popups.UiPresenter
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

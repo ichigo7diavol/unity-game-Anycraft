@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b648908616ff294786e1fbc3de92c79, type: 3}
-  m_Name: New Scene Loader Service Config
+  m_Name: SceneLoaderServiceConfig--Global
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.SceneLoader.SceneLoaderServiceConfig
-  _id: 
   _loadingSceneReference:
-    _path: 
-    _buildIndex: 0
+    _path: Scene--Loading
+    _buildIndex: 1
