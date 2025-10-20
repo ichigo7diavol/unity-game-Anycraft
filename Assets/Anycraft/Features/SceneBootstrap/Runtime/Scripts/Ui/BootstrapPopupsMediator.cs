@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using MessagePipe;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.Bootstrap.Ui
+namespace Anycraft.Features.SceneBootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapPopupsMediator

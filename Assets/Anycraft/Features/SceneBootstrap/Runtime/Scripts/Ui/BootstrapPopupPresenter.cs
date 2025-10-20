@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Anycraft.Features.Bootstrap.Ui
+namespace Anycraft.Features.SceneBootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapPopupPresenter

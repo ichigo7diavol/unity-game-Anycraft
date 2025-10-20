@@ -2,10 +2,10 @@ using Anycraft.Features.SceneScripting;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Bootstrap.Installers
+namespace Anycraft.Features.SceneBootstrap
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Bootstrap) + "/" + nameof(BootstrapSceneScriptingServiceInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneBootstrap) + "/" + nameof(BootstrapSceneScriptingServiceInstaller))]
     public sealed class BootstrapSceneScriptingServiceInstaller
         : BaseSceneScriptingServiceScriptableInstaller<BootstrapSceneScript>
     {

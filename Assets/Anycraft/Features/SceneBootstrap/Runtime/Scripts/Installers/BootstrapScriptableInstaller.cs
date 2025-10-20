@@ -3,10 +3,10 @@ using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.Bootstrap.Installers
+namespace Anycraft.Features.SceneBootstrap
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Bootstrap) + "/" + nameof(BootstrapScriptableInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneBootstrap) + "/" + nameof(BootstrapScriptableInstaller))]
     public sealed class BootstrapScriptableInstaller
         : BaseScriptableInstaller
     {

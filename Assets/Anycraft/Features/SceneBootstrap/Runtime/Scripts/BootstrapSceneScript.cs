@@ -1,4 +1,3 @@
-using Anycraft.Features.Bootstrap.Ui;
 using Anycraft.Features.Logger;
 using Anycraft.Features.SceneScripting;
 using Anycraft.Features.Ui.Popups.Services;
@@ -8,7 +7,7 @@ using MessagePipe;
 using R3;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.Bootstrap
+namespace Anycraft.Features.SceneBootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapSceneScript
