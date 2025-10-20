@@ -84,7 +84,7 @@ namespace Anycraft.Features.SceneLoader
             Assert.IsNotNull(sceneReference);
             Assert.IsFalse(IsLoading);
 
-            await LoadScene_Internal(sceneReference, LoadSceneMode.Additive);
+            await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Additive);
 
             try
             {
@@ -104,7 +104,7 @@ namespace Anycraft.Features.SceneLoader
             Assert.IsNotNull(sceneReference);
             Assert.IsFalse(IsLoading);
 
-            await LoadScene_Internal(sceneReference, LoadSceneMode.Additive);
+            await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
 
             try
             {
@@ -117,7 +117,11 @@ namespace Anycraft.Features.SceneLoader
             }
         }
 
-        private async UniTask LoadScene_Internal(SceneReference sceneReference, LoadSceneMode loadSceneMode)
+        private async UniTask LoadSceneAsync_Internal
+        (
+            SceneReference sceneReference,
+            LoadSceneMode loadSceneMode
+        )
         {
             Assert.IsNotNull(sceneReference);
 
