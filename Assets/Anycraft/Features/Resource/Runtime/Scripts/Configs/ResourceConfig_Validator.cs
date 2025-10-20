@@ -2,7 +2,7 @@ using Anycraft.Features.Configs;
 using Anycraft.Features.FluentValidationExtensions;
 using FluentValidation;
 
-namespace Anycraft.Features.Resource.Configs
+namespace Anycraft.Features.Resource
 {
     public sealed partial class ResourceConfig
     {

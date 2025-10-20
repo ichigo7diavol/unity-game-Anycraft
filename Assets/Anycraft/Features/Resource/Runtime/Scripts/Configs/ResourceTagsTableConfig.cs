@@ -2,7 +2,7 @@ using Anycraft.Features.Configs.Table;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Resource.Configs
+namespace Anycraft.Features.Resource
 {
     [UsedImplicitly]
     [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Resource) + "/" + nameof(Configs) + "/" + nameof(ResourceTagsTableConfig))]

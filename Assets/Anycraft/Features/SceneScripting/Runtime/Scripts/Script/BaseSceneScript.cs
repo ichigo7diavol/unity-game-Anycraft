@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
 
@@ -23,7 +22,5 @@ namespace Anycraft.Features.SceneScripting
     public abstract class BaseSceneScript
         : ISceneScript
     {
-        public virtual UniTask StartAsync()
-            => UniTask.CompletedTask;
     }
 }

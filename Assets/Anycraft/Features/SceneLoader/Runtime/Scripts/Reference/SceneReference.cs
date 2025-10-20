@@ -13,8 +13,15 @@ namespace Anycraft.Features.SceneLoader
         [HideInInspector]
         [SerializeField] private int _buildIndex;
     
-    
-        private string Path => _path;
-        private int BuildIndex => _buildIndex;
+        public string Path => _path;
+        public int BuildIndex => _buildIndex;
+
+        public SceneReference()
+        {
+        }
+
+        public SceneReference(string path, int buildIndex)
+        {
+        }
     }
 }

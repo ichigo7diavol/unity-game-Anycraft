@@ -1,8 +1,8 @@
 using FluentValidation;
 
-namespace Anycraft.Features.Processor.Configs
+namespace Anycraft.Features.Processor
 {
-    public sealed partial class ProcessorItemSlotData
+    public sealed partial class ProcessorInputData
     {
         public sealed class Validator
             : AbstractValidator<ProcessorInputData>

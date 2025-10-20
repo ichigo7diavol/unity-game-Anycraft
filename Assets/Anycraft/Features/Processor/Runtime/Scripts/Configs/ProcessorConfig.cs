@@ -1,9 +1,9 @@
 using Anycraft.Features.Configs.Index;
 using UnityEngine;
 
-namespace Anycraft.Features.Processor.Configs
+namespace Anycraft.Features.Processor
 {
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Processor) + "/" + nameof(Configs) + "/" + nameof(ProcessorConfig))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Processor) + "/" + nameof(ProcessorConfig))]
     public sealed partial class ProcessorConfig : BaseIndexedConfig
     {
         [SerializeField] private ProcessorData _data;

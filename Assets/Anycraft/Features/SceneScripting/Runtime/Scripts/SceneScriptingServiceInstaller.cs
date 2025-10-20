@@ -8,7 +8,7 @@ namespace Anycraft.Features.SceneScripting
     [UsedImplicitly]
     public abstract class BaseSceneScriptingServiceScriptableInstaller<TSceneScript, TSceneScriptConfig>
         : BaseSceneScriptingServiceScriptableInstaller<TSceneScript>
-        where TSceneScript : BaseSceneScript
+        where TSceneScript : ISceneScript
         where TSceneScriptConfig : BaseSceneScriptConfig
     {
         [SerializeField] private TSceneScriptConfig _config;
@@ -27,7 +27,7 @@ namespace Anycraft.Features.SceneScripting
     [UsedImplicitly]
     public abstract class BaseSceneScriptingServiceScriptableInstaller<TSceneScript>
         : BaseScriptableInstaller
-        where TSceneScript : BaseSceneScript
+        where TSceneScript : ISceneScript
     {
         public override void Install(IContainerBuilder builder)
         {

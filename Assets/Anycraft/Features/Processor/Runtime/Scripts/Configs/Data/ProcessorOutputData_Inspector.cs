@@ -1,4 +1,4 @@
-namespace Anycraft.Features.Processor.Configs
+namespace Anycraft.Features.Processor
 {
     public sealed partial class ProcessorOutputData
     {

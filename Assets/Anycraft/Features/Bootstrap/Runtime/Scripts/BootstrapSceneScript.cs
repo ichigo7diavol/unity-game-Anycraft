@@ -12,7 +12,7 @@ namespace Anycraft.Features.Bootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapSceneScript
-        : BaseSceneScript
+        : BaseSceneScript, ISceneScriptStartable
     {
         private readonly IAsyncPublisher<ShowPopupEvent<BootstrapPopupPresenter,
             BootstrapPopupPresenter.Data>> _showBootstrapPopupPublisher;
@@ -28,7 +28,7 @@ namespace Anycraft.Features.Bootstrap
             _showBootstrapPopupPublisher = showBootstrapPopupPublisher;
         }
 
-        public override async UniTask StartAsync()
+        public async UniTask StartAsync()
         {
             this.LogStepStarted("execution");
 

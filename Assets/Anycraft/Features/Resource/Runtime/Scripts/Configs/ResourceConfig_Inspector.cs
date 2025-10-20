@@ -1,4 +1,4 @@
-namespace Anycraft.Features.Resource.Configs
+namespace Anycraft.Features.Resource
 {
     public sealed partial class ResourceConfig
     {

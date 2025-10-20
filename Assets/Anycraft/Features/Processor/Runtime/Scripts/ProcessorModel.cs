@@ -1,5 +1,4 @@
 using Anycraft.Features.Frame.Models;
-using Anycraft.Features.Processor.Configs;
 
 namespace Anycraft.Features.Processor
 {

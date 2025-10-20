@@ -2,7 +2,7 @@ using Anycraft.Features.Configs.Index;
 using Anycraft.Features.FluentValidationExtensions;
 using FluentValidation;
 
-namespace Anycraft.Features.Processor.Configs
+namespace Anycraft.Features.Processor
 {
     public sealed partial class ProcessorConfig
     {
