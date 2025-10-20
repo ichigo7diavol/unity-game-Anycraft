@@ -1,8 +1,6 @@
 using Anycraft.Features.Bootstrap.Ui;
 using Anycraft.Features.Ui.Popups.Installers;
-using Anycraft.Features.Ui.Popups.Services;
 using JetBrains.Annotations;
-using MessagePipe;
 using VContainer;
 
 namespace Anycraft.Features.Bootstrap.Installers
@@ -14,9 +12,6 @@ namespace Anycraft.Features.Bootstrap.Installers
         public override void Install(IContainerBuilder builder)
         {
             base.Install(builder);
-
-            builder.RegisterMessageBroker<ShowPopupEvent<BootstrapPopupPresenter>>(
-                new MessagePipeOptions());
         }
     }
 }

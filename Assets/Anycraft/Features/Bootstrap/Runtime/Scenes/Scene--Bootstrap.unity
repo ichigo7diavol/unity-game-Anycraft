@@ -467,9 +467,9 @@ MonoBehaviour:
   _monoInstallers:
   - {fileID: 1764857762}
   _scriptableInstallers:
+  - {fileID: 11400000, guid: 19831dd652f5a2049ab4346107b9f145, type: 2}
   - {fileID: 11400000, guid: 770b5831446e0d24ca1cc3583a56f02d, type: 2}
   - {fileID: 11400000, guid: 3dfe28f027c2036459bc2da004b6728d, type: 2}
-  - {fileID: 11400000, guid: 19831dd652f5a2049ab4346107b9f145, type: 2}
   - {fileID: 11400000, guid: f97923ee5d813e14d8411605366250d8, type: 2}
   - {fileID: 11400000, guid: e9370c21734595044bd5971d62bd5dab, type: 2}
 --- !u!114 &1764857762
