@@ -1,11 +1,11 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Configs.Index
+namespace Anycraft.Features.Configs
 {
     [UsedImplicitly]
     public abstract partial class BaseIndexedConfig
-        : BaseIdentifiableConfig
+        : BaseSerializedConfig
     {
         [HideInInspector]
         [SerializeField] private int _index;

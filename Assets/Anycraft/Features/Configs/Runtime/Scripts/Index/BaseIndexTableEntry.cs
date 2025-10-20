@@ -2,7 +2,7 @@ using System;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Configs.Index
+namespace Anycraft.Features.Configs
 {
     [Serializable]
     [UsedImplicitly]

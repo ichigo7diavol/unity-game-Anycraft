@@ -5,7 +5,7 @@ using System.Linq;
 using Anycraft.Features.Utilities;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Configs.Table
+namespace Anycraft.Features.Configs
 {
     public partial class BaseTableEntry<TTable, TConfig>
     {

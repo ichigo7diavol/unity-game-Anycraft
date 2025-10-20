@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Anycraft.Features.FluentValidationExtensions;
 
-namespace Anycraft.Features.Configs.Index
+namespace Anycraft.Features.Configs
 {
     [UsedImplicitly]
     public abstract partial class BaseIndexTableConfig<TConfig> 

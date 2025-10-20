@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Configs.Table
+namespace Anycraft.Features.Configs
 {
     [UsedImplicitly]
     public abstract partial class BaseTableConfig<TConfig> : BaseSerializedConfig

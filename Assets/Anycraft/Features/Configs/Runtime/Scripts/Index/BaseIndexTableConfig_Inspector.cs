@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Anycraft.Features.Utilities;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Configs.Index
+namespace Anycraft.Features.Configs
 {
     public partial class BaseIndexTableConfig<TConfig>
     {
