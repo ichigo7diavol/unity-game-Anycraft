@@ -3,7 +3,6 @@ using Cysharp.Threading.Tasks;
 using MessagePipe;
 using UnityEngine.Assertions;
 using Anycraft.Features.Ui;
-using UnityEngine;
 
 namespace Anycraft.Features.SceneBootstrap
 {
@@ -14,7 +13,8 @@ namespace Anycraft.Features.SceneBootstrap
         public BootstrapPopupsMediator
         (
             PopupsService popupsService,
-            ISubscriber<ShowPopupEvent<BootstrapPopupPresenter>> showBootstrapPopupPublisher
+            ISubscriber<ShowPopupEvent<BootstrapPopupPresenter,
+                BootstrapPopupPresenter.Data>> showBootstrapPopupPublisher
         )
             : base(popupsService)
         {

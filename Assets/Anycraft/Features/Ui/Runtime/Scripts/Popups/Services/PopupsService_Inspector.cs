@@ -6,13 +6,19 @@ namespace Anycraft.Features.Ui
 {
     public sealed partial class PopupsService
     {
+        [HideDuplicateReferenceBox]
+        [LabelText(nameof(_prefabs))]
         [ShowInInspector] private IReadOnlyDictionary<Type, BasePopupPresenter> Inspector_Prefabs
             => _prefabs;
 
-        [ShowInInspector] private IReadOnlyDictionary<Type, BasePopupPresenter> Inspector_Pressenters
+        [HideDuplicateReferenceBox]
+        [LabelText(nameof(_popups))]
+        [ShowInInspector] private IReadOnlyDictionary<Type, BasePopupPresenter> Inspector_Popups
             => _popups;
         
-        [ShowInInspector] private PopupsPresenter Inspector_PopupsPresenter 
+        [HideDuplicateReferenceBox]
+        [LabelText(nameof(_presenter))]
+        [ShowInInspector] private PopupsPresenter Inspector_Presenter 
             => _presenter;
     }
 }

@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d479f7d41fb59f49aeb31d26d84177f, type: 3}
-  m_Name: ScriptableContainerInstaller--Bootstrap
-  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Bootstrap.Installers.BootstrapScriptableContainerInstaller
+  m_Script: {fileID: 11500000, guid: c038475c858855a4c95370a1e54d02a4, type: 3}
+  m_Name: SceneScriptStarterInstaller--Bootstrap
+  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.SceneBootstrap.BootstrapSceneScriptStarterInstaller

@@ -13,12 +13,12 @@ namespace Anycraft.Features.SceneBootstrap
     public sealed class BootstrapSceneScript
         : BaseSceneScript, ISceneScriptStartable
     {
-        private readonly IAsyncPublisher<ShowPopupEvent<BootstrapPopupPresenter,
+        private readonly IPublisher<ShowPopupEvent<BootstrapPopupPresenter,
             BootstrapPopupPresenter.Data>> _showBootstrapPopupPublisher;
 
         public BootstrapSceneScript
         (
-            IAsyncPublisher<ShowPopupEvent<BootstrapPopupPresenter,
+            IPublisher<ShowPopupEvent<BootstrapPopupPresenter,
                 BootstrapPopupPresenter.Data>> showBootstrapPopupPublisher
         )
         {
@@ -43,8 +43,7 @@ namespace Anycraft.Features.SceneBootstrap
                 BootstrapPopupPresenter.Data
             >(popupData);
 
-            await _showBootstrapPopupPublisher
-                .PublishAsync(eventData);
+            _showBootstrapPopupPublisher.Publish(eventData);
 
             this.LogStepCompleted($"opened: {nameof(BootstrapPopupPresenter)}");
             

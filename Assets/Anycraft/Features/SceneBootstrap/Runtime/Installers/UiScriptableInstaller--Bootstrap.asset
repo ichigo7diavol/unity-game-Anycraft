@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b7408a570a1eaa478840cf7a3be378b, type: 3}
-  m_Name: UiInstaller--Global
-  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Global.GlobalUiInstaller
+  m_Script: {fileID: 11500000, guid: f5bfcacffcd9acd42b659c86bf633a29, type: 3}
+  m_Name: UiScriptableInstaller--Bootstrap
+  m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.SceneBootstrap.BootstrapUiScriptableInstaller
   _uiPresenterPrefab: {fileID: 3843468784834754865, guid: 899d9ef98392b134297e7b2768794127, type: 3}
-  _serviceConfig: {fileID: 11400000, guid: c67bc1d1a6f98d14081ddde49bb27dbc, type: 2}
-  _isGlobal: 1
+  _serviceConfig: {fileID: 11400000, guid: 6585b369f04afc64bbb370c7841f9e98, type: 2}
+  _isGlobal: 0
