@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Anycraft.Features.Ui.Popups.Presenters
+namespace Anycraft.Features.Ui
 {
 
     [UsedImplicitly]

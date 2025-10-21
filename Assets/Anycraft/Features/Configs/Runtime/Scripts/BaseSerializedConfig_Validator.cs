@@ -12,6 +12,6 @@ namespace Anycraft.Features.Configs
             }
         }
 
-        public abstract void Validate();
+        public virtual void Validate() { }
     }
 }

@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System;
 using Sirenix.OdinInspector;
-using Anycraft.Features.Ui.Popups.Presenters;
 
-namespace Anycraft.Features.Ui.Popups.Services
+namespace Anycraft.Features.Ui
 {
     public sealed partial class PopupsService
     {

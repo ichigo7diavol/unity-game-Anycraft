@@ -6,17 +6,17 @@ using JetBrains.Annotations;
 using System.Collections.Generic;
 using System;
 using System.Linq;
-using Anycraft.Features.Ui.Popups.Presenters;
 using System.Threading;
 using Anycraft.Features.Logger;
 
-namespace Anycraft.Features.Ui.Popups.Services
+namespace Anycraft.Features.Ui
 {
     [UsedImplicitly]
     public sealed partial class PopupsService
         : IService
     {
         private readonly CancellationTokenSource _cts = new();
+        private readonly PopupsServiceConfig _config;
 
         private readonly IReadOnlyDictionary<Type, BasePopupPresenter> _prefabs;
         private readonly Dictionary<Type, BasePopupPresenter> _popups = new();
@@ -26,48 +26,63 @@ namespace Anycraft.Features.Ui.Popups.Services
 
         public PopupsService
         (
-            PopupsPresenter presenter,
-            IEnumerable<BasePopupPresenter> prefabs
+            PopupsServiceConfig config,
+            PopupsPresenter presenter
         )
         {
+            Assert.IsNotNull(config);
             Assert.IsNotNull(presenter);
-            Assert.IsNotNull(prefabs);
 
             _presenter = presenter;
-            _prefabs = prefabs.ToDictionary(p => p.GetType());
-        }
+            _config = config;
 
-        public async UniTask<TPopupPresenter> ShowAsync<TPopupPresenter>()
-            where TPopupPresenter : BasePopupPresenter
+            _prefabs = config.PopupsPrefabs
+                .ToDictionary(p => p.GetType());
+        }
+        
+        public async UniTask<TPopupPresenter> ShowPopupAsync<TPopupPresenter, TData>(TData data)
+            where TPopupPresenter : BasePopupPresenter<TData>
         {
             this.LogStepStarted($"Opening: {typeof(TPopupPresenter).Name}");
-
-            var type = typeof(TPopupPresenter);
-
-            if (_popups.ContainsKey(type))
-            {
-                throw new InvalidOperationException();
-            }
-            var prefab = GetPrefab<TPopupPresenter>();
-            var presenter = await _presenter.CreateAsync(prefab);
-
-            presenter.Token.Register(() => _popups.Remove(type));
-            _popups.Add(type, presenter);
-
             try
             {
+                var presenter = await CreatePresenter<TPopupPresenter>();
+                presenter.PopupData = data;
+
                 await presenter.ShowAsync();
+
+                this.LogStepCompleted($"Opening: {typeof(TPopupPresenter).Name}");
+    
+                return presenter;
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
+                throw;
             }
-            this.LogStepCompleted($"Opening: {typeof(TPopupPresenter).Name}");
-
-            return (TPopupPresenter)presenter;
         }
 
-        public async UniTask HideAsync<TPrenter>()
+        public async UniTask<TPopupPresenter> ShowPopupAsync<TPopupPresenter>()
+            where TPopupPresenter : BasePopupPresenter
+        {
+            this.LogStepStarted($"Opening: {typeof(TPopupPresenter).Name}");
+            try
+            {
+                var presenter = await CreatePresenter<TPopupPresenter>();
+                await presenter.ShowAsync();
+
+                this.LogStepCompleted($"Opening: {typeof(TPopupPresenter).Name}");
+    
+                return presenter;
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+                throw;
+            }
+        }
+
+        public async UniTask HidePopupAsync<TPrenter>()
             where TPrenter : BasePopupPresenter
         {
             var type = typeof(TPrenter);
@@ -79,12 +94,34 @@ namespace Anycraft.Features.Ui.Popups.Services
             try
             {
                 await presenter.HideAsync();
+                GameObject.Destroy(presenter);
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
             }
-            GameObject.Destroy(presenter);
+        }
+
+        private async UniTask<TPopupPresenter> CreatePresenter<TPopupPresenter>()
+            where TPopupPresenter : BasePopupPresenter
+        {
+            this.LogStepStarted($"Creating: {typeof(TPopupPresenter).Name}");
+
+            var type = typeof(TPopupPresenter);
+
+            if (_popups.TryGetValue(type, out var presenter))
+            {
+                return (TPopupPresenter)presenter;
+            }
+            var prefab = GetPrefab<TPopupPresenter>();
+            presenter = await _presenter.CreateAsync(prefab);
+
+            presenter.Token.Register(() => _popups.Remove(type));
+            _popups.Add(type, presenter);
+
+            this.LogStepCompleted($"Creating: {typeof(TPopupPresenter).Name}");
+
+            return (TPopupPresenter)presenter;
         }
 
         private T GetPrefab<T>()

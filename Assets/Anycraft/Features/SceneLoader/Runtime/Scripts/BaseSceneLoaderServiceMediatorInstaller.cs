@@ -1,24 +1,19 @@
 using Anycraft.Features.VContainerExtenions.Installers;
 using JetBrains.Annotations;
-using Sirenix.OdinInspector;
-using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.SceneLoader
 {
     [UsedImplicitly]
-    public abstract class BasePopupScriptableInstaller<TPopupPresenter>
+    public abstract class BaseSceneLoaderServiceMediatorInstaller<TSceneLoaderServiceMediator>
         : BaseScriptableInstaller
-        where TPopupPresenter : BasePopupPresenter
+        where TSceneLoaderServiceMediator : BaseSceneLoaderServiceMediator
     {
-        [Required]
-        [SerializeField] private TPopupPresenter _prefab;
-
         public override void Install(IContainerBuilder builder)
         {
             base.Install(builder);
 
-            builder.RegisterInstance<TPopupPresenter, BasePopupPresenter>(_prefab)
+            builder.Register<TSceneLoaderServiceMediator>(Lifetime.Singleton)
                 .AsImplementedInterfaces()
                 .AsSelf();
         }

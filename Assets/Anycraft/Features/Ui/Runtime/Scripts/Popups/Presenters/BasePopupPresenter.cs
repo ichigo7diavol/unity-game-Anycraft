@@ -2,11 +2,10 @@ using Anycraft.Features.Frame.Presenters;
 using Cysharp.Threading.Tasks;
 using R3;
 using JetBrains.Annotations;
-using Anycraft.Features.Ui.Popups.Animations;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Ui.Popups.Presenters
+namespace Anycraft.Features.Ui
 {
     [UsedImplicitly]
     public abstract class BasePopupPresenter<TData>

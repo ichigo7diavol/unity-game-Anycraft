@@ -6,7 +6,7 @@ using VContainer.Unity;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Ui.Popups.Presenters
+namespace Anycraft.Features.Ui
 {
     [UsedImplicitly]
     public sealed class PopupsPresenter

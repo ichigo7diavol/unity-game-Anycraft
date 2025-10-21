@@ -2,47 +2,42 @@ using UnityEngine.Assertions;
 using JetBrains.Annotations;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Anycraft.Features.Ui.Popups.Presenters;
 
-namespace Anycraft.Features.Ui.Popups.Services
+namespace Anycraft.Features.Ui
 {
     [UsedImplicitly]
     public abstract class BasePopupsMediator
     {
         private readonly CancellationTokenSource _cts = new();
-        private readonly PopupsService _popupsService;
+        private readonly PopupsService _service;
 
         public CancellationToken Token => _cts.Token;
 
-        protected PopupsService PopupsService => _popupsService;
+        protected PopupsService Service => _service;
 
-        protected BasePopupsMediator(PopupsService popupsService)
+        protected BasePopupsMediator(PopupsService service)
         {
-            Assert.IsNotNull(popupsService);
+            Assert.IsNotNull(service);
 
-            _popupsService = popupsService;
+            _service = service;
         }
 
-        protected async UniTask OnShowPopup<TPopupPresenter>
-        (
-            ShowPopupEvent<TPopupPresenter> data,
-            CancellationToken token
-        )
+        protected void OnShowPopup<TPopupPresenter>(ShowPopupEvent<TPopupPresenter> _)
             where TPopupPresenter : BasePopupPresenter
         {
-            await PopupsService.ShowAsync<TPopupPresenter>();
+            Service.ShowPopupAsync<TPopupPresenter>().Forget();
         }
 
-        protected async UniTask OnShowPopup<TPopupPresenter, TPopupData>
-        (
-            ShowPopupEvent<TPopupPresenter, TPopupData> data,
-            CancellationToken token
-        )
+        protected void OnShowPopup<TPopupPresenter, TPopupData>(ShowPopupEvent<TPopupPresenter, TPopupData> data)
             where TPopupPresenter : BasePopupPresenter<TPopupData>
-            where TPopupData : BasePopupPresenter
         {
-            var presenter = await PopupsService.ShowAsync<TPopupPresenter>();
-            presenter.PopupData = data.PopupData;
+            Service.ShowPopupAsync<TPopupPresenter, TPopupData>(data.PopupData).Forget();
+        }
+
+        protected void OnHidePopup<TPopupPresenter>(HidePopupEvent<TPopupPresenter> _)
+            where TPopupPresenter : BasePopupPresenter
+        {
+            Service.HidePopupAsync<TPopupPresenter>().Forget();
         }
     } 
 }

@@ -1,8 +1,9 @@
-using Anycraft.Features.Ui.Popups.Services;
 using JetBrains.Annotations;
 using Cysharp.Threading.Tasks;
 using MessagePipe;
 using UnityEngine.Assertions;
+using Anycraft.Features.Ui;
+using UnityEngine;
 
 namespace Anycraft.Features.SceneBootstrap
 {
@@ -13,7 +14,7 @@ namespace Anycraft.Features.SceneBootstrap
         public BootstrapPopupsMediator
         (
             PopupsService popupsService,
-            IAsyncSubscriber<ShowPopupEvent<BootstrapPopupPresenter>> showBootstrapPopupPublisher
+            ISubscriber<ShowPopupEvent<BootstrapPopupPresenter>> showBootstrapPopupPublisher
         )
             : base(popupsService)
         {

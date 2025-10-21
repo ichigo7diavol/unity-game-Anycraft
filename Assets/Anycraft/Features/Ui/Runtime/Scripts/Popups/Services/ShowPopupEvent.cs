@@ -1,8 +1,7 @@
-using Anycraft.Features.Ui.Popups.Presenters;
 using JetBrains.Annotations;
 using System;
 
-namespace Anycraft.Features.Ui.Popups.Services
+namespace Anycraft.Features.Ui
 {
     [UsedImplicitly]
     public readonly struct ShowPopupEvent<TPopupPreesnter>
@@ -21,5 +20,12 @@ namespace Anycraft.Features.Ui.Popups.Services
         {
             PopupData = data;
         }
+    }
+
+    [UsedImplicitly]
+    public readonly struct HidePopupEvent<TPopupPreesnter>
+        where TPopupPreesnter : BasePopupPresenter
+    {
+        public readonly Type PopupType => typeof(TPopupPreesnter);
     }
 }
