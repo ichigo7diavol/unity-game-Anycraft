@@ -2,7 +2,7 @@ using Anycraft.Features.Frame.Logger;
 using Anycraft.Features.Frame.Services.SceneLoader;
 using Anycraft.Features.Frame.Services.SceneScripting;
 using Anycraft.Features.Frame.Ui;
-using Anycraft.Features.Popups.BootstrapPopup;
+using Anycraft.Features.Popups.LoadingPopup;
 using Anycraft.Features.Scenes.SceneMenu;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
@@ -17,14 +17,14 @@ namespace Anycraft.Features.Scenes.SceneBootstrap
     public sealed class BootstrapSceneScript
         : BaseSceneScript, ISceneScriptStartable
     {
-        private readonly IPublisher<ShowPopupEvent<BootstrapPopupPresenter,
-            BootstrapPopupPresenter.Data>> _showBootstrapPopupPublisher;
+        private readonly IPublisher<ShowPopupEvent<LoadingPopupPresenter,
+            LoadingPopupPresenter.Data>> _showBootstrapPopupPublisher;
         private readonly IPublisher<LoadSceneEvent<MenuSceneScript>> _loadSceneMenuPublisher;
 
         public BootstrapSceneScript
         (
-            IPublisher<ShowPopupEvent<BootstrapPopupPresenter,
-                BootstrapPopupPresenter.Data>> showBootstrapPopupPublisher,
+            IPublisher<ShowPopupEvent<LoadingPopupPresenter,
+                LoadingPopupPresenter.Data>> showBootstrapPopupPublisher,
             IPublisher<LoadSceneEvent<MenuSceneScript>> loadSceneMenuPublisher
         )
         {
@@ -39,21 +39,16 @@ namespace Anycraft.Features.Scenes.SceneBootstrap
         {
             this.LogStepStarted("execution");
 
-            this.LogStepStarted($"opening: {nameof(BootstrapPopupPresenter)}");
+            this.LogStepStarted($"opening: {nameof(LoadingPopupPresenter)}");
 
             await UniTask.WaitForSeconds(1);
 
             var progressObservale = new ReactiveProperty<float>();
-            var popupData = new BootstrapPopupPresenter.Data(progressObservale);
-            var eventData = new ShowPopupEvent
-            <
-                BootstrapPopupPresenter,
-                BootstrapPopupPresenter.Data
-            >(popupData);
+            var bottomTextObservale = new ReactiveProperty<string>("LOADING");
+            
+            RaiseShowLoadingPopup(bottomTextObservale, progressObservale);
 
-            _showBootstrapPopupPublisher.Publish(eventData);
-
-            this.LogStepCompleted($"opening: {nameof(BootstrapPopupPresenter)}");
+            this.LogStepCompleted($"opening: {nameof(LoadingPopupPresenter)}");
 
             var duration = 1.0f;
             var t = 0.0f;
@@ -65,9 +60,32 @@ namespace Anycraft.Features.Scenes.SceneBootstrap
 
                 await UniTask.NextFrame();
             }
-            _loadSceneMenuPublisher.Publish(new LoadSceneEvent<MenuSceneScript>());
+            bottomTextObservale.Value = "READY";
+            _loadSceneMenuPublisher.Publish(
+                new LoadSceneEvent<MenuSceneScript>());
 
             this.LogStepCompleted("execution");
+        }
+
+        private void RaiseShowLoadingPopup
+        (
+            ReadOnlyReactiveProperty<string> bottomTextObservale,
+            ReadOnlyReactiveProperty<float> progressObservale
+        )
+        {
+            var popupData = new LoadingPopupPresenter.Data
+            (
+                "Bootstrap",
+                bottomTextObservale,
+                progressObservale
+            );
+            var eventData = new ShowPopupEvent
+            <
+                LoadingPopupPresenter,
+                LoadingPopupPresenter.Data
+            >(popupData);
+
+            _showBootstrapPopupPublisher.Publish(eventData);
         }
     }
 }

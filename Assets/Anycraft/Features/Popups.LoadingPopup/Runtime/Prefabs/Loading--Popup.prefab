@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4262019540227415012}
   - component: {fileID: 7230394334829853424}
   m_Layer: 5
-  m_Name: Text--Loading
+  m_Name: Text--Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loading
+  m_text: BOTTOM TEXT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 5283310909326062241}
   - component: {fileID: 4294371882965874836}
   m_Layer: 5
-  m_Name: Text--Bootstrap
+  m_Name: Text--Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bootstrap
+  m_text: HEADER TEXT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -636,7 +636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5981476839327379408, guid: 72fd741ad3ecb1444a2c4bcc03781eb4, type: 3}
       propertyPath: m_Name
-      value: Popup--Bootstrap
+      value: Loading--Popup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -646,10 +646,10 @@ PrefabInstance:
       addedObject: {fileID: 3140627127268865477}
     - targetCorrespondingSourceObject: {fileID: 2790856728591231461, guid: 72fd741ad3ecb1444a2c4bcc03781eb4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8081913711026949746}
+      addedObject: {fileID: 3181369054353965628}
     - targetCorrespondingSourceObject: {fileID: 2790856728591231461, guid: 72fd741ad3ecb1444a2c4bcc03781eb4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3181369054353965628}
+      addedObject: {fileID: 8081913711026949746}
     - targetCorrespondingSourceObject: {fileID: 2790856728591231461, guid: 72fd741ad3ecb1444a2c4bcc03781eb4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7651974300719868411}
@@ -692,6 +692,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Bootstrap.Ui.BootstrapPopupPresenter
   _animationPresenter: {fileID: 8356054504067159450}
+  _header: {fileID: 4294371882965874836}
+  _bottomText: {fileID: 7230394334829853424}
   _progressSlider: {fileID: 5756633411239579553}
 --- !u!114 &8356054504067159450
 MonoBehaviour:

@@ -1,10 +1,10 @@
 using Anycraft.Features.Frame.Ui;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
-using MessagePipe;
 using R3;
+using Sirenix.OdinInspector;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 namespace Anycraft.Features.Popups.LoadingPopup
@@ -13,20 +13,28 @@ namespace Anycraft.Features.Popups.LoadingPopup
     public sealed class LoadingPopupPresenter
         : BasePopupPresenter<LoadingPopupPresenter.Data>
     {
-        [UsedImplicitly]
         public sealed class Data
         {
+            public readonly string HeaderText;
+            public readonly ReadOnlyReactiveProperty<string> BottomTextObservable;
             public readonly ReadOnlyReactiveProperty<float> ProgressObservable;
 
-            public Data(ReadOnlyReactiveProperty<float> progressObservable)
+            public Data
+            (
+                string headerText,
+                ReadOnlyReactiveProperty<string> bottomTextObservable,
+                ReadOnlyReactiveProperty<float> progressObservable
+            )
             {
-                Assert.IsNotNull(progressObservable);
-
+                HeaderText = headerText;
                 ProgressObservable = progressObservable;
+                BottomTextObservable = bottomTextObservable;
             }
         }
-    
-        [SerializeField] private Slider _progressSlider;
+
+        [Required] [SerializeField] private TextMeshProUGUI _header;
+        [Required] [SerializeField] private TextMeshProUGUI _bottomText;
+        [Required] [SerializeField] private Slider _progressSlider;
 
         protected override void OnDataChanged(Data data)
         {
@@ -36,9 +44,15 @@ namespace Anycraft.Features.Popups.LoadingPopup
             {
                 return;
             }
+            _header.text = data.HeaderText;
+
+            data.BottomTextObservable
+                .Subscribe(this, (value, state) => state._bottomText.text = value)
+                .AddTo(DataCtsToken);
+
             data.ProgressObservable
                 .Subscribe(this, (value, state) => state._progressSlider.value = value)
                 .AddTo(DataCtsToken);
         }
-    }
+    } 
 }

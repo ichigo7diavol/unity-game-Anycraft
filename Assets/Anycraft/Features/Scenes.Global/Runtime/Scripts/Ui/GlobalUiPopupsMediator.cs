@@ -35,8 +35,12 @@ namespace Anycraft.Features.Scenes.Global
 
         private void OnSceneLoadingStarted(SceneLoadingStartedEvent eventData)
         {
-            var data = new LoadingPopupPresenter.Data(eventData.ProgressObservable);
-
+            var data = new LoadingPopupPresenter.Data
+            (
+                eventData.LoadingPopupHeaderText,
+                eventData.LoadingPopupBottomTextxObservable,
+                eventData.ProgressObservable
+            );
             OnShowPopup(new ShowPopupEvent<LoadingPopupPresenter, LoadingPopupPresenter.Data>(data));
         }
 

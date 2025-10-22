@@ -84,7 +84,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             Assert.IsNotNull(sceneReference);
             Assert.IsFalse(IsLoading);
 
-            await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Additive);
+            await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
 
             try
             {
@@ -151,6 +151,8 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
         private void RaiseSceneLoadingStarted(SceneReference sceneReference)
         {
             _sceneLoadingStartedEventPublisher.Publish(new SceneLoadingStartedEvent(
+                "Scene loading",
+                new ReactiveProperty<string>("BOTTOM TEXT"),
                 _progressObservable,
                 sceneReference
             ));
