@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Anycraft/Features/SceneBootstrap/Runtime/Scenes/Scene--Bootstrap.unity
     guid: 3be35c57e9812dc4ab269e02acd4938a
   - enabled: 1
-    path: Assets/Anycraft/Features/Global/Runtime/Scenes/Scene--Loading.unity
+    path: Assets/Anycraft/Features/SceneGlobal/Runtime/Scenes/Scene--Loading.unity
     guid: f06c9a59c562c52488806f0e8dff5819
   - enabled: 1
-    path: Assets/Anycraft/Features/Global/Runtime/Scenes/Scene--Main.unity
+    path: Assets/Anycraft/Features/SceneGlobal/Runtime/Scenes/Scene--Main.unity
     guid: f82bb937fc06ea241b1318b778ef3548
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
