@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5bfcacffcd9acd42b659c86bf633a29, type: 3}
-  m_Name: Ui--Installer--Bootstrap
+  m_Name: Ui--Installer--Shared
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.SceneBootstrap.BootstrapUiScriptableInstaller
-  _uiPresenterPrefab: {fileID: 3843468784834754865, guid: 899d9ef98392b134297e7b2768794127, type: 3}
+  _uiPresenterPrefab: {fileID: 3690268666028776807, guid: 2393b3c848a767c47a7701c5bb933e5a, type: 3}
   _serviceConfig: {fileID: 11400000, guid: 6585b369f04afc64bbb370c7841f9e98, type: 2}
   _isGlobal: 0

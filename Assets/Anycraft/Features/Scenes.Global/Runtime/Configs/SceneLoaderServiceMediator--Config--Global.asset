@@ -16,5 +16,5 @@ MonoBehaviour:
     _path: Scene--Bootstrap
     _buildIndex: 0
   _menuSceneReference:
-    _path: Scene--Main
-    _buildIndex: 2
+    _path: Scene--Menu
+    _buildIndex: 1

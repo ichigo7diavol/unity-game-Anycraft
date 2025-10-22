@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e975f5cdbf6589a4fb168a425789c248, type: 3}
-  m_Name: PopupsService--Config--Bootstrap
+  m_Name: PopupsService--Config--Shared
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Ui.PopupsServiceConfig
   _popupsPrefabs:
   - {fileID: 6801606267701710311, guid: 65ccd45693053af4bb4265fe85eb275d, type: 3}
