@@ -21,7 +21,7 @@ namespace Anycraft.Features.Scenes.Global
         )
             : base(service)
         {
-            Assert.IsNotNull(_config);
+            Assert.IsNotNull(config);
 
             _config = config;
 
