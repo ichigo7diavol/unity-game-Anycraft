@@ -43,8 +43,8 @@ namespace Anycraft.Features.Scenes.SceneBootstrap
 
             await UniTask.WaitForSeconds(1);
 
-            var progressObservale = new ReactiveProperty<float>();
-            var bottomTextObservale = new ReactiveProperty<string>("LOADING");
+            using var progressObservale = new ReactiveProperty<float>();
+            using var bottomTextObservale = new ReactiveProperty<string>("LOADING");
             
             RaiseShowLoadingPopup(bottomTextObservale, progressObservale);
 

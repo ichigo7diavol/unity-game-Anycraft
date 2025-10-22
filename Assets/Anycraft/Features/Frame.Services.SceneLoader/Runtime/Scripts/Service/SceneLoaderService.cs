@@ -38,6 +38,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
         private readonly CancellationTokenSource _cts = new();
         private readonly ProgressHandler _progressHandler;
 
+        private readonly ReactiveProperty<string> _loadingScreenBottomTextObservable = new("BOTTOM TEXT");
         private readonly ReactiveProperty<float> _progressObservable = new();
         private readonly ReactiveProperty<bool> _isLoadingObservable = new();
 
@@ -74,6 +75,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
 
             _progressHandler = new ProgressHandler(this);
 
+            _loadingScreenBottomTextObservable.AddTo(Token);
             _progressObservable.AddTo(Token);
             _isLoadingObservable.AddTo(Token);
         }
@@ -84,10 +86,10 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             Assert.IsNotNull(sceneReference);
             Assert.IsFalse(IsLoading);
 
-            await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
-
             try
             {
+                await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
+
                 var script = GetSceneScript<TSceneScript>();
                 script.StartAsync().Forget();
             }
@@ -104,10 +106,10 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             Assert.IsNotNull(sceneReference);
             Assert.IsFalse(IsLoading);
 
-            await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
-
             try
             {
+                await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
+
                 var script = GetSceneScript<TSceneScript>();
                 script.StartAsync(data).Forget();
             }
@@ -148,21 +150,23 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             return lifetimeScope.Container.Resolve<TSceneScript>();
         }
 
-        private void RaiseSceneLoadingStarted(SceneReference sceneReference)
+        private async void RaiseSceneLoadingStarted(SceneReference sceneReference)
         {
-            _sceneLoadingStartedEventPublisher.Publish(new SceneLoadingStartedEvent(
+            var data = new SceneLoadingStartedEvent(
                 "Scene loading",
-                new ReactiveProperty<string>("BOTTOM TEXT"),
+                _loadingScreenBottomTextObservable,
                 _progressObservable,
                 sceneReference
-            ));
+            );
+            _sceneLoadingStartedEventPublisher.Publish(data);
         }
         
-        private void RaiseSceneLoadingCompleted(SceneReference sceneReference)
+        private async void RaiseSceneLoadingCompleted(SceneReference sceneReference)
         {
-            _sceneLoadingCompletedEventPublisher.Publish(new SceneLoadingCompletedEvent(
+            var data = new SceneLoadingCompletedEvent(
                 sceneReference
-            ));
+            );
+            _sceneLoadingCompletedEventPublisher.Publish(data);
         }
 
         public void Dispose()
