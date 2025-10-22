@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using UnityEngine.Assertions;
 using VContainer.Unity;
 
-namespace Anycraft.Features.SceneScripting
+namespace Anycraft.Features.Frame.Services.SceneScripting
 {
     [UsedImplicitly]
     public abstract class BaseSceneScriptStarter<TSceneScript, TData>

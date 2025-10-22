@@ -7,9 +7,9 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using System.Threading;
-using Anycraft.Features.Logger;
+using Anycraft.Features.Frame.Logger;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     [UsedImplicitly]
     public sealed partial class PopupsService

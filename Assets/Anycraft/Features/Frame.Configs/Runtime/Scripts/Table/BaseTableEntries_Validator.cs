@@ -1,7 +1,7 @@
 using FluentValidation;
 using System.Linq;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     public abstract partial class BaseTableEntries<TTable, TConfig> 
     {

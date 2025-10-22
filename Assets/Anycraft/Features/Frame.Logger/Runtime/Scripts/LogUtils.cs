@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.Logger
+namespace Anycraft.Features.Frame.Logger
 {
     [UsedImplicitly]
     public static class LogUtils

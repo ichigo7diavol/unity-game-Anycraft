@@ -1,9 +1,9 @@
-using Anycraft.Features.BootstrapPopup;
-using Anycraft.Features.Logger;
-using Anycraft.Features.SceneLoader;
-using Anycraft.Features.SceneMenu;
-using Anycraft.Features.SceneScripting;
-using Anycraft.Features.Ui;
+using Anycraft.Features.Frame.Logger;
+using Anycraft.Features.Frame.Services.SceneLoader;
+using Anycraft.Features.Frame.Services.SceneScripting;
+using Anycraft.Features.Frame.Ui;
+using Anycraft.Features.Popups.BootstrapPopup;
+using Anycraft.Features.Scenes.SceneMenu;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using MessagePipe;
@@ -11,7 +11,7 @@ using R3;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.SceneBootstrap
+namespace Anycraft.Features.Scenes.SceneBootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapSceneScript

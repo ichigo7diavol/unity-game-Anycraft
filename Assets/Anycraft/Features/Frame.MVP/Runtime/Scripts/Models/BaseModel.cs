@@ -1,10 +1,10 @@
 using System;
 using System.Threading;
-using Anycraft.Features.Configs;
+using Anycraft.Features.Frame.Configs;
 using Cysharp.Threading.Tasks;
 using R3;
 
-namespace Anycraft.Features.Frame.Models
+namespace Anycraft.Features.Frame.MVP
 {
     public abstract class BaseModel<TConfig>
         : BaseModel

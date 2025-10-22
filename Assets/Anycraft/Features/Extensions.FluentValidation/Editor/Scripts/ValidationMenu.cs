@@ -1,7 +1,7 @@
-using Anycraft.Features.OdinExtensions.Windows;
+using Anycraft.Features.Extensions.Odin;
 using UnityEditor;
 
-namespace Anycraft.Features.FluentValidationExtensions 
+namespace Anycraft.Features.Extensions.FluentValidation 
 {
     public static class ValidationMenu
     {

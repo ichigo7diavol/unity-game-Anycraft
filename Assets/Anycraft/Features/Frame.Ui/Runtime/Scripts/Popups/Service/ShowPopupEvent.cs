@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using System;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     [UsedImplicitly]
     public readonly struct ShowPopupEvent<TPopupPreesnter>

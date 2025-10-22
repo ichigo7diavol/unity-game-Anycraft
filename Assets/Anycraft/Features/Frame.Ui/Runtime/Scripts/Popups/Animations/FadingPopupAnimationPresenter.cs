@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     [UsedImplicitly]
     public sealed class FadingPopupAnimationPresenter

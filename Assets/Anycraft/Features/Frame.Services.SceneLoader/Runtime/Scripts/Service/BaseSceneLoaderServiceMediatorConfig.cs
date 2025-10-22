@@ -1,8 +1,8 @@
-using Anycraft.Features.Configs;
+using Anycraft.Features.Frame.Configs;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.SceneLoader
+namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     [UsedImplicitly]
     [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneLoader) + "/" + nameof(BaseSceneLoaderServiceMediatorConfig))]

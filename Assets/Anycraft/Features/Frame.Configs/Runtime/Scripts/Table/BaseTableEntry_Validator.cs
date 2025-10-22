@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     public partial class BaseTableEntry<TTable, TConfig>
     {

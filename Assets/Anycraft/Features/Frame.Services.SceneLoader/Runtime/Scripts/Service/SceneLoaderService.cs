@@ -1,9 +1,9 @@
 using System;
 using System.Threading;
-using Anycraft.Features.Logger;
-using Anycraft.Features.SceneScripting;
+using Anycraft.Features.Extenions.VContainer;
+using Anycraft.Features.Frame.Logger;
+using Anycraft.Features.Frame.Services.SceneScripting;
 using Anycraft.Features.Services;
-using Anycraft.Features.VContainerExtenions;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using MessagePipe;
@@ -13,7 +13,7 @@ using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using VContainer;
 
-namespace Anycraft.Features.SceneLoader
+namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     [UsedImplicitly]
     public sealed class SceneLoaderService

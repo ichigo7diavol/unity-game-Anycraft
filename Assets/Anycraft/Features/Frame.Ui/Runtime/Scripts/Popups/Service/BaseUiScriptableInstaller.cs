@@ -1,5 +1,4 @@
-using Anycraft.Features.VContainerExtenions;
-using Anycraft.Features.VContainerExtenions.Installers;
+using Anycraft.Features.Extenions.VContainer;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -7,7 +6,7 @@ using UnityEngine.Assertions;
 using VContainer;
 using VContainer.Unity;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     [UsedImplicitly]
     public abstract class BaseUiScriptableInstaller<TPopupsMediator>

@@ -1,11 +1,10 @@
-using Anycraft.Features.Frame.Presenters;
+using Anycraft.Features.Frame.MVP;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
-
     [UsedImplicitly]
     public sealed class UiPresenter
         : BasePresenter

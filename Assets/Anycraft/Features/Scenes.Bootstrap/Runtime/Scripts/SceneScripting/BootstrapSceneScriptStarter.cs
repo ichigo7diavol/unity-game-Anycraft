@@ -1,7 +1,7 @@
-using Anycraft.Features.SceneScripting;
+using Anycraft.Features.Frame.Services.SceneScripting;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.SceneBootstrap
+namespace Anycraft.Features.Scenes.SceneBootstrap
 {
 
     [UsedImplicitly]

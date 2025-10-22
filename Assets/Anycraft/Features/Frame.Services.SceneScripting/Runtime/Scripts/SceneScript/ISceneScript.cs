@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.SceneScripting
+namespace Anycraft.Features.Frame.Services.SceneScripting
 {
     [UsedImplicitly]
     public interface ISceneScript

@@ -1,4 +1,4 @@
-using Anycraft.Features.Ui;
+using Anycraft.Features.Frame.Ui;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using R3;
@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Anycraft.Features.BootstrapPopup
+namespace Anycraft.Features.Popups.BootstrapPopup
 {
     
     [UsedImplicitly]

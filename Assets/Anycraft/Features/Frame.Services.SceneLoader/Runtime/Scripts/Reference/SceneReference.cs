@@ -2,7 +2,7 @@ using System;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.SceneLoader
+namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     [Serializable]
     [UsedImplicitly]

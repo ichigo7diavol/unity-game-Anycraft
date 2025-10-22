@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using FluentValidation;
 
-namespace Anycraft.Features.FluentValidationExtensions
+namespace Anycraft.Features.Extensions.FluentValidation
 {
     public sealed partial class ModalWindowValidationFailureContext
     {

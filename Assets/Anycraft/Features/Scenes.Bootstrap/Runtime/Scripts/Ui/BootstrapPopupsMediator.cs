@@ -2,10 +2,11 @@ using JetBrains.Annotations;
 using Cysharp.Threading.Tasks;
 using MessagePipe;
 using UnityEngine.Assertions;
-using Anycraft.Features.Ui;
-using Anycraft.Features.BootstrapPopup;
+using Anycraft.Features.Frame.Ui;
+using Anycraft.Features.Popups.BootstrapPopup;
+using UnityEngine;
 
-namespace Anycraft.Features.SceneBootstrap
+namespace Anycraft.Features.Scenes.SceneBootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapPopupsMediator

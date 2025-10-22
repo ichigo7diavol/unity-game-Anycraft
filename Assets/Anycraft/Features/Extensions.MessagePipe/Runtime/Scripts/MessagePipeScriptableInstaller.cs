@@ -1,13 +1,13 @@
-using Anycraft.Features.VContainerExtenions.Installers;
+using Anycraft.Features.Extenions.VContainer;
 using JetBrains.Annotations;
 using MessagePipe;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.MessagePipeExtensions.Installers
+namespace Anycraft.Features.Extensions.MessagePipe
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(MessagePipeExtensions) + "/" + nameof(MessagePipeScriptableInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" +  nameof(Extensions) + "/" + nameof(MessagePipeScriptableInstaller))]
     public sealed class MessagePipeScriptableInstaller
         : BaseScriptableInstaller
     {

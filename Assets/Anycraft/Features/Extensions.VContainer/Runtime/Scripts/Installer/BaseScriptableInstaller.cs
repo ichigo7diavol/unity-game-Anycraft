@@ -1,13 +1,10 @@
-using System.Collections.Generic;
-using Anycraft.Features.FluentValidationExtensions;
+using Anycraft.Features.Extensions.FluentValidation;
 using JetBrains.Annotations;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Assertions;
 using VContainer;
-using System;
 
-namespace Anycraft.Features.VContainerExtenions.Installers
+namespace Anycraft.Features.Extenions.VContainer
 {
     [UsedImplicitly]
     public abstract partial class BaseScriptableInstaller

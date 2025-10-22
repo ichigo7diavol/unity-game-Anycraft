@@ -1,12 +1,12 @@
-using Anycraft.Features.Ui;
+using Anycraft.Features.Frame.Frame.Ui;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.BootstrapPopup
+namespace Anycraft.Features.Popups.BootstrapPopup
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneBootstrap) + "/" + nameof(GlobalUiScriptableInstaller))]
-    public sealed class GlobalUiScriptableInstaller
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Popups) + "/" + nameof(BootstrapPopup) + "/" + nameof(BootstrapPopupScriptableInstaller))]
+    public sealed class BootstrapPopupScriptableInstaller
         : BasePopupScriptableInstaller<BootstrapPopupPresenter>
     {
     }

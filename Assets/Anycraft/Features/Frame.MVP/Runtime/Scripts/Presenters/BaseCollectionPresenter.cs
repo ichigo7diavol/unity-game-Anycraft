@@ -6,7 +6,7 @@ using R3;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.Frame.Presenters
+namespace Anycraft.Features.Frame.MVP
 {
     public abstract class BaseCollectionPresenter<TPresenter>
         : BasePresenter

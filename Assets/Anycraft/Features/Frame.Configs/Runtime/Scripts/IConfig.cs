@@ -1,7 +1,7 @@
-using Anycraft.Features.FluentValidationExtensions;
+using Anycraft.Features.Extensions.FluentValidation;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     [UsedImplicitly]
     public interface IConfig

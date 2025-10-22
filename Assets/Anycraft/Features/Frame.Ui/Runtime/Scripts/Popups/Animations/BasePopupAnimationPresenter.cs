@@ -1,8 +1,8 @@
-using Anycraft.Features.Frame.Presenters;
 using JetBrains.Annotations;
 using Cysharp.Threading.Tasks;
+using Anycraft.Features.Frame.MVP;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     [UsedImplicitly]
     public abstract class BasePopupAnimationPresenter

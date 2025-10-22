@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.Logger
+namespace Anycraft.Features.Frame.Logger
 {
     [UsedImplicitly]
     public static class LogExtensions

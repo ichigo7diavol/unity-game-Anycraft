@@ -1,11 +1,11 @@
-using Anycraft.Features.SceneLoader;
-using Anycraft.Features.SceneMenu;
 using JetBrains.Annotations;
 using MessagePipe;
 using Cysharp.Threading.Tasks;
 using UnityEngine.Assertions;
+using Anycraft.Features.Frame.Services.SceneLoader;
+using Anycraft.Features.Scenes.SceneMenu;
 
-namespace Anycraft.Features.Global
+namespace Anycraft.Features.Scenes.Global
 {
     [UsedImplicitly]
     public sealed class GlobalSceneLoaderServiceMediator

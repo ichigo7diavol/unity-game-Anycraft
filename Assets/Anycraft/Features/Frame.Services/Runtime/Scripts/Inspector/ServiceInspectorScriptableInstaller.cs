@@ -1,5 +1,4 @@
-using Anycraft.Features.VContainerExtenions;
-using Anycraft.Features.VContainerExtenions.Installers;
+using Anycraft.Features.Extenions.VContainer;
 using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;

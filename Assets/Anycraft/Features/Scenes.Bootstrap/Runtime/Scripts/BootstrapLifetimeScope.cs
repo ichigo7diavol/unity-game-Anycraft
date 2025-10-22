@@ -1,6 +1,6 @@
-using Anycraft.Features.VContainerExtenions;
+using Anycraft.Features.Extenions.VContainer;
 
-namespace Anycraft.Features.SceneBootstrap
+namespace Anycraft.Features.Scenes.SceneBootstrap
 {
     public sealed class BootstrapLifetimeScope
         : BaseLifetimeScope

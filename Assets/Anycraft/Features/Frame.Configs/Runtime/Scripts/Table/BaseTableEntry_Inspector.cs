@@ -2,10 +2,10 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Anycraft.Features.Utilities;
+using Anycraft.Features.Frame.Utilities;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     public partial class BaseTableEntry<TTable, TConfig>
     {
@@ -20,7 +20,8 @@ namespace Anycraft.Features.Configs
 
         private IEnumerable<string> GetIds()
         {
-            var table = RuntimeEditorUtils.LoadFirstAssetOfType<TTable>();
+            var table = RuntimeEditorUtils
+                .LoadFirstAssetOfType<TTable>();
 
             return table.Configs.Select(e => e.Id);
         }

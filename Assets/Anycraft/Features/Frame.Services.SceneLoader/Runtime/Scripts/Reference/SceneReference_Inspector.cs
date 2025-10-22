@@ -3,7 +3,7 @@
 using Sirenix.OdinInspector;
 using UnityEditor;
 
-namespace Anycraft.Features.SceneLoader
+namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     public sealed partial class SceneReference
     {

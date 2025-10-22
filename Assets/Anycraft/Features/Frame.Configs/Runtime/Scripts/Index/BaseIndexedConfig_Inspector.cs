@@ -1,6 +1,6 @@
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     public abstract partial class BaseIndexedConfig
     {

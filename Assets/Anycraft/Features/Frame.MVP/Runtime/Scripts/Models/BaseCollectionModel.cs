@@ -1,12 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using Cysharp.Threading.Tasks;
 using ObservableCollections;
 using R3;
 using UnityEngine;
 
-namespace Anycraft.Features.Frame.Models
+namespace Anycraft.Features.Frame.MVP
 {
     public abstract class BaseCollectionModel<TModel> 
         : BaseModel

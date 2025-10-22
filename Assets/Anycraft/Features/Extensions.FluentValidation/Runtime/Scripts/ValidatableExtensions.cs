@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Anycraft.Features.FluentValidationExtensions
+namespace Anycraft.Features.Extensions.FluentValidation
 {
     public static class ValidatableExtensions
     {

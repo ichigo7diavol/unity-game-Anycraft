@@ -3,9 +3,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
-using Anycraft.Features.Utilities;
+using Anycraft.Features.Frame.Utilities;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     public partial class BaseTableEntries<TTable, TConfig>
     {

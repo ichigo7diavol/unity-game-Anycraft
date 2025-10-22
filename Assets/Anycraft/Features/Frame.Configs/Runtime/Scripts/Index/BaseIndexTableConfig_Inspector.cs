@@ -1,10 +1,10 @@
 #if UNITY_EDITOR
 
 using System.Collections.Generic;
-using Anycraft.Features.Utilities;
+using Anycraft.Features.Frame.Utilities;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     public partial class BaseIndexTableConfig<TConfig>
     {

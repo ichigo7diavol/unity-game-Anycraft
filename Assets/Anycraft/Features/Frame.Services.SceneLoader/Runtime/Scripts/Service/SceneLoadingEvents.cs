@@ -1,7 +1,7 @@
 using R3;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.SceneLoader
+namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     public readonly struct SceneLoadingStartedEvent
     {

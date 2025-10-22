@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     [Serializable]
     [UsedImplicitly]

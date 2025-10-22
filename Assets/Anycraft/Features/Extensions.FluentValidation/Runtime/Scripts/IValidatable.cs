@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.FluentValidationExtensions
+namespace Anycraft.Features.Extensions.FluentValidation
 {
     [UsedImplicitly]
     public interface IValidatable

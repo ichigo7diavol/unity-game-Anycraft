@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace Anycraft.Features.Utilities
+namespace Anycraft.Features.Frame.Utilities
 {
     public static class RuntimeEditorUtils
     {

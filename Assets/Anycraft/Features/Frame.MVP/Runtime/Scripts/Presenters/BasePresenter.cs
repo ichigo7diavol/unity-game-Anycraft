@@ -1,12 +1,10 @@
 using System.Threading;
-using System.Xml.Serialization;
-using Anycraft.Features.Frame.Models;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using R3;
 using UnityEngine;
 
-namespace Anycraft.Features.Frame.Presenters
+namespace Anycraft.Features.Frame.MVP
 {
     [UsedImplicitly]
     public abstract class BasePresenter<TModel>

@@ -1,14 +1,13 @@
 #if UNITY_EDITOR
 
 using System.Collections.Generic;
-using Anycraft.Features.Utilities;
 using FluentValidation;
 using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-namespace Anycraft.Features.FluentValidationExtensions
+namespace Anycraft.Features.Extensions.FluentValidation
 {
     public partial class ModalWindowValidationFailureContext
     {

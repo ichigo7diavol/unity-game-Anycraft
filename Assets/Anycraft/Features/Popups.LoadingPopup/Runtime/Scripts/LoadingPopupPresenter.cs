@@ -1,4 +1,4 @@
-using Anycraft.Features.Ui;
+using Anycraft.Features.Frame.Ui;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using MessagePipe;
@@ -7,8 +7,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-
-namespace Anycraft.Features.LoadingPopup
+namespace Anycraft.Features.Popups.LoadingPopup
 {
     [UsedImplicitly]
     public sealed class LoadingPopupPresenter

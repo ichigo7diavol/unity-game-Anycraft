@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using VContainer;
 
-namespace Anycraft.Features.VContainerExtenions.Installers
+namespace Anycraft.Features.Extenions.VContainer
 {
     [UsedImplicitly]
     public abstract class BaseMonoInstaller

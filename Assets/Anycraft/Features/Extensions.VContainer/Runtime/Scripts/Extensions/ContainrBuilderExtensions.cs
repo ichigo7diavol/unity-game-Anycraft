@@ -2,10 +2,10 @@ using VContainer;
 using UnityEngine;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.VContainerExtenions
+namespace Anycraft.Features.Extenions.VContainer
 {
     [UsedImplicitly]
-    public static class ContainrBuilderExtensions
+    public static class ContainerBuilderExtensions
     {
         public static void AsLazy<T>(this IContainerBuilder builder)
         {

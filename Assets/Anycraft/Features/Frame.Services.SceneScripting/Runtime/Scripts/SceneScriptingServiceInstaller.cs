@@ -1,9 +1,9 @@
-using Anycraft.Features.VContainerExtenions.Installers;
+using Anycraft.Features.Extenions.VContainer;
 using JetBrains.Annotations;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.SceneScripting
+namespace Anycraft.Features.Frame.Services.SceneScripting
 {
     [UsedImplicitly]
     public abstract class BaseSceneScriptingServiceScriptableInstaller<TSceneScript, TSceneScriptConfig>

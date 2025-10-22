@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System;
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     public sealed partial class PopupsService
     {

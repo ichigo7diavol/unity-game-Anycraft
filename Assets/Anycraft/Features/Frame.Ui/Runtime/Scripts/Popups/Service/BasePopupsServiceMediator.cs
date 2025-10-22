@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     [UsedImplicitly]
     public abstract class BasePopupsServiceMediator

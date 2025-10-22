@@ -1,14 +1,11 @@
-using System;
-using Anycraft.Features.Configs;
-using Anycraft.Features.VContainerExtenions;
-using Anycraft.Features.VContainerExtenions.Installers;
+using Anycraft.Features.Extenions.VContainer;
 using JetBrains.Annotations;
 using NUnit.Framework;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using VContainer;
 
-namespace Anycraft.Features.SceneLoader
+namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     [UsedImplicitly]
     public abstract class BaseSceneLoaderServiceMediatorInstaller<

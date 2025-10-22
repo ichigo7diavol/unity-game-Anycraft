@@ -1,12 +1,12 @@
-using Anycraft.Features.Frame.Presenters;
 using Cysharp.Threading.Tasks;
 using UnityEngine.Assertions;
 using VContainer;
 using VContainer.Unity;
 using JetBrains.Annotations;
 using UnityEngine;
+using Anycraft.Features.Frame.MVP;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     [UsedImplicitly]
     public sealed class PopupsPresenter

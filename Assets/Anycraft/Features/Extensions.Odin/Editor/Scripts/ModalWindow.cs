@@ -4,7 +4,7 @@ using UnityEngine;
 using Sirenix.Utilities.Editor;
 using Sirenix.Utilities;
 
-namespace Anycraft.Features.OdinExtensions.Windows
+namespace Anycraft.Features.Extensions.Odin
 {
     public sealed class ModalWindow
         : OdinEditorWindow

@@ -1,6 +1,6 @@
 using Sirenix.OdinInspector;
 
-namespace Anycraft.Features.SceneScripting
+namespace Anycraft.Features.Frame.Services.SceneScripting
 {
     public partial class SceneScriptingService
     {

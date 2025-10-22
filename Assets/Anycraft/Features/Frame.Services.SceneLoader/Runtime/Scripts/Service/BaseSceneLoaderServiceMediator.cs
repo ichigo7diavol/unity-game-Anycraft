@@ -1,12 +1,11 @@
 using System;
 using System.Threading;
-using Anycraft.Features.Logger;
-using Anycraft.Features.SceneScripting;
-using Cysharp.Threading.Tasks;
+using Anycraft.Features.Frame.Logger;
+using Anycraft.Features.Frame.Services.SceneScripting;
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.SceneLoader
+namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     [UsedImplicitly]
     public readonly struct LoadSceneEvent<TSceneScript>

@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using NUnit.Framework;
 
-namespace Anycraft.Features.SceneScripting
+namespace Anycraft.Features.Frame.Services.SceneScripting
 {
     [UsedImplicitly]
     public abstract class BaseSceneScriptingServiceMediator

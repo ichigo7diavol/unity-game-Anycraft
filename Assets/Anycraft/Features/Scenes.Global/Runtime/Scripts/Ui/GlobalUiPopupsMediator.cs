@@ -1,13 +1,13 @@
-using Anycraft.Features.LoadingPopup;
-using Anycraft.Features.SceneLoader;
-using Anycraft.Features.Ui;
+using Anycraft.Features.Frame.Services.SceneLoader;
+using Anycraft.Features.Frame.Ui;
+using Anycraft.Features.Popups.LoadingPopup;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using MessagePipe;
 using R3;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.Global
+namespace Anycraft.Features.Scenes.Global
 {
     [UsedImplicitly]
     public sealed class GlobalUiPopupsMediator

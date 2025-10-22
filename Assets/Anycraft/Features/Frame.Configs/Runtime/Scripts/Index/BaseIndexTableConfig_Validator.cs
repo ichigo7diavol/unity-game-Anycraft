@@ -1,8 +1,8 @@
 using FluentValidation;
-using Anycraft.Features.FluentValidationExtensions;
 using System.Linq;
+using Anycraft.Features.Extensions.FluentValidation;
 
-namespace Anycraft.Features.Configs
+namespace Anycraft.Features.Frame.Configs
 {
     public abstract partial class BaseIndexTableConfig<TConfig> 
     {

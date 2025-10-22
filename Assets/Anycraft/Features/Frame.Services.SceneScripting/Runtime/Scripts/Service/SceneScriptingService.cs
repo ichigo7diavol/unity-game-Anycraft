@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.SceneScripting
+namespace Anycraft.Features.Frame.Services.SceneScripting
 {
     [UsedImplicitly]
     public sealed partial class SceneScriptingService

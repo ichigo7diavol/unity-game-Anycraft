@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.Ui
+namespace Anycraft.Features.Frame.Ui
 {
     [UsedImplicitly]
     public interface IPopupPresenter

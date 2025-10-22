@@ -1,8 +1,8 @@
-using Anycraft.Features.SceneScripting;
+using Anycraft.Features.Frame.Services.SceneScripting;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Anycraft.Features.SceneBootstrap
+namespace Anycraft.Features.Scenes.SceneBootstrap
 {
     [UsedImplicitly]
     [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneBootstrap) + "/" + nameof(BootstrapSceneScriptStarterScriptableInstaller))]
