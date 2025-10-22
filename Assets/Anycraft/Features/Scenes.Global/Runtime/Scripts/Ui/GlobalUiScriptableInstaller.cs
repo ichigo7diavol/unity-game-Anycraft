@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Anycraft.Features.Scenes.Global
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Global) + "/" + nameof(GlobalUiScriptableInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Scenes) + "/" + nameof(Global) + "/" + nameof(GlobalUiScriptableInstaller))]
     public sealed class GlobalUiScriptableInstaller
         : BaseUiScriptableInstaller<GlobalUiPopupsMediator>
     {

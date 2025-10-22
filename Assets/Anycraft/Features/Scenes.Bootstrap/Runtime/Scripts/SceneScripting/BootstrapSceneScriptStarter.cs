@@ -3,7 +3,6 @@ using JetBrains.Annotations;
 
 namespace Anycraft.Features.Scenes.SceneBootstrap
 {
-
     [UsedImplicitly]
     public sealed class BootstrapSceneScriptStarter
         : BaseSceneScriptStarter<BootstrapSceneScript>

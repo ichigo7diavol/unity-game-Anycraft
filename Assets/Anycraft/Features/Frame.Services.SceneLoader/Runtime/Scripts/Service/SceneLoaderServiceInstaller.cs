@@ -6,7 +6,7 @@ using VContainer;
 namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneLoader) + "/" + nameof(SceneLoaderServiceInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Frame) + "/" + nameof(Services) + "/" + nameof(SceneLoader) + "/" + nameof(SceneLoaderServiceInstaller))]
     public sealed class SceneLoaderServiceInstaller
         : BaseScriptableInstaller
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Anycraft.Features.Scenes.SceneBootstrap
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneBootstrap) + "/" + nameof(BootstrapSceneScriptingServiceScriptableInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Scenes) + "/" + nameof(SceneBootstrap) + "/" + nameof(BootstrapSceneScriptingServiceScriptableInstaller))]
     public sealed class BootstrapSceneScriptingServiceScriptableInstaller
         : BaseSceneScriptingServiceScriptableInstaller<BootstrapSceneScript>
     {

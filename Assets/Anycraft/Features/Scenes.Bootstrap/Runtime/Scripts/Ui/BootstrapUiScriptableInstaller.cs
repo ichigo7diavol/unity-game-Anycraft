@@ -6,7 +6,7 @@ using VContainer;
 namespace Anycraft.Features.Scenes.SceneBootstrap
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(SceneBootstrap) + "/" + nameof(BootstrapUiScriptableInstaller))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Scenes) + "/" + nameof(SceneBootstrap) + "/" + nameof(BootstrapUiScriptableInstaller))]
     public sealed class BootstrapUiScriptableInstaller
         : BaseUiScriptableInstaller<BootstrapPopupsMediator>
     {

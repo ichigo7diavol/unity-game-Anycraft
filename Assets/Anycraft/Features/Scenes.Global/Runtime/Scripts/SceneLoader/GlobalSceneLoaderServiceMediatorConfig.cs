@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Anycraft.Features.Scenes.Global
 {
     [UsedImplicitly]
-    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Global) + "/" + nameof(GlobalSceneLoaderServiceMediatorConfig))]
+    [CreateAssetMenu(menuName = nameof(Anycraft) + "/" + nameof(Features) + "/" + nameof(Scenes) + "/" + nameof(Global) + "/" + nameof(GlobalSceneLoaderServiceMediatorConfig))]
     public sealed class GlobalSceneLoaderServiceMediatorConfig
         : BaseSceneLoaderServiceMediatorConfig
     {
