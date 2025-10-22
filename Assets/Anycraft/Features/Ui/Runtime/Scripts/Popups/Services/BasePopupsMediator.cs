@@ -30,6 +30,7 @@ namespace Anycraft.Features.Ui
 
         protected void OnShowPopup<TPopupPresenter, TPopupData>(ShowPopupEvent<TPopupPresenter, TPopupData> data)
             where TPopupPresenter : BasePopupPresenter<TPopupData>
+            where TPopupData : class
         {
             Service.ShowPopupAsync<TPopupPresenter, TPopupData>(data.PopupData).Forget();
         }

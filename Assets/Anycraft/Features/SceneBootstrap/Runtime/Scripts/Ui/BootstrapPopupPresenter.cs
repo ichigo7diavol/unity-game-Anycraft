@@ -8,11 +8,12 @@ using UnityEngine.UI;
 
 namespace Anycraft.Features.SceneBootstrap
 {
+    
     [UsedImplicitly]
     public sealed class BootstrapPopupPresenter
         : BasePopupPresenter<BootstrapPopupPresenter.Data>
     {
-        public readonly struct Data
+        public sealed class Data
         {
             public readonly ReadOnlyReactiveProperty<float> ProgressObservable;
 
@@ -27,9 +28,15 @@ namespace Anycraft.Features.SceneBootstrap
 
         protected override void OnDataChanged(Data data)
         {
+            base.OnDataChanged(data);
+            
+            if (data == null)
+            {
+                return;
+            }
             data.ProgressObservable
                 .Subscribe(this, (value, state) => state._progressSlider.value = value)
-                .AddTo(Token);
+                .AddTo(DataCtsToken);
         }
     } 
 }

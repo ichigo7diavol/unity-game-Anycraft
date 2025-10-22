@@ -11,31 +11,35 @@ using UnityEngine.UI;
 namespace Anycraft.Features.Global
 {
     [UsedImplicitly]
-    public readonly struct LoadingPopupData
-    {
-        public readonly ReadOnlyReactiveProperty<float> ProgressObservable;
-
-        public LoadingPopupData(ReadOnlyReactiveProperty<float> progressObservable)
-        {
-            Assert.IsNotNull(progressObservable);
-
-            ProgressObservable = progressObservable;
-        }
-    }
-    
-    [UsedImplicitly]
     public sealed class LoadingPopupPresenter
-        : BasePopupPresenter<LoadingPopupData>
+        : BasePopupPresenter<LoadingPopupPresenter.Data>
     {
+        [UsedImplicitly]
+        public sealed class Data
+        {
+            public readonly ReadOnlyReactiveProperty<float> ProgressObservable;
+
+            public Data(ReadOnlyReactiveProperty<float> progressObservable)
+            {
+                Assert.IsNotNull(progressObservable);
+
+                ProgressObservable = progressObservable;
+            }
+        }
+    
         [SerializeField] private Slider _progressSlider;
 
-        protected override void OnDataChanged(LoadingPopupData data)
+        protected override void OnDataChanged(Data data)
         {
             base.OnDataChanged(data);
 
+            if (data == null)
+            {
+                return;
+            }
             data.ProgressObservable
                 .Subscribe(this, (value, state) => state._progressSlider.value = value)
-                .AddTo(Token);
+                .AddTo(DataCtsToken);
         }
     }
 }

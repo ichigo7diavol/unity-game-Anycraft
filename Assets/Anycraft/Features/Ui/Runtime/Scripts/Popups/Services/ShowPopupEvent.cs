@@ -11,12 +11,13 @@ namespace Anycraft.Features.Ui
     }
 
     [UsedImplicitly]
-    public readonly struct ShowPopupEvent<TPopupPreesnter, TData>
-        where TPopupPreesnter : BasePopupPresenter<TData>
+    public readonly struct ShowPopupEvent<TPopupPreesnter, TPopupData>
+        where TPopupPreesnter : BasePopupPresenter<TPopupData>
+        where TPopupData : class
     {
-        public readonly TData PopupData;
+        public readonly TPopupData PopupData;
 
-        public ShowPopupEvent(TData data)
+        public ShowPopupEvent(TPopupData data)
         {
             PopupData = data;
         }

@@ -5,7 +5,7 @@ using VContainer;
 namespace Anycraft.Features.SceneLoader
 {
     [UsedImplicitly]
-    public abstract class BaseSceneLoaderServiceMediatorInstaller<TSceneLoaderServiceMediator>
+    public abstract class BaseSceneLoaderServiceInstaller<TSceneLoaderServiceMediator>
         : BaseScriptableInstaller
         where TSceneLoaderServiceMediator : BaseSceneLoaderServiceMediator
     {

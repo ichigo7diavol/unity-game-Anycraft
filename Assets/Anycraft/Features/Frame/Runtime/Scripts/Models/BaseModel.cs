@@ -22,7 +22,7 @@ namespace Anycraft.Features.Frame.Models
             : base()
         {
             _configObservable.Subscribe();
-            _configObservable.AddTo(Token);
+            _configObservable.AddTo(CtsToken);
         }
 
         protected virtual void OnConfigChanged(TConfig config)
@@ -35,7 +35,7 @@ namespace Anycraft.Features.Frame.Models
     {
         private readonly CancellationTokenSource _cts = new();
 
-        public CancellationToken Token => _cts.Token;
+        public CancellationToken CtsToken => _cts.Token;
 
         protected BaseModel()
         {

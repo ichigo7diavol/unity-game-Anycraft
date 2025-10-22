@@ -4,14 +4,20 @@ using R3;
 using JetBrains.Annotations;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Threading;
 
 namespace Anycraft.Features.Ui
 {
     [UsedImplicitly]
     public abstract class BasePopupPresenter<TData>
         : BasePopupPresenter
+        where TData : class
     {
         private readonly ReactiveProperty<TData> _dataObservable = new();
+
+        private CancellationTokenSource _dataCts;
+
+        public CancellationToken DataCtsToken => _dataCts.Token;
 
         public TData PopupData
         {
@@ -21,12 +27,26 @@ namespace Anycraft.Features.Ui
 
         protected virtual void OnDataChanged(TData data)
         {
+            _dataCts?.Cancel();
+            _dataCts?.Dispose();
+
+            if (data == null)
+            {
+                return;
+            }
+            _dataCts = new();
         }
 
-        private void Awake()
+        protected void Awake()
         {
             _dataObservable.Subscribe(OnDataChanged);
-            _dataObservable.AddTo(Token);
+            _dataObservable.AddTo(CtsToken);
+        }
+
+        protected void Oestroy()
+        {
+            _dataCts?.Cancel();
+            _dataCts?.Dispose();
         }
     }
 

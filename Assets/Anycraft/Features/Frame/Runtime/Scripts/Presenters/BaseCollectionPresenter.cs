@@ -19,10 +19,10 @@ namespace Anycraft.Features.Frame.Presenters
         private void Awake()
         {
             _presenters.ObserveAdd().Subscribe(OnPresenterAdd)
-                .AddTo(Token);
+                .AddTo(CtsToken);
             
             _presenters.ObserveRemove().Subscribe(OnPresenterRemove)
-                .AddTo(Token);
+                .AddTo(CtsToken);
         }
 
         public async UniTask<TPresenter> CreateAsync<T>(T prefab)

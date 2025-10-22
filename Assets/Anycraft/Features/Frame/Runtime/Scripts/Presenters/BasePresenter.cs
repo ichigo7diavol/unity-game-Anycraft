@@ -22,7 +22,7 @@ namespace Anycraft.Features.Frame.Presenters
         private void Awake()
         {
             _modelObservable.Subscribe(OnModelChanged);
-            _modelObservable.AddTo(Token);
+            _modelObservable.AddTo(CtsToken);
         }
     }
 
@@ -30,7 +30,7 @@ namespace Anycraft.Features.Frame.Presenters
     public abstract class BasePresenter
         : MonoBehaviour
     {
-        public CancellationToken Token => destroyCancellationToken;
+        public CancellationToken CtsToken => destroyCancellationToken;
 
         protected virtual void OnDestroy()
         {

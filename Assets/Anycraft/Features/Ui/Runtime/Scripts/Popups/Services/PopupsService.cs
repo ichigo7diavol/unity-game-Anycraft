@@ -40,8 +40,9 @@ namespace Anycraft.Features.Ui
                 .ToDictionary(p => p.GetType());
         }
         
-        public async UniTask<TPopupPresenter> ShowPopupAsync<TPopupPresenter, TData>(TData data)
-            where TPopupPresenter : BasePopupPresenter<TData>
+        public async UniTask<TPopupPresenter> ShowPopupAsync<TPopupPresenter, TPopupData>(TPopupData data)
+            where TPopupPresenter : BasePopupPresenter<TPopupData>
+            where TPopupData : class
         {
             this.LogStepStarted($"Opening: {typeof(TPopupPresenter).Name}");
             try
@@ -116,7 +117,7 @@ namespace Anycraft.Features.Ui
             var prefab = GetPrefab<TPopupPresenter>();
             presenter = await _presenter.CreateAsync(prefab);
 
-            presenter.Token.Register(() => _popups.Remove(type));
+            presenter.CtsToken.Register(() => _popups.Remove(type));
             _popups.Add(type, presenter);
 
             this.LogStepCompleted($"Creating: {typeof(TPopupPresenter).Name}");

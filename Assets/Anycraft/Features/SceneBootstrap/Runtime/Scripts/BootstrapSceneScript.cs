@@ -1,11 +1,15 @@
 using Anycraft.Features.Logger;
+using Anycraft.Features.SceneLoader;
+using Anycraft.Features.SceneMenu;
 using Anycraft.Features.SceneScripting;
 using Anycraft.Features.Ui;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using MessagePipe;
 using R3;
+using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 
 namespace Anycraft.Features.SceneBootstrap
 {
@@ -15,16 +19,20 @@ namespace Anycraft.Features.SceneBootstrap
     {
         private readonly IPublisher<ShowPopupEvent<BootstrapPopupPresenter,
             BootstrapPopupPresenter.Data>> _showBootstrapPopupPublisher;
+        private readonly IPublisher<LoadSceneEvent<MenuSceneScript>> _loadSceneMenuPublisher;
 
         public BootstrapSceneScript
         (
             IPublisher<ShowPopupEvent<BootstrapPopupPresenter,
-                BootstrapPopupPresenter.Data>> showBootstrapPopupPublisher
+                BootstrapPopupPresenter.Data>> showBootstrapPopupPublisher,
+            IPublisher<LoadSceneEvent<MenuSceneScript>> loadSceneMenuPublisher
         )
         {
             Assert.IsNotNull(showBootstrapPopupPublisher);
+            Assert.IsNotNull(loadSceneMenuPublisher);
 
             _showBootstrapPopupPublisher = showBootstrapPopupPublisher;
+            _loadSceneMenuPublisher = loadSceneMenuPublisher;
         }
 
         public async UniTask StartAsync()
@@ -45,8 +53,20 @@ namespace Anycraft.Features.SceneBootstrap
 
             _showBootstrapPopupPublisher.Publish(eventData);
 
-            this.LogStepCompleted($"opened: {nameof(BootstrapPopupPresenter)}");
-            
+            this.LogStepCompleted($"opening: {nameof(BootstrapPopupPresenter)}");
+
+            var duration = 1.0f;
+            var t = 0.0f;
+
+            while (t < duration)
+            {
+                t += Time.unscaledDeltaTime;
+                progressObservale.Value = t;
+
+                await UniTask.NextFrame();
+            }
+            _loadSceneMenuPublisher.Publish(new LoadSceneEvent<MenuSceneScript>());
+
             this.LogStepCompleted("execution");
         }
     }

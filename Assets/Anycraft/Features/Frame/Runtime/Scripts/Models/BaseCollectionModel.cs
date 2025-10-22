@@ -18,8 +18,8 @@ namespace Anycraft.Features.Frame.Models
 
         protected BaseCollectionModel()
         {
-            _models.ObserveAdd().Subscribe(OnModelAdd).AddTo(Token);
-            _models.ObserveRemove().Subscribe(OnModelRemove).AddTo(Token);
+            _models.ObserveAdd().Subscribe(OnModelAdd).AddTo(CtsToken);
+            _models.ObserveRemove().Subscribe(OnModelRemove).AddTo(CtsToken);
         }
 
         public TModel Create<T>()
@@ -53,7 +53,7 @@ namespace Anycraft.Features.Frame.Models
         protected virtual void OnModelAdd(
             CollectionAddEvent<KeyValuePair<int, BaseModel>> data)
         {
-            data.Value.Value.Token
+            data.Value.Value.CtsToken
                 .Register(() => _models.Remove(data.Value.Key));
         }
 
