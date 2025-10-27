@@ -385,6 +385,7 @@ MonoBehaviour:
   autoInjectGameObjects: []
   _monoInstallers: []
   _scriptableInstallers:
+  - {fileID: 11400000, guid: a6644a41f6cd9e6418c2e77b9bb5aab0, type: 2}
   - {fileID: 11400000, guid: 1d56c8b499c042f4dba5db5ae017dc7c, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

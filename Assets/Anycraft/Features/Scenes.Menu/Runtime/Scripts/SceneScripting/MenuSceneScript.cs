@@ -8,7 +8,7 @@ namespace Anycraft.Features.Scenes.SceneMenu
     {
         public UniTask StartAsync()
         {
-            throw new System.NotImplementedException();
+            return UniTask.CompletedTask;
         }
     }
 }

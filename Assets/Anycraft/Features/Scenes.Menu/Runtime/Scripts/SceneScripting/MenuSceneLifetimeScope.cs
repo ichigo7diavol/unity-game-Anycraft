@@ -1,8 +1,10 @@
 using Anycraft.Features.Extenions.VContainer;
+using JetBrains.Annotations;
 
 namespace Anycraft.Features.Scenes.SceneMenu
 {
-    public class MenuSceneLifetimeScope
+    [UsedImplicitly]
+    public sealed class MenuSceneLifetimeScope
         : BaseLifetimeScope
     {
     }

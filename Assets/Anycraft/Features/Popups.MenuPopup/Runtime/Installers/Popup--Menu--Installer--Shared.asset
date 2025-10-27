@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 321a5a0bb03f16c46a158686367541c9, type: 3}
-  m_Name: MenuPopupScriptable--Installer
+  m_Name: Popup--Menu--Installer--Shared
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Popups.MenuPopup.MenuPopupScriptableInstaller
   _prefab: {fileID: 1188387604418153085, guid: bb1e4ff287b35b846b837135804bac18, type: 3}
