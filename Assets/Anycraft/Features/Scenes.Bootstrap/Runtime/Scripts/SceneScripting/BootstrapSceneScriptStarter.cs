@@ -1,7 +1,7 @@
 using Anycraft.Features.Frame.Services.SceneScripting;
 using JetBrains.Annotations;
 
-namespace Anycraft.Features.Scenes.SceneBootstrap
+namespace Anycraft.Features.Scenes.Bootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapSceneScriptStarter

@@ -5,14 +5,14 @@ using Cysharp.Threading.Tasks;
 using MessagePipe;
 using NUnit.Framework;
 
-namespace Anycraft.Features.Scenes.SceneMenu
+namespace Anycraft.Features.Scenes.Main
 {
-    public sealed class MenuSceneScript
+    public sealed class MainSceneScript
         : BaseSceneScript, ISceneScriptStartable
     {
         private readonly IAsyncPublisher<ShowPopupEvent<MenuPopupPresenter>> _openMenuPopupPublisher;
 
-        public MenuSceneScript
+        public MainSceneScript
         (
             IAsyncPublisher<ShowPopupEvent<MenuPopupPresenter>> openMenuPopupPublisher
         )

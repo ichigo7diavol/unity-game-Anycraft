@@ -4,9 +4,8 @@ using MessagePipe;
 using UnityEngine.Assertions;
 using Anycraft.Features.Frame.Ui;
 using Anycraft.Features.Popups.LoadingPopup;
-using UnityEngine;
 
-namespace Anycraft.Features.Scenes.SceneBootstrap
+namespace Anycraft.Features.Scenes.Bootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapPopupsMediator

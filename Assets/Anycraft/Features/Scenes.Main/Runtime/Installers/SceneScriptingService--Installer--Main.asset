@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee750cc44f7a70f49abd9a127a927edf, type: 3}
-  m_Name: SceneScriptingService--Installer--Menu
+  m_Name: SceneScriptingService--Installer--Main
   m_EditorClassIdentifier: Assembly-CSharp::Anycraft.Features.Scenes.SceneMenu.MenuSceneScriptingServiceScriptableInstaller

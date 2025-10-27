@@ -3,7 +3,7 @@ using MessagePipe;
 using Cysharp.Threading.Tasks;
 using UnityEngine.Assertions;
 using Anycraft.Features.Frame.Services.SceneLoader;
-using Anycraft.Features.Scenes.SceneMenu;
+using Anycraft.Features.Scenes.Main;
 using System.Threading;
 
 namespace Anycraft.Features.Scenes.Global
@@ -18,7 +18,7 @@ namespace Anycraft.Features.Scenes.Global
         (
             SceneLoaderService service,
             GlobalSceneLoaderServiceMediatorConfig config,
-            ISubscriber<LoadSceneEvent<MenuSceneScript>> loadSceneMenuSubscriber
+            ISubscriber<LoadSceneEvent<MainSceneScript>> loadSceneMenuSubscriber
         )
             : base(service)
         {
@@ -31,10 +31,10 @@ namespace Anycraft.Features.Scenes.Global
                 .AddTo(CtsToken);
         }
 
-        private void OnLoadSceneMenu(LoadSceneEvent<MenuSceneScript> _)
+        private void OnLoadSceneMenu(LoadSceneEvent<MainSceneScript> _)
         {
             Service.LoadSceneAndRunScriptAsync<
-                MenuSceneLifetimeScope, MenuSceneScript>(_config.MenuSceneReference)
+                MainSceneLifetimeScope, MainSceneScript>(_config.MenuSceneReference)
                 .Forget();
         }
     }

@@ -3,7 +3,7 @@ using Anycraft.Features.Frame.Services.SceneLoader;
 using Anycraft.Features.Frame.Services.SceneScripting;
 using Anycraft.Features.Frame.Ui;
 using Anycraft.Features.Popups.LoadingPopup;
-using Anycraft.Features.Scenes.SceneMenu;
+using Anycraft.Features.Scenes.Main;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using MessagePipe;
@@ -11,7 +11,7 @@ using R3;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Anycraft.Features.Scenes.SceneBootstrap
+namespace Anycraft.Features.Scenes.Bootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapSceneScript
@@ -19,13 +19,13 @@ namespace Anycraft.Features.Scenes.SceneBootstrap
     {
         private readonly IAsyncPublisher<ShowPopupEvent<LoadingPopupPresenter,
             LoadingPopupPresenter.Data>> _showBootstrapPopupPublisher;
-        private readonly IPublisher<LoadSceneEvent<MenuSceneScript>> _loadSceneMenuPublisher;
+        private readonly IPublisher<LoadSceneEvent<MainSceneScript>> _loadSceneMenuPublisher;
 
         public BootstrapSceneScript
         (
             IAsyncPublisher<ShowPopupEvent<LoadingPopupPresenter,
                 LoadingPopupPresenter.Data>> showBootstrapPopupPublisher,
-            IPublisher<LoadSceneEvent<MenuSceneScript>> loadSceneMenuPublisher
+            IPublisher<LoadSceneEvent<MainSceneScript>> loadSceneMenuPublisher
         )
         {
             Assert.IsNotNull(showBootstrapPopupPublisher);
@@ -62,7 +62,7 @@ namespace Anycraft.Features.Scenes.SceneBootstrap
             }
             bottomTextObservale.Value = "READY";
             _loadSceneMenuPublisher.Publish(
-                new LoadSceneEvent<MenuSceneScript>());
+                new LoadSceneEvent<MainSceneScript>());
 
             this.LogStepCompleted("execution");
         }
