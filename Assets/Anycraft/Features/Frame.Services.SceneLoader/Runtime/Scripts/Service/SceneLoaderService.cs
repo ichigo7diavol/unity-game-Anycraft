@@ -83,7 +83,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
 
         public async UniTask LoadSceneAndRunScriptAsync<TLifetimeScope, TSceneScript>(SceneReference sceneReference)
             where TLifetimeScope : BaseLifetimeScope
-            where TSceneScript : ISceneScript, ISceneScriptStartable
+            where TSceneScript : ISceneScriptBuildable
         {
             Assert.IsNotNull(sceneReference);
             Assert.IsFalse(IsLoading);
@@ -93,7 +93,8 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
                 await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
 
                 var script = GetSceneScript<TLifetimeScope, TSceneScript>();
-                script.StartAsync().Forget();
+                await script.BuildAsync();
+                await script.StartAsync();
             }
             catch (Exception e)
             {
@@ -104,7 +105,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
         public async UniTask LoadSceneAndRunScriptAsync<TLifetimeScope, TSceneScript, TScriptData>(
             SceneReference sceneReference, TScriptData data)
             where TLifetimeScope : BaseLifetimeScope
-            where TSceneScript : ISceneScript, ISceneScriptStartable<TScriptData>
+            where TSceneScript : ISceneScriptBuildable<TScriptData>
         {
             Assert.IsNotNull(sceneReference);
             Assert.IsFalse(IsLoading);
@@ -114,7 +115,8 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
                 await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
 
                 var script = GetSceneScript<TLifetimeScope, TSceneScript>();
-                script.StartAsync(data).Forget();
+                await script.BuildAsync(data);
+                await script.StartAsync();
             }
             catch (Exception e)
             {
@@ -129,6 +131,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
         )
         {
             Assert.IsNotNull(sceneReference);
+            Assert.IsFalse(IsLoading);
 
             IsLoading = true;
 

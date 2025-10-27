@@ -10,7 +10,7 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
     public abstract class BaseSceneScriptStarterScriptableInstaller<TScriptStarter, TSceneScript, TData>
         : BaseScriptableInstaller
         where TScriptStarter : BaseSceneScriptStarter<TSceneScript, TData>
-        where TSceneScript : ISceneScript, ISceneScriptStartable<TData>
+        where TSceneScript : ISceneScript, ISceneScriptBuildable<TData>
     {
         [Required]
         [SerializeField] private TData _data;
@@ -35,7 +35,7 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
     public abstract class BaseSceneScriptStarterScriptableInstaller<TScriptStarter, TSceneScript>
         : BaseScriptableInstaller
         where TScriptStarter : BaseSceneScriptStarter<TSceneScript>
-        where TSceneScript : ISceneScript, ISceneScriptStartable
+        where TSceneScript : ISceneScript, ISceneScriptBuildable
     {
         public override void Install(IContainerBuilder builder)
         {

@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+using Anycraft.Features.Frame.Logger;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
@@ -8,7 +10,7 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
     [UsedImplicitly]
     public abstract class BaseSceneScriptStarter<TSceneScript, TData>
         : IStartable
-        where TSceneScript : ISceneScript, ISceneScriptStartable<TData>
+        where TSceneScript : ISceneScript, ISceneScriptBuildable<TData>
     {
         private readonly SceneScriptingService _service;
         private readonly TData _data;
@@ -21,18 +23,22 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
             _data = data;
         }
 
-        public void Start()
+        public async void Start()
         {
-            _service
-                .StartScriptAsync<TSceneScript, TData>(_data)
-                .Forget();
+            this.LogStepStarted("Scene BUILDING");
+            await _service.StartBuildAsync<TSceneScript, TData>(_data);
+            this.LogStepCompleted("Scene BUILDING");
+
+            this.LogStepStarted("Scene STARTING");
+            await _service.StartAsync();
+            this.LogStepStarted("Scene BUILDING");
         }
     }
 
     [UsedImplicitly]
     public abstract class BaseSceneScriptStarter<TSceneScript>
         : IStartable
-        where TSceneScript : ISceneScript, ISceneScriptStartable
+        where TSceneScript : ISceneScript, ISceneScriptBuildable
     {
         private readonly SceneScriptingService _service;
 
@@ -43,11 +49,15 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
             _service = service;
         }
 
-        public void Start()
+        public async void Start()
         {
-            _service
-                .StartScriptAsync<TSceneScript>()
-                .Forget();
+            this.LogStepStarted("Scene BUILDING");
+            await _service.StartBuildAsync<TSceneScript>();
+            this.LogStepCompleted("Scene BUILDING");
+
+            this.LogStepStarted("Scene STARTING");
+            await _service.StartAsync();
+            this.LogStepStarted("Scene BUILDING");
         }
     }
 }

@@ -1,3 +1,5 @@
+using Anycraft.Features.Frame.Logger;
+using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
 
@@ -22,5 +24,11 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
     public abstract class BaseSceneScript
         : ISceneScript
     {
+        public UniTask StartAsync()
+        {
+            this.LogDebug("Scene started STUB");
+
+            return UniTask.CompletedTask;
+        }
     }
 }

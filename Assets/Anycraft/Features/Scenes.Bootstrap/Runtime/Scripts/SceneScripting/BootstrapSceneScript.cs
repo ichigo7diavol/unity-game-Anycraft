@@ -15,7 +15,7 @@ namespace Anycraft.Features.Scenes.Bootstrap
 {
     [UsedImplicitly]
     public sealed class BootstrapSceneScript
-        : BaseSceneScript, ISceneScriptStartable
+        : BaseSceneScript, ISceneScriptBuildable
     {
         private readonly IAsyncPublisher<ShowPopupEvent<LoadingPopupPresenter,
             LoadingPopupPresenter.Data>> _showBootstrapPopupPublisher;
@@ -35,7 +35,7 @@ namespace Anycraft.Features.Scenes.Bootstrap
             _loadSceneMenuPublisher = loadSceneMenuPublisher;
         }
 
-        public async UniTask StartAsync()
+        public async UniTask BuildAsync()
         {
             this.LogStepStarted("execution");
 

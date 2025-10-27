@@ -4,16 +4,16 @@ using JetBrains.Annotations;
 namespace Anycraft.Features.Frame.Services.SceneScripting
 {
     [UsedImplicitly]
-    public interface ISceneScriptStartable
+    public interface ISceneScriptBuildable
         : ISceneScript
     {
-        UniTask StartAsync();
+        UniTask BuildAsync();
     }
 
     [UsedImplicitly]
-    public interface ISceneScriptStartable<TData>
+    public interface ISceneScriptBuildable<TData>
         : ISceneScript
     {
-        UniTask StartAsync(TData data);
+        UniTask BuildAsync(TData data);
     }
 }

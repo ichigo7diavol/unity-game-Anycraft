@@ -9,13 +9,13 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
 {
     [UsedImplicitly]
     public readonly struct LoadSceneEvent<TSceneScript>
-        where TSceneScript : ISceneScript, ISceneScriptStartable
+        where TSceneScript : ISceneScript, ISceneScriptBuildable
     {
     }
 
     [UsedImplicitly]
     public readonly struct LoadSceneEvent<TSceneScript, TSceneScriptData>
-        where TSceneScript : ISceneScript, ISceneScriptStartable<TSceneScriptData>
+        where TSceneScript : ISceneScript, ISceneScriptBuildable<TSceneScriptData>
     {
         public readonly TSceneScriptData Data;
     }

@@ -19,24 +19,29 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
             _script = script;
         }
 
-        public UniTask StartScriptAsync<TSceneScript>()
-            where TSceneScript : ISceneScriptStartable
+        public UniTask StartAsync()
         {
-            if (_script is not TSceneScript script)
-            {
-                throw new InvalidOperationException();
-            }
-            return script.StartAsync();
+            return _script.StartAsync();
         }
 
-        public UniTask StartScriptAsync<TSceneScript, TData>(TData data)
-            where TSceneScript : ISceneScriptStartable<TData>
+        public UniTask StartBuildAsync<TSceneScript>()
+            where TSceneScript : ISceneScriptBuildable
         {
             if (_script is not TSceneScript script)
             {
                 throw new InvalidOperationException();
             }
-            return script.StartAsync(data);
+            return script.BuildAsync();
+        }
+
+        public UniTask StartBuildAsync<TSceneScript, TData>(TData data)
+            where TSceneScript : ISceneScriptBuildable<TData>
+        {
+            if (_script is not TSceneScript script)
+            {
+                throw new InvalidOperationException();
+            }
+            return script.BuildAsync(data);
         }
 
         public void Dispose()

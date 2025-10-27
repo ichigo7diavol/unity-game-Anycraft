@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace Anycraft.Features.Scenes.Main
 {
     public sealed class MainSceneScript
-        : BaseSceneScript, ISceneScriptStartable
+        : BaseSceneScript, ISceneScriptBuildable
     {
         private readonly IAsyncPublisher<ShowPopupEvent<MenuPopupPresenter>> _openMenuPopupPublisher;
 
@@ -22,7 +22,7 @@ namespace Anycraft.Features.Scenes.Main
             _openMenuPopupPublisher = openMenuPopupPublisher;
         }
 
-        public async UniTask StartAsync()
+        public async UniTask BuildAsync()
         {
             await _openMenuPopupPublisher.PublishAsync(default);
         }
