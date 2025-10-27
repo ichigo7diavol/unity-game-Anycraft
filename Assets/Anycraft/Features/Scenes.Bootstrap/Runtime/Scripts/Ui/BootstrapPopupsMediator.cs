@@ -15,7 +15,7 @@ namespace Anycraft.Features.Scenes.SceneBootstrap
         public BootstrapPopupsMediator
         (
             PopupsService popupsService,
-            ISubscriber<ShowPopupEvent<LoadingPopupPresenter,
+            IAsyncSubscriber<ShowPopupEvent<LoadingPopupPresenter,
                 LoadingPopupPresenter.Data>> showBootstrapPopupPublisher
         )
             : base(popupsService)

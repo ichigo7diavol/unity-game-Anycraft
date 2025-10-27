@@ -17,8 +17,8 @@ namespace Anycraft.Features.Scenes.Global
         public GlobalUiPopupsMediator
         (
             PopupsService popupsService,
-            ISubscriber<SceneLoadingStartedEvent> sceneLoadingStartedSubscriber,
-            ISubscriber<SceneLoadingCompletedEvent> sceneLoadingCompletedSubscriber
+            IAsyncSubscriber<SceneLoadingStartedEvent> sceneLoadingStartedSubscriber,
+            IAsyncSubscriber<SceneLoadingCompletedEvent> sceneLoadingCompletedSubscriber
         )
             : base(popupsService)
         {
@@ -34,20 +34,29 @@ namespace Anycraft.Features.Scenes.Global
                 .AddTo(Token);
         }
 
-        private void OnSceneLoadingStarted(SceneLoadingStartedEvent eventData)
+        private async UniTask OnSceneLoadingStarted
+        (
+            SceneLoadingStartedEvent eventData,
+            CancellationToken token = default
+        )
         {
+            // todo: decouple ui and scene loading things
             var data = new LoadingPopupPresenter.Data
             (
                 eventData.LoadingPopupHeaderText,
                 eventData.LoadingPopupBottomTextxObservable,
                 eventData.ProgressObservable
             );
-            OnShowPopup(new ShowPopupEvent<LoadingPopupPresenter, LoadingPopupPresenter.Data>(data));
+            await OnShowPopup(new ShowPopupEvent<LoadingPopupPresenter, LoadingPopupPresenter.Data>(data));
         }
 
-        private void OnSceneLoadedCompleted(SceneLoadingCompletedEvent eventData)
+        private async UniTask OnSceneLoadedCompleted
+        (
+            SceneLoadingCompletedEvent eventData,
+            CancellationToken token = default
+        )
         {
-            OnHidePopup(new HidePopupEvent<LoadingPopupPresenter>());
+            await OnHidePopup(new HidePopupEvent<LoadingPopupPresenter>());
         }
     }
 }

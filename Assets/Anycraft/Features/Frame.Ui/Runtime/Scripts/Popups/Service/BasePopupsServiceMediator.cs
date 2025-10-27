@@ -22,23 +22,35 @@ namespace Anycraft.Features.Frame.Ui
             _service = service;
         }
 
-        protected void OnShowPopup<TPopupPresenter>(ShowPopupEvent<TPopupPresenter> _)
+        protected async UniTask OnShowPopup<TPopupPresenter>
+        (
+            ShowPopupEvent<TPopupPresenter> _,
+            CancellationToken token = default
+        )
             where TPopupPresenter : BasePopupPresenter
         {
-            Service.ShowPopupAsync<TPopupPresenter>().Forget();
+            await Service.ShowPopupAsync<TPopupPresenter>();
         }
 
-        protected void OnShowPopup<TPopupPresenter, TPopupData>(ShowPopupEvent<TPopupPresenter, TPopupData> data)
+        protected async UniTask OnShowPopup<TPopupPresenter, TPopupData>
+        (
+            ShowPopupEvent<TPopupPresenter, TPopupData> data,
+            CancellationToken token = default
+        )
             where TPopupPresenter : BasePopupPresenter<TPopupData>
             where TPopupData : class
         {
-            Service.ShowPopupAsync<TPopupPresenter, TPopupData>(data.PopupData).Forget();
+            await Service.ShowPopupAsync<TPopupPresenter, TPopupData>(data.PopupData);
         }
 
-        protected void OnHidePopup<TPopupPresenter>(HidePopupEvent<TPopupPresenter> _)
+        protected async UniTask OnHidePopup<TPopupPresenter>
+        (
+            HidePopupEvent<TPopupPresenter> _,
+            CancellationToken token = default
+        )
             where TPopupPresenter : BasePopupPresenter
         {
-            Service.HidePopupAsync<TPopupPresenter>().Forget();
+            await Service.HidePopupAsync<TPopupPresenter>();
         }
     } 
 }

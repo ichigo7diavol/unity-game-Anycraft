@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.Assertions;
 using Anycraft.Features.Frame.Services.SceneLoader;
 using Anycraft.Features.Scenes.SceneMenu;
+using System.Threading;
 
 namespace Anycraft.Features.Scenes.Global
 {
@@ -32,8 +33,8 @@ namespace Anycraft.Features.Scenes.Global
 
         private void OnLoadSceneMenu(LoadSceneEvent<MenuSceneScript> _)
         {
-            Service
-                .LoadSceneAndRunScriptAsync<MenuSceneScript>(_config.MenuSceneReference)
+            Service.LoadSceneAndRunScriptAsync<
+                MenuSceneLifetimeScope, MenuSceneScript>(_config.MenuSceneReference)
                 .Forget();
         }
     }

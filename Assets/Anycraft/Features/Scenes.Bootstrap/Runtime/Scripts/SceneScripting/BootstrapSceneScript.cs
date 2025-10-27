@@ -17,13 +17,13 @@ namespace Anycraft.Features.Scenes.SceneBootstrap
     public sealed class BootstrapSceneScript
         : BaseSceneScript, ISceneScriptStartable
     {
-        private readonly IPublisher<ShowPopupEvent<LoadingPopupPresenter,
+        private readonly IAsyncPublisher<ShowPopupEvent<LoadingPopupPresenter,
             LoadingPopupPresenter.Data>> _showBootstrapPopupPublisher;
         private readonly IPublisher<LoadSceneEvent<MenuSceneScript>> _loadSceneMenuPublisher;
 
         public BootstrapSceneScript
         (
-            IPublisher<ShowPopupEvent<LoadingPopupPresenter,
+            IAsyncPublisher<ShowPopupEvent<LoadingPopupPresenter,
                 LoadingPopupPresenter.Data>> showBootstrapPopupPublisher,
             IPublisher<LoadSceneEvent<MenuSceneScript>> loadSceneMenuPublisher
         )

@@ -12,6 +12,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 using VContainer;
+using VContainer.Unity;
 
 namespace Anycraft.Features.Frame.Services.SceneLoader
 {
@@ -42,8 +43,8 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
         private readonly ReactiveProperty<float> _progressObservable = new();
         private readonly ReactiveProperty<bool> _isLoadingObservable = new();
 
-        private readonly IPublisher<SceneLoadingStartedEvent> _sceneLoadingStartedEventPublisher;
-        private readonly IPublisher<SceneLoadingCompletedEvent> _sceneLoadingCompletedEventPublisher;
+        private readonly IAsyncPublisher<SceneLoadingStartedEvent> _sceneLoadingStartedEventPublisher;
+        private readonly IAsyncPublisher<SceneLoadingCompletedEvent> _sceneLoadingCompletedEventPublisher;
 
         public ReadOnlyReactiveProperty<float> ProgressObservable => _progressObservable;
         public float Progress
@@ -63,8 +64,8 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
 
         public SceneLoaderService
         (
-            IPublisher<SceneLoadingStartedEvent> sceneLoadingStartedEventPublisher,
-            IPublisher<SceneLoadingCompletedEvent> sceneLoadingCompletedEventPublisher
+            IAsyncPublisher<SceneLoadingStartedEvent> sceneLoadingStartedEventPublisher,
+            IAsyncPublisher<SceneLoadingCompletedEvent> sceneLoadingCompletedEventPublisher
         )
         {
             Assert.IsNotNull(sceneLoadingStartedEventPublisher);
@@ -80,7 +81,8 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             _isLoadingObservable.AddTo(Token);
         }
 
-        public async UniTask LoadSceneAndRunScriptAsync<TSceneScript>(SceneReference sceneReference)
+        public async UniTask LoadSceneAndRunScriptAsync<TLifetimeScope, TSceneScript>(SceneReference sceneReference)
+            where TLifetimeScope : BaseLifetimeScope
             where TSceneScript : ISceneScript, ISceneScriptStartable
         {
             Assert.IsNotNull(sceneReference);
@@ -90,7 +92,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             {
                 await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
 
-                var script = GetSceneScript<TSceneScript>();
+                var script = GetSceneScript<TLifetimeScope, TSceneScript>();
                 script.StartAsync().Forget();
             }
             catch (Exception e)
@@ -99,8 +101,9 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             }
         }
 
-        public async UniTask LoadSceneAndRunScriptAsync<TSceneScript, TScriptData>(
+        public async UniTask LoadSceneAndRunScriptAsync<TLifetimeScope, TSceneScript, TScriptData>(
             SceneReference sceneReference, TScriptData data)
+            where TLifetimeScope : BaseLifetimeScope
             where TSceneScript : ISceneScript, ISceneScriptStartable<TScriptData>
         {
             Assert.IsNotNull(sceneReference);
@@ -110,7 +113,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             {
                 await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
 
-                var script = GetSceneScript<TSceneScript>();
+                var script = GetSceneScript<TLifetimeScope, TSceneScript>();
                 script.StartAsync(data).Forget();
             }
             catch (Exception e)
@@ -131,42 +134,59 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
 
             this.LogStepStarted($"Scene: '{sceneReference.Path}' loading");
 
-            RaiseSceneLoadingStarted(sceneReference);
+            await RaiseSceneLoadingStarted(sceneReference);
 
             var operation = SceneManager.LoadSceneAsync(sceneReference.BuildIndex, loadSceneMode);
             await operation.ToUniTask(progress: _progressHandler);
 
             this.LogStepCompleted($"Scene: '{sceneReference.Path}' loading");
 
-            RaiseSceneLoadingCompleted(sceneReference);
+            await RaiseSceneLoadingCompleted(sceneReference);
 
             IsLoading = false;
         }
 
-        private TSceneScript GetSceneScript<TSceneScript>()
+        private TSceneScript GetSceneScript<TLifetimeScope, TSceneScript>()
+            where TLifetimeScope : BaseLifetimeScope
             where TSceneScript : ISceneScript
         {
-            var lifetimeScope = UnityEngine.Object.FindFirstObjectByType<BaseLifetimeScope>();
+            var lifetimeScope = UnityEngine.Object.FindFirstObjectByType<TLifetimeScope>();
             return lifetimeScope.Container.Resolve<TSceneScript>();
         }
 
-        private async void RaiseSceneLoadingStarted(SceneReference sceneReference)
+        private async UniTask RaiseSceneLoadingStarted(SceneReference sceneReference)
         {
+            // todo: decouple ui things
+            // maybe some scene loading data with loaded scene abstract context
             var data = new SceneLoadingStartedEvent(
                 "Scene loading",
                 _loadingScreenBottomTextObservable,
                 _progressObservable,
                 sceneReference
             );
-            _sceneLoadingStartedEventPublisher.Publish(data);
+            try
+            {
+                await _sceneLoadingStartedEventPublisher.PublishAsync(data);
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
         
-        private async void RaiseSceneLoadingCompleted(SceneReference sceneReference)
+        private async UniTask RaiseSceneLoadingCompleted(SceneReference sceneReference)
         {
             var data = new SceneLoadingCompletedEvent(
                 sceneReference
             );
-            _sceneLoadingCompletedEventPublisher.Publish(data);
+            try
+            {
+                await _sceneLoadingCompletedEventPublisher.PublishAsync(data);
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
 
         public void Dispose()
