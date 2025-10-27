@@ -40,7 +40,8 @@ namespace Anycraft.Features.Frame.Ui
             _prefabs = prefabs.ToDictionary(p => p.GetType());
         }
         
-        public async UniTask<TPopupPresenter> ShowPopupAsync<TPopupPresenter, TPopupData>(TPopupData data)
+        public async UniTask<TPopupPresenter> ShowPopupAsync<TPopupPresenter, TPopupData>(
+            TPopupData data, bool isInstant = false)
             where TPopupPresenter : BasePopupPresenter<TPopupData>
             where TPopupData : class
         {
@@ -50,7 +51,7 @@ namespace Anycraft.Features.Frame.Ui
                 var presenter = await CreatePresenter<TPopupPresenter>();
                 presenter.PopupData = data;
 
-                await presenter.ShowAsync();
+                await presenter.ShowAsync(isInstant);
 
                 this.LogStepCompleted($"Opening: {typeof(TPopupPresenter).Name}");
     
@@ -63,14 +64,14 @@ namespace Anycraft.Features.Frame.Ui
             }
         }
 
-        public async UniTask<TPopupPresenter> ShowPopupAsync<TPopupPresenter>()
+        public async UniTask<TPopupPresenter> ShowPopupAsync<TPopupPresenter>(bool isInstant = false)
             where TPopupPresenter : BasePopupPresenter
         {
             this.LogStepStarted($"Opening: {typeof(TPopupPresenter).Name}");
             try
             {
                 var presenter = await CreatePresenter<TPopupPresenter>();
-                await presenter.ShowAsync();
+                await presenter.ShowAsync(isInstant);
 
                 this.LogStepCompleted($"Opening: {typeof(TPopupPresenter).Name}");
     
@@ -83,7 +84,7 @@ namespace Anycraft.Features.Frame.Ui
             }
         }
 
-        public async UniTask HidePopupAsync<TPrenter>()
+        public async UniTask HidePopupAsync<TPrenter>(bool isInstant = false)
             where TPrenter : BasePopupPresenter
         {
             var type = typeof(TPrenter);
@@ -94,7 +95,7 @@ namespace Anycraft.Features.Frame.Ui
             }
             try
             {
-                await presenter.HideAsync();
+                await presenter.HideAsync(isInstant);
                 GameObject.Destroy(presenter);
             }
             catch (Exception e)

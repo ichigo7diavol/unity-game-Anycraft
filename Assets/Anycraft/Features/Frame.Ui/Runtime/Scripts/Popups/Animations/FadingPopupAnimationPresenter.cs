@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using System.Threading;
 
 namespace Anycraft.Features.Frame.Ui
 {
@@ -14,11 +15,12 @@ namespace Anycraft.Features.Frame.Ui
 
         [SerializeField] private float _duration;
 
-        public async override UniTask ShowAsync()
+        // todo: attach to token
+        public async override UniTask ShowAsync(bool isInstant = false, CancellationToken token = default)
         {
-            var elapsed = 0f;
+            var elapsed = isInstant ? _duration : 0f;
 
-            while (elapsed < _duration)
+            while (elapsed <= _duration && !token.IsCancellationRequested)
             {
                 elapsed += Time.unscaledDeltaTime;
                 _canvasGroup.alpha = Mathf.Clamp01(elapsed / _duration);
@@ -27,11 +29,12 @@ namespace Anycraft.Features.Frame.Ui
             }
         }
 
-        public async override UniTask HideAsync()
+        // todo: attach to token
+        public async override UniTask HideAsync(bool isInstant = false, CancellationToken token = default)
         {
-            var elapsed = 0f;
+            var elapsed = isInstant ? _duration : 0f;
             
-            while (elapsed < _duration)
+            while (elapsed <= _duration && !token.IsCancellationRequested)
             {
                 elapsed += Time.unscaledDeltaTime;
                 _canvasGroup.alpha = 1.0f - Mathf.Clamp01(elapsed / _duration);

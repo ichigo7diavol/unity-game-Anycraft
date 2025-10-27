@@ -24,12 +24,12 @@ namespace Anycraft.Features.Frame.Ui
 
         protected async UniTask OnShowPopup<TPopupPresenter>
         (
-            ShowPopupEvent<TPopupPresenter> _,
+            ShowPopupEvent<TPopupPresenter> data,
             CancellationToken token = default
         )
             where TPopupPresenter : BasePopupPresenter
         {
-            await Service.ShowPopupAsync<TPopupPresenter>();
+            await Service.ShowPopupAsync<TPopupPresenter>(data.IsInstant);
         }
 
         protected async UniTask OnShowPopup<TPopupPresenter, TPopupData>
@@ -40,17 +40,17 @@ namespace Anycraft.Features.Frame.Ui
             where TPopupPresenter : BasePopupPresenter<TPopupData>
             where TPopupData : class
         {
-            await Service.ShowPopupAsync<TPopupPresenter, TPopupData>(data.PopupData);
+            await Service.ShowPopupAsync<TPopupPresenter, TPopupData>(data.PopupData, data.IsInstant);
         }
 
         protected async UniTask OnHidePopup<TPopupPresenter>
         (
-            HidePopupEvent<TPopupPresenter> _,
+            HidePopupEvent<TPopupPresenter> data,
             CancellationToken token = default
         )
             where TPopupPresenter : BasePopupPresenter
         {
-            await Service.HidePopupAsync<TPopupPresenter>();
+            await Service.HidePopupAsync<TPopupPresenter>(data.IsInstant);
         }
     } 
 }

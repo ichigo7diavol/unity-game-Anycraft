@@ -83,7 +83,7 @@ namespace Anycraft.Features.Scenes.Bootstrap
             <
                 LoadingPopupPresenter,
                 LoadingPopupPresenter.Data
-            >(popupData);
+            >(popupData, true);
 
             _showBootstrapPopupPublisher.Publish(eventData);
         }

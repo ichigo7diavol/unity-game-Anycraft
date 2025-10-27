@@ -8,6 +8,12 @@ namespace Anycraft.Features.Frame.Ui
         where TPopupPreesnter : BasePopupPresenter
     {
         public readonly Type PopupType => typeof(TPopupPreesnter);
+        public readonly bool IsInstant;
+
+        public ShowPopupEvent(bool isInstant = false)
+        {
+            IsInstant = isInstant;
+        }
     }
 
     [UsedImplicitly]
@@ -16,10 +22,12 @@ namespace Anycraft.Features.Frame.Ui
         where TPopupData : class
     {
         public readonly TPopupData PopupData;
+        public readonly bool IsInstant;
 
-        public ShowPopupEvent(TPopupData data)
+        public ShowPopupEvent(TPopupData data, bool isInstant = false)
         {
             PopupData = data;
+            IsInstant = isInstant;
         }
     }
 
@@ -28,5 +36,11 @@ namespace Anycraft.Features.Frame.Ui
         where TPopupPreesnter : BasePopupPresenter
     {
         public readonly Type PopupType => typeof(TPopupPreesnter);
+        public readonly bool IsInstant;
+
+        public HidePopupEvent(bool isInstant = false)
+        {
+            IsInstant = isInstant;
+        }
     }
 }

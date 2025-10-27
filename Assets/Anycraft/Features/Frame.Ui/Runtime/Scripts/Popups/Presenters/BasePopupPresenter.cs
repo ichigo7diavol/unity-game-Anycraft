@@ -5,6 +5,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using System.Threading;
 using Anycraft.Features.Frame.MVP;
+using Sirenix.Utilities.Editor.Expressions;
 
 namespace Anycraft.Features.Frame.Ui
 {
@@ -57,12 +58,12 @@ namespace Anycraft.Features.Frame.Ui
         [Required]
         [SerializeField] BasePopupAnimationPresenter _animationPresenter;
 
-        public virtual async UniTask ShowAsync() 
-            => await _animationPresenter.ShowAsync();
+        public virtual async UniTask ShowAsync(bool isInstant = false) 
+            => await _animationPresenter.ShowAsync(isInstant, token: CtsToken);
 
-        public virtual async UniTask HideAsync()
+        public virtual async UniTask HideAsync(bool isInstant = false)
         {
-            await _animationPresenter.HideAsync();
+            await _animationPresenter.HideAsync(isInstant, token: CtsToken);
             // todo: do something
             Destroy(gameObject);
         }

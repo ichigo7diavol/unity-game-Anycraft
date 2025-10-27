@@ -137,6 +137,7 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             await RaiseSceneLoadingStarted(sceneReference);
 
             var operation = SceneManager.LoadSceneAsync(sceneReference.BuildIndex, loadSceneMode);
+            // todo: exception at exit from app while loading scene 
             await operation.ToUniTask(progress: _progressHandler);
 
             this.LogStepCompleted($"Scene: '{sceneReference.Path}' loading");

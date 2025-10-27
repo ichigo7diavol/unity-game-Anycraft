@@ -6,7 +6,7 @@ namespace Anycraft.Features.Frame.Ui
     [UsedImplicitly]
     public interface IPopupPresenter
     {
-        UniTask ShowAsync();
-        UniTask HideAsync();
+        UniTask ShowAsync(bool isInstant);
+        UniTask HideAsync(bool isInstant);
     }
 }
