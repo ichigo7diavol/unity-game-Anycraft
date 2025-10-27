@@ -60,7 +60,11 @@ namespace Anycraft.Features.Frame.Ui
         public virtual async UniTask ShowAsync() 
             => await _animationPresenter.ShowAsync();
 
-        public virtual async UniTask HideAsync() 
-            => await _animationPresenter.HideAsync();
+        public virtual async UniTask HideAsync()
+        {
+            await _animationPresenter.HideAsync();
+            // todo: do something
+            Destroy(gameObject);
+        }
     }
 }
