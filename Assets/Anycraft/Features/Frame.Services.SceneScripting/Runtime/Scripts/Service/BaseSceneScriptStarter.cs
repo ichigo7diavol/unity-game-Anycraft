@@ -1,6 +1,3 @@
-using System.Threading.Tasks;
-using Anycraft.Features.Frame.Logger;
-using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine.Assertions;
 using VContainer.Unity;
@@ -25,13 +22,8 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
 
         public async void Start()
         {
-            this.LogStepStarted("Scene BUILDING");
             await _service.StartBuildAsync<TSceneScript, TData>(_data);
-            this.LogStepCompleted("Scene BUILDING");
-
-            this.LogStepStarted("Scene STARTING");
             await _service.StartAsync();
-            this.LogStepStarted("Scene BUILDING");
         }
     }
 
@@ -51,13 +43,8 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
 
         public async void Start()
         {
-            this.LogStepStarted("Scene BUILDING");
             await _service.StartBuildAsync<TSceneScript>();
-            this.LogStepCompleted("Scene BUILDING");
-
-            this.LogStepStarted("Scene STARTING");
             await _service.StartAsync();
-            this.LogStepStarted("Scene BUILDING");
         }
     }
 }

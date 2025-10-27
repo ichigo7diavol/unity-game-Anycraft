@@ -24,7 +24,7 @@ namespace Anycraft.Features.Frame.Services.SceneScripting
     public abstract class BaseSceneScript
         : ISceneScript
     {
-        public UniTask StartAsync()
+        public virtual UniTask StartAsync()
         {
             this.LogDebug("Scene started STUB");
 

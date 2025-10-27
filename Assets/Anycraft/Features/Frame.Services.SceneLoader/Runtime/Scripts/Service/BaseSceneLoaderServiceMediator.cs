@@ -32,13 +32,13 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
 
         protected BaseSceneLoaderServiceMediator(SceneLoaderService service)
         {
-            this.LogStepStarted($"Mediator '{GetType().Name}' creation");
+            this.LogStepStarted($"'{GetType().Name}'");
 
             Assert.IsNotNull(service);
 
             _service = service;
 
-            this.LogStepCompleted($"Mediator '{GetType().Name}' creation");
+            this.LogStepCompleted($"'{GetType().Name}'");
         }
 
         public void Dispose()

@@ -35,10 +35,13 @@ namespace Anycraft.Features.Scenes.Bootstrap
             _loadSceneMenuPublisher = loadSceneMenuPublisher;
         }
 
-        public async UniTask BuildAsync()
+        public UniTask BuildAsync()
         {
-            this.LogStepStarted("execution");
+            return UniTask.CompletedTask;
+        }
 
+        public override async UniTask StartAsync()
+        {
             this.LogStepStarted($"opening: {nameof(LoadingPopupPresenter)}");
 
             await UniTask.WaitForSeconds(1);
@@ -63,8 +66,6 @@ namespace Anycraft.Features.Scenes.Bootstrap
             bottomTextObservale.Value = "READY";
             _loadSceneMenuPublisher.Publish(
                 new LoadSceneEvent<MainSceneScript>());
-
-            this.LogStepCompleted("execution");
         }
 
         private void RaiseShowLoadingPopup

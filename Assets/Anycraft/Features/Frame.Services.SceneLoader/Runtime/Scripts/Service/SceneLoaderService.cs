@@ -92,9 +92,9 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             {
                 await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
 
-                var script = GetSceneScript<TLifetimeScope, TSceneScript>();
-                await script.BuildAsync();
-                await script.StartAsync();
+                var service = GetSceneScriptingService<TLifetimeScope>();
+                await service.StartBuildAsync<TSceneScript>();
+                await service.StartAsync();
             }
             catch (Exception e)
             {
@@ -114,9 +114,9 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             {
                 await LoadSceneAsync_Internal(sceneReference, LoadSceneMode.Single);
 
-                var script = GetSceneScript<TLifetimeScope, TSceneScript>();
-                await script.BuildAsync(data);
-                await script.StartAsync();
+                var service = GetSceneScriptingService<TLifetimeScope>();
+                await service.StartBuildAsync<TSceneScript, TScriptData>(data);
+                await service.StartAsync();
             }
             catch (Exception e)
             {
@@ -150,12 +150,11 @@ namespace Anycraft.Features.Frame.Services.SceneLoader
             IsLoading = false;
         }
 
-        private TSceneScript GetSceneScript<TLifetimeScope, TSceneScript>()
+        private SceneScriptingService GetSceneScriptingService<TLifetimeScope>()
             where TLifetimeScope : BaseLifetimeScope
-            where TSceneScript : ISceneScript
         {
             var lifetimeScope = UnityEngine.Object.FindFirstObjectByType<TLifetimeScope>();
-            return lifetimeScope.Container.Resolve<TSceneScript>();
+            return lifetimeScope.Container.Resolve<SceneScriptingService>();
         }
 
         private async UniTask RaiseSceneLoadingStarted(SceneReference sceneReference)
